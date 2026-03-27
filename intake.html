@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>AIReady Australia — Tell Us About Your Business</title>
+  <meta name="description" content="Complete your AIReady Australia business intake questionnaire. Your answers let us build a specific, actionable AI roadmap for your business." />
+  <meta name="robots" content="noindex, nofollow" />
+
+  <link rel="canonical" href="https://aireadyaudit.com.au/intake.html" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ===== INTAKE-SPECIFIC STYLES ===== */
+
+    .intake-hero {
+      background: linear-gradient(135deg, var(--color-bg) 0%, #0d1117 100%);
+      border-bottom: 1px solid var(--color-border, rgba(255,255,255,0.08));
+      padding: 3rem 0 2.5rem;
+      text-align: center;
+    }
+
+    .intake-hero .intake-badge {
+      display: inline-block;
+      background: rgba(99,102,241,0.15);
+      color: var(--color-primary, #6366f1);
+      border: 1px solid rgba(99,102,241,0.3);
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.35rem 1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .intake-hero h1 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 0.9rem;
+      color: var(--color-heading, #fff);
+    }
+
+    .intake-hero p {
+      color: var(--color-muted, #94a3b8);
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+
+    .intake-meta {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--color-muted, #94a3b8);
+    }
+
+    .intake-meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* Progress bar */
+    .intake-progress {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: var(--color-bg, #0a0f1a);
+      border-bottom: 1px solid var(--color-border, rgba(255,255,255,0.08));
+      padding: 0.6rem 0;
+    }
+
+    .progress-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .progress-bar-track {
+      background: rgba(255,255,255,0.08);
+      border-radius: 999px;
+      height: 4px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--color-primary, #6366f1), #818cf8);
+      border-radius: 999px;
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    .progress-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: var(--color-muted, #94a3b8);
+      margin-top: 0.4rem;
+    }
+
+    /* Form layout */
+    .intake-form-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    /* Section blocks */
+    .form-section {
+      margin-bottom: 3.5rem;
+    }
+
+    .form-section-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1.2rem;
+      border-bottom: 1px solid var(--color-border, rgba(255,255,255,0.08));
+    }
+
+    .section-letter {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.4rem;
+      height: 2.4rem;
+      min-width: 2.4rem;
+      background: linear-gradient(135deg, var(--color-primary, #6366f1), #818cf8);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1;
+    }
+
+    .section-title-block h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--color-heading, #fff);
+      margin: 0 0 0.2rem;
+    }
+
+    .section-title-block p {
+      font-size: 0.82rem;
+      color: var(--color-muted, #94a3b8);
+      margin: 0;
+    }
+
+    /* Question fields */
+    .form-question {
+      margin-bottom: 2.2rem;
+    }
+
+    .question-label {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--color-heading, #fff);
+      margin-bottom: 0.35rem;
+      line-height: 1.4;
+    }
+
+    .question-number {
+      color: var(--color-primary, #6366f1);
+      font-weight: 700;
+      margin-right: 0.3rem;
+    }
+
+    .question-hint {
+      font-size: 0.8rem;
+      color: var(--color-muted, #94a3b8);
+      margin-bottom: 0.65rem;
+      line-height: 1.5;
+      font-style: italic;
+    }
+
+    /* Inputs */
+    .form-input,
+    .form-textarea,
+    .form-select {
+      width: 100%;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px;
+      color: var(--color-body, #e2e8f0);
+      font-size: 0.92rem;
+      font-family: inherit;
+      padding: 0.75rem 1rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      box-sizing: border-box;
+    }
+
+    .form-input:focus,
+    .form-textarea:focus,
+    .form-select:focus {
+      outline: none;
+      border-color: var(--color-primary, #6366f1);
+      box-shadow: 0 0 0 3px rgba(99,102,241,0.18);
+    }
+
+    .form-input::placeholder,
+    .form-textarea::placeholder {
+      color: rgba(148,163,184,0.5);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    .form-textarea.tall {
+      min-height: 150px;
+    }
+
+    .form-select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+      cursor: pointer;
+    }
+
+    .form-select option {
+      background: #1e2433;
+      color: #e2e8f0;
+    }
+
+    /* Radio groups */
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .radio-option {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.65rem 1rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+      font-size: 0.9rem;
+      color: var(--color-body, #e2e8f0);
+    }
+
+    .radio-option:hover {
+      background: rgba(99,102,241,0.08);
+      border-color: rgba(99,102,241,0.25);
+    }
+
+    .radio-option input[type="radio"] {
+      width: 1.1rem;
+      height: 1.1rem;
+      accent-color: var(--color-primary, #6366f1);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .radio-option input[type="radio"]:checked + span {
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .radio-option:has(input:checked) {
+      background: rgba(99,102,241,0.1);
+      border-color: rgba(99,102,241,0.4);
+    }
+
+    /* Range slider */
+    .range-wrap {
+      padding: 0.5rem 0;
+    }
+
+    .range-slider {
+      width: 100%;
+      accent-color: var(--color-primary, #6366f1);
+      cursor: pointer;
+      height: 6px;
+    }
+
+    .range-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: var(--color-muted, #94a3b8);
+      margin-top: 0.3rem;
+    }
+
+    .range-value-display {
+      text-align: center;
+      margin-top: 0.6rem;
+    }
+
+    .range-value-badge {
+      display: inline-block;
+      background: rgba(99,102,241,0.15);
+      color: var(--color-primary, #6366f1);
+      border: 1px solid rgba(99,102,241,0.3);
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 0.2rem 0.85rem;
+    }
+
+    .range-description {
+      font-size: 0.78rem;
+      color: var(--color-muted, #94a3b8);
+      text-align: center;
+      margin-top: 0.35rem;
+      font-style: italic;
+      min-height: 1.2em;
+    }
+
+    /* Data quality sub-field */
+    .sub-field {
+      margin-top: 1.2rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .sub-field label {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--color-heading, #fff);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Multi-part input */
+    .input-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    @media (max-width: 560px) {
+      .input-pair { grid-template-columns: 1fr; }
+    }
+
+    /* Submit area */
+    .form-submit-area {
+      margin-top: 3rem;
+      text-align: center;
+    }
+
+    .form-submit-note {
+      font-size: 0.82rem;
+      color: var(--color-muted, #94a3b8);
+      margin-bottom: 1.2rem;
+    }
+
+    .btn-submit {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: linear-gradient(135deg, var(--color-primary, #6366f1), #818cf8);
+      color: #fff;
+      font-size: 1.05rem;
+      font-weight: 700;
+      padding: 1rem 2.5rem;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.15s;
+      font-family: inherit;
+    }
+
+    .btn-submit:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    .btn-submit:active {
+      transform: translateY(0);
+    }
+
+    /* Thank you state */
+    .thankyou-state {
+      display: none;
+      text-align: center;
+      padding: 4rem 1.5rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .thankyou-state.visible {
+      display: block;
+    }
+
+    .thankyou-icon {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, #10b981, #34d399);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+    }
+
+    .thankyou-icon svg {
+      color: #fff;
+    }
+
+    .thankyou-state h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--color-heading, #fff);
+      margin-bottom: 0.75rem;
+    }
+
+    .thankyou-state p {
+      color: var(--color-muted, #94a3b8);
+      line-height: 1.7;
+      margin-bottom: 0.75rem;
+    }
+
+    .thankyou-state p strong {
+      color: var(--color-body, #e2e8f0);
+    }
+
+    .thankyou-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+      color: var(--color-primary, #6366f1);
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.92rem;
+    }
+
+    .thankyou-back:hover {
+      text-decoration: underline;
+    }
+
+    /* Required asterisk */
+    .req {
+      color: #f87171;
+      margin-left: 0.15rem;
+    }
+
+    /* Section divider */
+    .section-gap {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+      margin: 0.5rem 0 3.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <header class="site-header" id="top">
+    <nav class="nav container">
+      <a href="index.html" class="nav-logo" aria-label="AIReady Australia home">
+        <span class="logo-mark">AI</span><span class="logo-text">Ready Australia</span>
+      </a>
+      <ul class="nav-links" id="navMenu" role="list" style="margin-left:auto;">
+        <li><a href="index.html#pricing" class="nav-link">Pricing</a></li>
+        <li><a href="mailto:hello@aireadyaudit.com.au" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== INTAKE HERO ===== -->
+  <div class="intake-hero">
+    <div class="container">
+      <div class="intake-badge">Post-Payment Intake</div>
+      <h1>Tell Us About Your Business</h1>
+      <p>Your answers drive everything in your audit. The more specific you are, the sharper the output. There are no wrong answers — we're mapping how your business actually runs today.</p>
+      <div class="intake-meta">
+        <span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          20–35 minutes to complete
+        </span>
+        <span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Confidential — not shared with third parties
+        </span>
+        <span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          25 questions, 8 sections
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== PROGRESS BAR ===== -->
+  <div class="intake-progress" id="intakeProgress">
+    <div class="progress-inner">
+      <div class="progress-bar-track">
+        <div class="progress-bar-fill" id="progressFill"></div>
+      </div>
+      <div class="progress-label">
+        <span id="progressText">Section A of 8</span>
+        <span id="progressPct">0%</span>
+      </div>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ===== FORM ===== -->
+    <div class="intake-form-wrap" id="formWrap">
+      <form id="intakeForm" novalidate>
+
+        <!-- ======================================================
+             SECTION A: BUSINESS BASICS
+        ====================================================== -->
+        <div class="form-section" data-section="A">
+          <div class="form-section-header">
+            <div class="section-letter">A</div>
+            <div class="section-title-block">
+              <h2>Business Basics</h2>
+              <p>Help us understand who you are and the shape of your business.</p>
+            </div>
+          </div>
+
+          <!-- Q1 -->
+          <div class="form-question">
+            <label class="question-label" for="q1">
+              <span class="question-number">Q1.</span>
+              What is your business name, industry, and the primary product or service you sell?<span class="req">*</span>
+            </label>
+            <p class="question-hint">Be specific — e.g. "residential building and renovation company, Perth WA" not just "construction".</p>
+            <textarea class="form-textarea" id="q1" name="q1" placeholder="e.g. Apex Electrical — residential and commercial electrician, Brisbane QLD. We do new installs, fault-finding, and switchboard upgrades." rows="4" required></textarea>
+          </div>
+
+          <!-- Q2 -->
+          <div class="form-question">
+            <label class="question-label">
+              <span class="question-number">Q2.</span>
+              How many full-time equivalent (FTE) staff do you currently have?<span class="req">*</span>
+            </label>
+            <p class="question-hint">Include part-time staff as fractions (two part-timers = 1 FTE). Include yourself.</p>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="q2" value="Solo" required /><span>Just me (solo operator)</span></label>
+              <label class="radio-option"><input type="radio" name="q2" value="2–5 FTE" /><span>2–5 FTE</span></label>
+              <label class="radio-option"><input type="radio" name="q2" value="6–15 FTE" /><span>6–15 FTE</span></label>
+              <label class="radio-option"><input type="radio" name="q2" value="16–30 FTE" /><span>16–30 FTE</span></label>
+              <label class="radio-option"><input type="radio" name="q2" value="31–50 FTE" /><span>31–50 FTE</span></label>
+              <label class="radio-option"><input type="radio" name="q2" value="51–100 FTE" /><span>51–100 FTE</span></label>
+              <label class="radio-option"><input type="radio" name="q2" value="100+ FTE" /><span>100+ FTE</span></label>
+            </div>
+          </div>
+
+          <!-- Q3 -->
+          <div class="form-question">
+            <label class="question-label" for="q3">
+              <span class="question-number">Q3.</span>
+              What is your approximate annual revenue?
+            </label>
+            <p class="question-hint">Used for scoping only — helps us recommend tools proportionate to your business size.</p>
+            <select class="form-select" id="q3" name="q3">
+              <option value="" disabled selected>Select a range…</option>
+              <option value="Under $250K">Under $250K</option>
+              <option value="$250K–$500K">$250K–$500K</option>
+              <option value="$500K–$1M">$500K–$1M</option>
+              <option value="$1M–$3M">$1M–$3M</option>
+              <option value="$3M–$10M">$3M–$10M</option>
+              <option value="$10M–$30M">$10M–$30M</option>
+              <option value="Over $30M">Over $30M</option>
+              <option value="Prefer not to say">Prefer not to say</option>
+            </select>
+          </div>
+
+          <!-- Q4 -->
+          <div class="form-question">
+            <label class="question-label" for="q4">
+              <span class="question-number">Q4.</span>
+              Where is your business located, and who are your customers?
+            </label>
+            <p class="question-hint">e.g. "Brisbane-based, serving clients nationally" or "Melbourne retail, local only".</p>
+            <textarea class="form-textarea" id="q4" name="q4" placeholder="e.g. Sydney-based. Serve B2B clients across NSW and QLD — mostly professional services firms." rows="3"></textarea>
+          </div>
+
+          <!-- Q5 -->
+          <div class="form-question">
+            <label class="question-label">
+              <span class="question-number">Q5.</span>
+              What stage would you describe the business as?<span class="req">*</span>
+            </label>
+            <p class="question-hint">Select the best fit, then add years of operation in the field below.</p>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="q5_stage" value="Startup / Pre-revenue" required /><span>Startup / Pre-revenue (under 2 years)</span></label>
+              <label class="radio-option"><input type="radio" name="q5_stage" value="Early growth" /><span>Early growth (2–5 years, still finding product-market fit)</span></label>
+              <label class="radio-option"><input type="radio" name="q5_stage" value="Established growth" /><span>Established growth (5–10 years, scaling what works)</span></label>
+              <label class="radio-option"><input type="radio" name="q5_stage" value="Mature / optimising" /><span>Mature / optimising (10+ years, focused on efficiency)</span></label>
+              <label class="radio-option"><input type="radio" name="q5_stage" value="Enterprise / market leader" /><span>Enterprise / market leader (dominant position, transformation focus)</span></label>
+            </div>
+            <div style="margin-top:0.9rem;">
+              <input class="form-input" type="text" id="q5_years" name="q5_years" placeholder="Years in operation (e.g. 7 years)" style="max-width:280px;" />
+            </div>
+          </div>
+        </div>
+
+        <div class="section-gap"></div>
+
+        <!-- ======================================================
+             SECTION B: TECHNOLOGY STACK
+        ====================================================== -->
+        <div class="form-section" data-section="B">
+          <div class="form-section-header">
+            <div class="section-letter">B</div>
+            <div class="section-title-block">
+              <h2>Technology Stack</h2>
+              <p>What tools are you running? We'll find integration and automation opportunities here.</p>
+            </div>
+          </div>
+
+          <!-- Q6 -->
+          <div class="form-question">
+            <label class="question-label" for="q6">
+              <span class="question-number">Q6.</span>
+              List every software tool or platform your business currently uses.<span class="req">*</span>
+            </label>
+            <p class="question-hint">Include everything — accounting, CRM, scheduling, email, project management, ecommerce, comms, industry-specific tools. Even "just Excel" counts. List format preferred.</p>
+            <textarea class="form-textarea tall" id="q6" name="q6" placeholder="e.g. Xero, HubSpot, Slack, Microsoft 365, Shopify, ServiceM8, Google Workspace, Trello…" rows="6" required></textarea>
+          </div>
+
+          <!-- Q7 -->
+          <div class="form-question">
+            <label class="question-label" for="q7">
+              <span class="question-number">Q7.</span>
+              Of those tools, which does your team actually use daily? Which are rarely used?
+            </label>
+            <p class="question-hint">e.g. "Daily: Xero, Gmail, Slack. Rarely used: HubSpot — we bought it but it's not adopted."</p>
+            <textarea class="form-textarea" id="q7" name="q7" placeholder="Daily use: …&#10;Rarely used / shelfware: …" rows="5"></textarea>
+          </div>
+
+          <!-- Q8 -->
+          <div class="form-question">
+            <label class="question-label">
+              <span class="question-number">Q8.</span>
+              How would you rate your team's overall comfort with technology and new software?<span class="req">*</span>
+            </label>
+            <p class="question-hint">1 = most staff struggle with basic software · 10 = tech-forward, team actively seeks better tools.</p>
+            <div class="range-wrap">
+              <input class="range-slider" type="range" id="q8" name="q8" min="1" max="10" value="5" step="1" oninput="updateRange('q8', this.value)" />
+              <div class="range-labels">
+                <span>1 — Struggles with basics</span>
+                <span>10 — Tech-forward</span>
+              </div>
+              <div class="range-value-display">
+                <span class="range-value-badge" id="q8-badge">5 / 10</span>
+              </div>
+              <p class="range-description" id="q8-desc">Average — most tools get used, some adoption gaps</p>
+            </div>
+          </div>
+
+          <!-- Q9 -->
+          <div class="form-question">
+            <label class="question-label" for="q9">
+              <span class="question-number">Q9.</span>
+              Do you currently use any AI tools? If yes, list them and describe how you're using them.
+            </label>
+            <p class="question-hint">If not, that's fine — we'll start from fundamentals. Be honest about informal use too (e.g. "ChatGPT for emails").</p>
+            <textarea class="form-textarea" id="q9" name="q9" placeholder="e.g. Yes — we use ChatGPT occasionally for writing but nothing systematic. Tried an AI chatbot on the website but removed it.&#10;&#10;Or: No — we haven't used any AI tools yet." rows="4"></textarea>
+          </div>
+        </div>
+
+        <div class="section-gap"></div>
+
+        <!-- ======================================================
+             SECTION C: BOTTLENECKS & PAIN POINTS
+        ====================================================== -->
+        <div class="form-section" data-section="C">
+          <div class="form-section-header">
+            <div class="section-letter">C</div>
+            <div class="section-title-block">
+              <h2>Bottlenecks &amp; Pain Points</h2>
+              <p>Where is your business bleeding time, money, or energy?</p>
+            </div>
+          </div>
+
+          <!-- Q10 -->
+          <div class="form-question">
+            <label class="question-label" for="q10">
+              <span class="question-number">Q10.</span>
+              What are the top 3 things that take up too much time, cost too much, or frustrate you most?<span class="req">*</span>
+            </label>
+            <p class="question-hint">Be concrete — not "admin is a problem" but "we spend 3 hours every Monday manually doing X." One paragraph per item if possible.</p>
+            <textarea class="form-textarea tall" id="q10" name="q10" placeholder="1. …&#10;&#10;2. …&#10;&#10;3. …" rows="9" required></textarea>
+          </div>
+
+          <!-- Q11 -->
+          <div class="form-question">
+            <label class="question-label" for="q11">
+              <span class="question-number">Q11.</span>
+              Where do things most commonly fall through the cracks?
+            </label>
+            <p class="question-hint">e.g. leads not followed up, invoices sent late, jobs not properly documented, customer complaints not tracked.</p>
+            <textarea class="form-textarea" id="q11" name="q11" placeholder="e.g. Follow-up calls after quotes almost never happen. We lose work because we don't chase quotes proactively." rows="4"></textarea>
+          </div>
+
+          <!-- Q12 -->
+          <div class="form-question">
+            <label class="question-label" for="q12">
+              <span class="question-number">Q12.</span>
+              Is there any important task that consistently doesn't get done because no one has time?
+            </label>
+            <p class="question-hint">Chronic neglect of important tasks is a strong AI signal — content creation, follow-ups, reporting, documentation.</p>
+            <textarea class="form-textarea" id="q12" name="q12" placeholder="e.g. Monthly client reporting. We know we should be doing it but it always falls off the list." rows="4"></textarea>
+          </div>
+        </div>
+
+        <div class="section-gap"></div>
+
+        <!-- ======================================================
+             SECTION D: WORKFLOWS
+        ====================================================== -->
+        <div class="form-section" data-section="D">
+          <div class="form-section-header">
+            <div class="section-letter">D</div>
+            <div class="section-title-block">
+              <h2>Workflows</h2>
+              <p>Walk us through how your business actually operates day to day.</p>
+            </div>
+          </div>
+
+          <!-- Q13 -->
+          <div class="form-question">
+            <label class="question-label" for="q13">
+              <span class="question-number">Q13.</span>
+              Describe your lead-to-customer journey — step by step.
+            </label>
+            <p class="question-hint">Who does what, which tools they use, and roughly how long each step takes. We need the actual current process, not the ideal one.</p>
+            <textarea class="form-textarea tall" id="q13" name="q13" placeholder="1. Lead comes in via web form → 2. Goes to shared Gmail inbox → 3. Someone calls them within a day or two → 4. We send a quote in Word → 5. Follow up by phone if no reply…" rows="8"></textarea>
+          </div>
+
+          <!-- Q14 -->
+          <div class="form-question">
+            <label class="question-label" for="q14">
+              <span class="question-number">Q14.</span>
+              Describe your customer service workflow.
+            </label>
+            <p class="question-hint">How do customers contact you, how are requests tracked, and how are they resolved? Include channels, weekly volume if known, and who handles it.</p>
+            <textarea class="form-textarea" id="q14" name="q14" placeholder="e.g. Customers call or email. We log issues in a shared spreadsheet. Volume is roughly 20–30 contacts per week. Two staff members handle it…" rows="5"></textarea>
+          </div>
+
+          <!-- Q15 -->
+          <div class="form-question">
+            <label class="question-label" for="q15">
+              <span class="question-number">Q15.</span>
+              How does your marketing currently work?
+            </label>
+            <p class="question-hint">Who creates content, how often, on which platforms, and your approximate monthly spend (including staff time).</p>
+            <textarea class="form-textarea" id="q15" name="q15" placeholder="e.g. We post on LinkedIn twice a week — the owner writes it. No paid ads currently. No agency. Maybe 2–3 hours/week total. Zero budget beyond staff time." rows="5"></textarea>
+          </div>
+
+          <!-- Q16 -->
+          <div class="form-question">
+            <label class="question-label" for="q16">
+              <span class="question-number">Q16.</span>
+              How is invoicing, payments, and financial reporting handled?
+            </label>
+            <p class="question-hint">Who does it, how often, which tools, and roughly how many hours per week across the team.</p>
+            <textarea class="form-textarea" id="q16" name="q16" placeholder="e.g. Bookkeeper does invoicing in Xero twice a week, about 3 hours total. Bank reconciliation monthly. BAS done by our accountant quarterly." rows="5"></textarea>
+          </div>
+        </div>
+
+        <div class="section-gap"></div>
+
+        <!-- ======================================================
+             SECTION E: DATA AVAILABILITY & QUALITY
+        ====================================================== -->
+        <div class="form-section" data-section="E">
+          <div class="form-section-header">
+            <div class="section-letter">E</div>
+            <div class="section-title-block">
+              <h2>Data Availability &amp; Quality</h2>
+              <p>AI is only as good as your data. Let's find out what you're working with.</p>
+            </div>
+          </div>
+
+          <!-- Q17 -->
+          <div class="form-question">
+            <label class="question-label" for="q17_text">
+              <span class="question-number">Q17.</span>
+              Where does your customer data live, and how complete is it?
+            </label>
+            <p class="question-hint">Is it in a CRM, spreadsheet, accounting software, or scattered? Rate the quality from 1 (scattered/unreliable) to 10 (clean, centralised, up to date).</p>
+            <textarea class="form-textarea" id="q17_text" name="q17_text" placeholder="e.g. Mostly in Xero and an old spreadsheet. Some contacts in Gmail. No proper CRM. Data is incomplete and not maintained regularly." rows="4"></textarea>
+            <div class="sub-field">
+              <label for="q17_quality">Data quality rating:</label>
+              <div class="range-wrap">
+                <input class="range-slider" type="range" id="q17_quality" name="q17_quality" min="1" max="10" value="5" step="1" oninput="updateRange('q17_quality', this.value)" />
+                <div class="range-labels">
+                  <span>1 — Scattered / unreliable</span>
+                  <span>10 — Clean &amp; centralised</span>
+                </div>
+                <div class="range-value-display">
+                  <span class="range-value-badge" id="q17_quality-badge">5 / 10</span>
+                </div>
+                <p class="range-description" id="q17_quality-desc">Moderate — some good data, significant gaps</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q18 -->
+          <div class="form-question">
+            <label class="question-label">
+              <span class="question-number">Q18.</span>
+              Do you have documented processes (SOPs, checklists, training guides) for your key workflows?
+            </label>
+            <p class="question-hint">Where are they stored and how current are they?</p>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="q18" value="No documented processes" /><span>No documented processes — it's all in people's heads</span></label>
+              <label class="radio-option"><input type="radio" name="q18" value="Some processes documented" /><span>Some processes documented, but inconsistent and possibly outdated</span></label>
+              <label class="radio-option"><input type="radio" name="q18" value="Most key processes documented" /><span>Most key processes documented (stored in: )</span></label>
+              <label class="radio-option"><input type="radio" name="q18" value="Fully documented" /><span>Fully documented, maintained, and accessible to the team</span></label>
+            </div>
+            <div style="margin-top:0.9rem;">
+              <input class="form-input" type="text" id="q18_location" name="q18_location" placeholder="Where are they stored? (e.g. Notion, Google Drive, SharePoint…)" />
+            </div>
+          </div>
+        </div>
+
+        <div class="section-gap"></div>
+
+        <!-- ======================================================
+             SECTION F: BUDGET & IMPLEMENTATION CAPACITY
+        ====================================================== -->
+        <div class="form-section" data-section="F">
+          <div class="form-section-header">
+            <div class="section-letter">F</div>
+            <div class="section-title-block">
+              <h2>Budget &amp; Implementation Capacity</h2>
+              <p>Every recommendation gets filtered through what's realistic for your situation.</p>
+            </div>
+          </div>
+
+          <!-- Q19 -->
+          <div class="form-question">
+            <label class="question-label">
+              <span class="question-number">Q19.</span>
+              What is your approximate monthly budget for new AI tools or software subscriptions?
+            </label>
+            <p class="question-hint">This is separate from implementation costs — just ongoing tool spend. No shame in a tight budget.</p>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="q19" value="$0 — free tools only" /><span>$0 — I need free tools only</span></label>
+              <label class="radio-option"><input type="radio" name="q19" value="$1–$100/month" /><span>$1–$100/month</span></label>
+              <label class="radio-option"><input type="radio" name="q19" value="$101–$300/month" /><span>$101–$300/month</span></label>
+              <label class="radio-option"><input type="radio" name="q19" value="$301–$500/month" /><span>$301–$500/month</span></label>
+              <label class="radio-option"><input type="radio" name="q19" value="$501–$1,000/month" /><span>$501–$1,000/month</span></label>
+              <label class="radio-option"><input type="radio" name="q19" value="$1,001–$3,000/month" /><span>$1,001–$3,000/month</span></label>
+              <label class="radio-option"><input type="radio" name="q19" value="$3,000+/month" /><span>$3,000+/month</span></label>
+            </div>
+          </div>
+
+          <!-- Q20 -->
+          <div class="form-question">
+            <label class="question-label" for="q20">
+              <span class="question-number">Q20.</span>
+              Who would be responsible for implementing AI changes in your business?
+            </label>
+            <p class="question-hint">Describe the person/team — their skills, current capacity, and whether they'd need vendor support.</p>
+            <textarea class="form-textarea" id="q20" name="q20" placeholder="e.g. Me — the owner. I'm reasonably technical. I'd probably need help with initial setup but can maintain things once they're running. No dedicated IT person." rows="5"></textarea>
+          </div>
+        </div>
+
+        <div class="section-gap"></div>
+
+        <!-- ======================================================
+             SECTION G: GOALS & PRIORITIES
+        ====================================================== -->
+        <div class="form-section" data-section="G">
+          <div class="form-section-header">
+            <div class="section-letter">G</div>
+            <div class="section-title-block">
+              <h2>Goals &amp; Priorities</h2>
+              <p>What success looks like — and what areas you want to leave alone.</p>
+            </div>
+          </div>
+
+          <!-- Q21 -->
+          <div class="form-question">
+            <label class="question-label" for="q21">
+              <span class="question-number">Q21.</span>
+              What is the single most important outcome you want from this audit?<span class="req">*</span>
+            </label>
+            <p class="question-hint">What would make this money well spent? Quick wins to reduce workload? A 12-month AI strategy? Knowing if you're falling behind competitors? Be honest.</p>
+            <textarea class="form-textarea" id="q21" name="q21" placeholder="e.g. I want to know where I'm wasting the most time and get a clear shortlist of tools to fix it. I don't need a 50-page report — I need 5 things to do this quarter." rows="5" required></textarea>
+          </div>
+
+          <!-- Q22 -->
+          <div class="form-question">
+            <label class="question-label" for="q22">
+              <span class="question-number">Q22.</span>
+              What are your top 2–3 business goals for the next 12 months?
+            </label>
+            <p class="question-hint">e.g. grow revenue by 30%, reduce staff costs, expand to a new location, improve customer retention, sell the business.</p>
+            <textarea class="form-textarea" id="q22" name="q22" placeholder="1. …&#10;2. …&#10;3. …" rows="5"></textarea>
+          </div>
+
+          <!-- Q23 -->
+          <div class="form-question">
+            <label class="question-label" for="q23">
+              <span class="question-number">Q23.</span>
+              Are there areas where you would NOT want AI involved?
+            </label>
+            <p class="question-hint">Privacy, culture, customer relationship concerns — anything. These are legitimate constraints, not obstacles.</p>
+            <textarea class="form-textarea" id="q23" name="q23" placeholder="e.g. We don't want AI speaking directly to customers — our brand is built on personal relationships. Fine with AI in back-office work.&#10;&#10;Or: No restrictions — everything is on the table." rows="4"></textarea>
+          </div>
+        </div>
+
+        <div class="section-gap"></div>
+
+        <!-- ======================================================
+             SECTION H: PREVIOUS AI/AUTOMATION EXPERIENCE
+        ====================================================== -->
+        <div class="form-section" data-section="H">
+          <div class="form-section-header">
+            <div class="section-letter">H</div>
+            <div class="section-title-block">
+              <h2>Previous AI / Automation Experience</h2>
+              <p>What's been tried, what worked, what didn't — and anything else we should know.</p>
+            </div>
+          </div>
+
+          <!-- Q24 -->
+          <div class="form-question">
+            <label class="question-label" for="q24">
+              <span class="question-number">Q24.</span>
+              Have you previously tried to automate or use AI in your business?
+            </label>
+            <p class="question-hint">If yes: what you tried, what happened, and why it did or didn't work. Past failures tell us more than successes.</p>
+            <textarea class="form-textarea" id="q24" name="q24" placeholder="e.g. Yes — we tried a chatbot 2 years ago. It couldn't answer specific questions and customers hated it. Turned it off after 3 months. The bot wasn't trained properly and we didn't have in-house skills to maintain it.&#10;&#10;Or: No previous attempts." rows="5"></textarea>
+          </div>
+
+          <!-- Q25 -->
+          <div class="form-question">
+            <label class="question-label" for="q25">
+              <span class="question-number">Q25.</span>
+              Is there anything else we should know before we start the audit?
+            </label>
+            <p class="question-hint">Anything that didn't fit the questions above — a competitor that just automated their sales team, a key staff member leaving, a planned acquisition, a regulatory constraint. If it feels relevant, write it down. No length limit.</p>
+            <textarea class="form-textarea tall" id="q25" name="q25" placeholder="Anything goes here — context, concerns, constraints, plans, competitive pressures, things you want us to watch for…" rows="7"></textarea>
+          </div>
+        </div>
+
+        <!-- ===== SUBMIT AREA ===== -->
+        <div class="form-submit-area">
+          <p class="form-submit-note">
+            Your answers will be sent directly to our team at hello@aireadyaudit.com.au.<br />
+            Your email client will open with the form data ready to send.
+          </p>
+          <button type="submit" class="btn-submit">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Submit My Intake Form
+          </button>
+          <p style="margin-top:1rem; font-size:0.78rem; color:#64748b;">
+            Have questions? Email us at <a href="mailto:hello@aireadyaudit.com.au" style="color:#6366f1;">hello@aireadyaudit.com.au</a>
+          </p>
+        </div>
+
+      </form>
+    </div>
+
+    <!-- ===== THANK YOU STATE ===== -->
+    <div class="thankyou-state" id="thankyouState">
+      <div class="thankyou-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h2>You're all set — thank you!</h2>
+      <p>Your intake questionnaire has been sent to our team. We've got everything we need to get started on your audit.</p>
+      <p><strong>What happens next:</strong> You'll receive a confirmation email from hello@aireadyaudit.com.au within one business day. Your report will be delivered within the timeframe for your tier (Starter: 5 days, Business: 7 days, Enterprise: 5 days priority).</p>
+      <p>If you haven't heard from us within 24 hours, or if you have anything to add, just email us directly at <a href="mailto:hello@aireadyaudit.com.au" style="color:#6366f1;">hello@aireadyaudit.com.au</a>.</p>
+      <a href="index.html" class="thankyou-back">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Back to AIReady Australia
+      </a>
+    </div>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" aria-label="AIReady Australia">
+          <span class="logo-mark">AI</span><span class="logo-text">Ready Australia</span>
+        </a>
+        <p class="footer-tagline">AI Readiness Audits for Australian Business.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <ul role="list">
+          <li><a href="index.html#pricing">Pricing</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="mailto:hello@aireadyaudit.com.au">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="footer-legal">
+        <p>&copy; 2026 AIReady Australia. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ===== RANGE SLIDER DESCRIPTIONS =====
+    const rangeDescriptions = {
+      q8: [
+        '', // 0 unused
+        '1–2: Most staff struggle with basic software; heavy training needed for anything new',
+        '1–2: Most staff struggle with basic software; heavy training needed for anything new',
+        '3–4: Functional but cautious; adoption is slow and often incomplete',
+        '3–4: Functional but cautious; adoption is slow and often incomplete',
+        '5–6: Average — most tools get used, some adoption gaps',
+        '5–6: Average — most tools get used, some adoption gaps',
+        '7–8: Comfortable — team picks up new tools reasonably quickly',
+        '7–8: Comfortable — team picks up new tools reasonably quickly',
+        '9–10: Tech-forward — team actively seeks better tools and adopts them fast',
+        '9–10: Tech-forward — team actively seeks better tools and adopts them fast',
+      ],
+      q17_quality: [
+        '',
+        '1–2: Scattered and unreliable — data is in multiple places and hard to trust',
+        '1–2: Scattered and unreliable — data is in multiple places and hard to trust',
+        '3–4: Poor — significant gaps and inconsistencies throughout',
+        '3–4: Poor — significant gaps and inconsistencies throughout',
+        '5–6: Moderate — some good data, significant gaps',
+        '5–6: Moderate — some good data, significant gaps',
+        '7–8: Good — mostly complete and reasonably up to date',
+        '7–8: Good — mostly complete and reasonably up to date',
+        '9–10: Excellent — clean, centralised, consistently maintained',
+        '9–10: Excellent — clean, centralised, consistently maintained',
+      ]
+    };
+
+    function updateRange(id, value) {
+      const badge = document.getElementById(id + '-badge');
+      const desc = document.getElementById(id + '-desc');
+      if (badge) badge.textContent = value + ' / 10';
+      if (desc && rangeDescriptions[id]) {
+        desc.textContent = rangeDescriptions[id][parseInt(value)] || '';
+      }
+    }
+
+    // Initialise displays
+    updateRange('q8', document.getElementById('q8').value);
+    updateRange('q17_quality', document.getElementById('q17_quality').value);
+
+    // ===== PROGRESS BAR =====
+    const sections = ['A','B','C','D','E','F','G','H'];
+    const sectionNames = {
+      A: 'Business Basics',
+      B: 'Technology Stack',
+      C: 'Bottlenecks & Pain Points',
+      D: 'Workflows',
+      E: 'Data Availability',
+      F: 'Budget & Capacity',
+      G: 'Goals & Priorities',
+      H: 'Previous Experience'
+    };
+
+    function updateProgress() {
+      const scrollY = window.scrollY + 120;
+      let currentSection = 'A';
+      document.querySelectorAll('.form-section').forEach(el => {
+        if (el.offsetTop <= scrollY) {
+          currentSection = el.dataset.section;
+        }
+      });
+      const idx = sections.indexOf(currentSection);
+      const pct = Math.round(((idx + 1) / sections.length) * 100);
+      document.getElementById('progressFill').style.width = pct + '%';
+      document.getElementById('progressText').textContent = 'Section ' + currentSection + ' of 8 — ' + sectionNames[currentSection];
+      document.getElementById('progressPct').textContent = pct + '%';
+    }
+
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+
+    // ===== MAILTO SUBMIT =====
+    document.getElementById('intakeForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const form = e.target;
+      const data = new FormData(form);
+
+      // Collect all values
+      const lines = [
+        '=== AIReady Australia Intake Questionnaire ===',
+        '',
+        '--- SECTION A: BUSINESS BASICS ---',
+        '',
+        'Q1. Business name, industry, and primary product/service:',
+        data.get('q1') || '(not answered)',
+        '',
+        'Q2. Team size (FTE):',
+        data.get('q2') || '(not answered)',
+        '',
+        'Q3. Approximate annual revenue:',
+        data.get('q3') || '(not answered)',
+        '',
+        'Q4. Business location and customers:',
+        data.get('q4') || '(not answered)',
+        '',
+        'Q5. Business stage: ' + (data.get('q5_stage') || '(not answered'),
+        'Years in operation: ' + (data.get('q5_years') || '(not specified)'),
+        '',
+        '--- SECTION B: TECHNOLOGY STACK ---',
+        '',
+        'Q6. All software tools and platforms used:',
+        data.get('q6') || '(not answered)',
+        '',
+        'Q7. Daily tools vs. rarely used:',
+        data.get('q7') || '(not answered)',
+        '',
+        'Q8. Team tech comfort rating: ' + data.get('q8') + ' / 10',
+        '',
+        'Q9. Current AI tool usage:',
+        data.get('q9') || '(not answered)',
+        '',
+        '--- SECTION C: BOTTLENECKS & PAIN POINTS ---',
+        '',
+        'Q10. Top 3 time/cost/frustration points:',
+        data.get('q10') || '(not answered)',
+        '',
+        'Q11. Where things fall through the cracks:',
+        data.get('q11') || '(not answered)',
+        '',
+        'Q12. Important task that consistently doesn\'t get done:',
+        data.get('q12') || '(not answered)',
+        '',
+        '--- SECTION D: WORKFLOWS ---',
+        '',
+        'Q13. Lead-to-customer journey:',
+        data.get('q13') || '(not answered)',
+        '',
+        'Q14. Customer service workflow:',
+        data.get('q14') || '(not answered)',
+        '',
+        'Q15. Marketing workflow:',
+        data.get('q15') || '(not answered)',
+        '',
+        'Q16. Invoicing, payments, financial reporting:',
+        data.get('q16') || '(not answered)',
+        '',
+        '--- SECTION E: DATA AVAILABILITY & QUALITY ---',
+        '',
+        'Q17. Where customer data lives:',
+        data.get('q17_text') || '(not answered)',
+        'Data quality rating: ' + data.get('q17_quality') + ' / 10',
+        '',
+        'Q18. Documented processes: ' + (data.get('q18') || '(not answered)'),
+        'Storage location: ' + (data.get('q18_location') || '(not specified)'),
+        '',
+        '--- SECTION F: BUDGET & IMPLEMENTATION CAPACITY ---',
+        '',
+        'Q19. Monthly budget for AI tools:',
+        data.get('q19') || '(not answered)',
+        '',
+        'Q20. Who would implement AI changes:',
+        data.get('q20') || '(not answered)',
+        '',
+        '--- SECTION G: GOALS & PRIORITIES ---',
+        '',
+        'Q21. Most important outcome from this audit:',
+        data.get('q21') || '(not answered)',
+        '',
+        'Q22. Top 2–3 business goals for next 12 months:',
+        data.get('q22') || '(not answered)',
+        '',
+        'Q23. Areas where AI is NOT wanted:',
+        data.get('q23') || '(not answered)',
+        '',
+        '--- SECTION H: PREVIOUS AI/AUTOMATION EXPERIENCE ---',
+        '',
+        'Q24. Previous AI/automation attempts:',
+        data.get('q24') || '(not answered)',
+        '',
+        'Q25. Anything else we should know:',
+        data.get('q25') || '(not answered)',
+        '',
+        '=== END OF QUESTIONNAIRE ===',
+      ];
+
+      const body = lines.join('\n');
+      const subject = 'AIReady Australia — Intake Questionnaire Submission';
+      const mailto = 'mailto:hello@aireadyaudit.com.au'
+        + '?subject=' + encodeURIComponent(subject)
+        + '&body=' + encodeURIComponent(body);
+
+      // Open mailto
+      window.location.href = mailto;
+
+      // Show thank you state
+      setTimeout(function() {
+        document.getElementById('formWrap').style.display = 'none';
+        document.getElementById('intakeProgress').style.display = 'none';
+        const ty = document.getElementById('thankyouState');
+        ty.classList.add('visible');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 800);
+    });
+  </script>
+
+</body>
+</html>

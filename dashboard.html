@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AIReady Australia — Mission Control</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d0d0d;
+      --bg-card: #141414;
+      --bg-card2: #1a1a1a;
+      --border: #222;
+      --text: #f0f0f0;
+      --muted: #888;
+      --complete: #00C896;
+      --inprogress: #4A9EFF;
+      --pending: #444;
+      --pending-text: #666;
+      --accent-purple: #7B2FBE;
+      --accent-blue: #4A9EFF;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 0;
+    }
+
+    /* ── HEADER ── */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 32px;
+      border-bottom: 1px solid var(--border);
+      background: #0d0d0d;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .header-left h1 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #fff 0%, #aaa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .header-left .subtitle {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .last-updated {
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+
+    .offline-badge {
+      display: none;
+      font-size: 0.7rem;
+      background: #3a1a1a;
+      color: #ff6b6b;
+      border: 1px solid #ff6b6b44;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    .offline-badge.visible { display: inline-flex; align-items: center; gap: 6px; }
+
+    .refresh-counter {
+      font-size: 0.75rem;
+      color: var(--inprogress);
+      background: #0d1f35;
+      border: 1px solid #1a3a5c;
+      padding: 5px 12px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      display: flex;
+      gap: 0;
+      border-bottom: 1px solid var(--border);
+      overflow-x: auto;
+    }
+
+    .stat-item {
+      flex: 1;
+      min-width: 120px;
+      padding: 16px 24px;
+      border-right: 1px solid var(--border);
+      text-align: center;
+    }
+    .stat-item:last-child { border-right: none; }
+
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.7rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 4px;
+    }
+
+    .stat-complete .stat-value { color: var(--complete); }
+    .stat-inprogress .stat-value { color: var(--inprogress); }
+    .stat-pending .stat-value { color: #666; }
+    .stat-days .stat-value { color: #F59E0B; }
+
+    /* ── SECTIONS ── */
+    .section {
+      padding: 32px;
+    }
+
+    .section-title {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── PIPELINE STAGES ── */
+    .pipeline {
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      align-items: stretch;
+    }
+
+    .stage-connector {
+      display: flex;
+      align-items: center;
+      padding: 0 4px;
+      flex-shrink: 0;
+    }
+
+    .stage-connector svg {
+      width: 20px;
+      height: 20px;
+      opacity: 0.3;
+    }
+
+    .stage-card {
+      flex: 0 0 auto;
+      width: 190px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+
+    .stage-card:hover { border-color: #333; }
+
+    .stage-header {
+      padding: 12px 14px 10px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .stage-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .stage-name {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #ddd;
+    }
+
+    .stage-items {
+      padding: 10px 0;
+    }
+
+    .stage-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 7px 14px;
+    }
+
+    .item-icon {
+      flex-shrink: 0;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      margin-top: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .item-icon.complete {
+      background: var(--complete);
+    }
+    .item-icon.complete::after {
+      content: '';
+      width: 5px;
+      height: 3px;
+      border-left: 1.5px solid #0d0d0d;
+      border-bottom: 1.5px solid #0d0d0d;
+      transform: rotate(-45deg) translateY(-1px);
+      display: block;
+    }
+
+    .item-icon.in-progress {
+      background: var(--inprogress);
+      animation: pulse-ring 1.8s ease-out infinite;
+    }
+    .item-icon.in-progress::after {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #fff;
+      display: block;
+    }
+
+    .item-icon.pending {
+      background: var(--pending);
+      border: 1px solid #555;
+    }
+
+    @keyframes pulse-ring {
+      0% { box-shadow: 0 0 0 0 rgba(74, 158, 255, 0.5); }
+      70% { box-shadow: 0 0 0 6px rgba(74, 158, 255, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(74, 158, 255, 0); }
+    }
+
+    .item-text { flex: 1; min-width: 0; }
+
+    .item-name {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #ccc;
+      line-height: 1.3;
+    }
+
+    .item-name.complete { color: #eee; }
+    .item-name.in-progress { color: var(--inprogress); }
+    .item-name.pending { color: var(--pending-text); }
+
+    .item-note {
+      font-size: 0.65rem;
+      color: #555;
+      margin-top: 1px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 0 32px;
+    }
+
+    /* ── CLIENT JOURNEY ── */
+    .journey-wrap {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      overflow-x: auto;
+      padding-bottom: 8px;
+    }
+
+    .journey-arrow {
+      display: flex;
+      align-items: center;
+      padding: 0 6px;
+      flex-shrink: 0;
+    }
+
+    .journey-arrow span {
+      font-size: 1rem;
+      color: #333;
+    }
+
+    .journey-node {
+      flex: 0 0 auto;
+      width: 150px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 12px;
+      position: relative;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .journey-node:hover {
+      border-color: #333;
+      transform: translateY(-2px);
+    }
+
+    .journey-node.live { border-top: 2px solid var(--complete); }
+    .journey-node.ready { border-top: 2px solid var(--inprogress); }
+    .journey-node.building { border-top: 2px solid var(--pending); }
+
+    .journey-node.building .journey-node-status-dot {
+      animation: pulse-ring-build 2s ease-out infinite;
+    }
+
+    @keyframes pulse-ring-build {
+      0% { box-shadow: 0 0 0 0 rgba(68, 68, 68, 0.6); }
+      70% { box-shadow: 0 0 0 5px rgba(68, 68, 68, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(68, 68, 68, 0); }
+    }
+
+    .journey-node-status {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-bottom: 8px;
+    }
+
+    .journey-node-status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+    }
+
+    .journey-node.live .journey-node-status-dot { background: var(--complete); }
+    .journey-node.ready .journey-node-status-dot { background: var(--inprogress); }
+    .journey-node.building .journey-node-status-dot { background: var(--pending); }
+
+    .journey-node-status-label {
+      font-size: 0.6rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .journey-node.live .journey-node-status-label { color: var(--complete); }
+    .journey-node.ready .journey-node-status-label { color: var(--inprogress); }
+    .journey-node.building .journey-node-status-label { color: #666; }
+
+    .journey-node-name {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #ddd;
+      margin-bottom: 4px;
+      line-height: 1.2;
+    }
+
+    .journey-node-desc {
+      font-size: 0.65rem;
+      color: #666;
+      line-height: 1.4;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      header { padding: 16px 20px; }
+      .section { padding: 24px 20px; }
+      .divider { margin: 0 20px; }
+      .stats-bar { overflow-x: auto; }
+      .stat-item { min-width: 100px; padding: 14px 16px; }
+      .stat-value { font-size: 1.6rem; }
+      .stage-card { width: 170px; }
+      .journey-node { width: 130px; }
+    }
+
+    /* ── LOADING SKELETON ── */
+    .skeleton {
+      background: linear-gradient(90deg, #1a1a1a 25%, #222 50%, #1a1a1a 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite;
+      border-radius: 8px;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    .loading-state {
+      display: flex;
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .loading-card {
+      flex: 0 0 190px;
+      height: 200px;
+    }
+
+    /* ── ERROR ── */
+    .error-notice {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.7rem;
+      color: #ff6b6b;
+      background: #1a0808;
+      border: 1px solid #ff6b6b33;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    /* footer */
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.7rem;
+      color: #333;
+      border-top: 1px solid var(--border);
+    }
+
+    .progress-track {
+      height: 3px;
+      background: #1a1a1a;
+      border-radius: 2px;
+      margin: 0 14px 10px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      border-radius: 2px;
+      transition: width 0.5s ease;
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-left">
+    <h1>AIReady Australia — Mission Control</h1>
+    <div class="subtitle">Live build dashboard · 7-day sprint tracker</div>
+  </div>
+  <div class="header-right">
+    <span class="offline-badge" id="offlineBadge">⚠ Offline · showing last known state</span>
+    <div class="last-updated" id="lastUpdatedEl">—</div>
+    <div class="refresh-counter" id="refreshCounter">Refreshing in: 60s</div>
+  </div>
+</header>
+
+<!-- STATS BAR -->
+<div class="stats-bar" id="statsBar">
+  <div class="stat-item stat-complete">
+    <div class="stat-value" id="statComplete">—</div>
+    <div class="stat-label">Complete</div>
+  </div>
+  <div class="stat-item stat-inprogress">
+    <div class="stat-value" id="statInProgress">—</div>
+    <div class="stat-label">In Progress</div>
+  </div>
+  <div class="stat-item stat-pending">
+    <div class="stat-value" id="statPending">—</div>
+    <div class="stat-label">Pending</div>
+  </div>
+  <div class="stat-item stat-days">
+    <div class="stat-value" id="statDays">—</div>
+    <div class="stat-label">Days Left</div>
+  </div>
+</div>
+
+<!-- SECTION 1: BUILD PIPELINE -->
+<div class="section">
+  <div class="section-title">Build Pipeline — 7-Day Sprint</div>
+  <div class="pipeline" id="pipeline">
+    <!-- rendered by JS -->
+    <div class="loading-state" id="pipelineLoading">
+      <div class="skeleton loading-card"></div>
+      <div class="skeleton loading-card"></div>
+      <div class="skeleton loading-card"></div>
+      <div class="skeleton loading-card"></div>
+      <div class="skeleton loading-card"></div>
+      <div class="skeleton loading-card"></div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- SECTION 2: CLIENT JOURNEY -->
+<div class="section">
+  <div class="section-title">Client Journey Pipeline</div>
+  <div class="journey-wrap" id="journey">
+    <!-- rendered by JS -->
+  </div>
+</div>
+
+<footer>
+  AIReady Australia &nbsp;·&nbsp; Pathfinder Prime &nbsp;·&nbsp; Auto-updating every 60 seconds
+</footer>
+
+<script>
+  const REFRESH_INTERVAL = 60;
+  let countdown = REFRESH_INTERVAL;
+  let lastData = null;
+  let isOffline = false;
+
+  // ─── DATA FETCH ───────────────────────────────────────────────────────
+  async function fetchData() {
+    try {
+      const url = './dashboard-status.json?_t=' + Date.now();
+      const res = await fetch(url, { cache: 'no-store' });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const data = await res.json();
+      lastData = data;
+      isOffline = false;
+      document.getElementById('offlineBadge').classList.remove('visible');
+      renderAll(data);
+    } catch (err) {
+      console.warn('Fetch failed:', err.message);
+      isOffline = true;
+      document.getElementById('offlineBadge').classList.add('visible');
+      if (lastData) renderAll(lastData);
+    }
+  }
+
+  // ─── RENDER ALL ───────────────────────────────────────────────────────
+  function renderAll(data) {
+    renderStats(data.stats);
+    renderLastUpdated(data.lastUpdated, data.updatedBy);
+    renderPipeline(data.buildPipeline);
+    renderJourney(data.clientJourney);
+  }
+
+  // ─── STATS ────────────────────────────────────────────────────────────
+  function renderStats(stats) {
+    document.getElementById('statComplete').textContent = stats.itemsComplete;
+    document.getElementById('statInProgress').textContent = stats.itemsInProgress;
+    document.getElementById('statPending').textContent = stats.itemsPending;
+    document.getElementById('statDays').textContent = stats.daysRemaining + 'd';
+  }
+
+  // ─── LAST UPDATED ─────────────────────────────────────────────────────
+  function renderLastUpdated(ts, by) {
+    const d = new Date(ts);
+    const str = d.toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' })
+      + ' ' + d.toLocaleTimeString('en-AU', { hour: '2-digit', minute: '2-digit' });
+    document.getElementById('lastUpdatedEl').textContent = 'Updated ' + str + ' by ' + by;
+  }
+
+  // ─── PIPELINE ─────────────────────────────────────────────────────────
+  function renderPipeline(pipeline) {
+    const container = document.getElementById('pipeline');
+    const loading = document.getElementById('pipelineLoading');
+    if (loading) loading.remove();
+
+    // Clear previous stage cards/connectors, keep nothing
+    container.innerHTML = '';
+
+    const stages = Object.values(pipeline);
+
+    stages.forEach((stage, idx) => {
+      // Stage card
+      const card = document.createElement('div');
+      card.className = 'stage-card';
+
+      const total = stage.items.length;
+      const done = stage.items.filter(i => i.status === 'complete').length;
+      const pct = total > 0 ? Math.round((done / total) * 100) : 0;
+
+      card.innerHTML = `
+        <div class="stage-header">
+          <div class="stage-dot" style="background:${stage.color}"></div>
+          <div class="stage-name">${stage.name}</div>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" style="width:${pct}%;background:${stage.color}"></div>
+        </div>
+        <div class="stage-items">
+          ${stage.items.map(item => renderItem(item)).join('')}
+        </div>
+      `;
+
+      container.appendChild(card);
+
+      // Connector arrow (between cards)
+      if (idx < stages.length - 1) {
+        const conn = document.createElement('div');
+        conn.className = 'stage-connector';
+        conn.innerHTML = `<svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 10H14M14 10L10 6M14 10L10 14" stroke="#555" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>`;
+        container.appendChild(conn);
+      }
+    });
+  }
+
+  function renderItem(item) {
+    const cls = item.status === 'in-progress' ? 'in-progress' : item.status;
+    return `
+      <div class="stage-item">
+        <div class="item-icon ${cls}"></div>
+        <div class="item-text">
+          <div class="item-name ${cls}">${item.name}</div>
+          <div class="item-note">${item.note || ''}</div>
+        </div>
+      </div>
+    `;
+  }
+
+  // ─── JOURNEY ──────────────────────────────────────────────────────────
+  function renderJourney(journey) {
+    const container = document.getElementById('journey');
+    container.innerHTML = '';
+
+    journey.forEach((node, idx) => {
+      const el = document.createElement('div');
+      el.className = 'journey-node ' + node.status;
+      el.innerHTML = `
+        <div class="journey-node-status">
+          <div class="journey-node-status-dot"></div>
+          <div class="journey-node-status-label">${node.status}</div>
+        </div>
+        <div class="journey-node-name">${node.name}</div>
+        <div class="journey-node-desc">${node.desc}</div>
+      `;
+      container.appendChild(el);
+
+      if (idx < journey.length - 1) {
+        const arrow = document.createElement('div');
+        arrow.className = 'journey-arrow';
+        arrow.innerHTML = '<span>›</span>';
+        container.appendChild(arrow);
+      }
+    });
+  }
+
+  // ─── COUNTDOWN ────────────────────────────────────────────────────────
+  function tick() {
+    countdown--;
+    if (countdown <= 0) {
+      countdown = REFRESH_INTERVAL;
+      fetchData();
+    }
+    document.getElementById('refreshCounter').textContent =
+      'Refreshing in: ' + countdown + 's';
+  }
+
+  // ─── INIT ─────────────────────────────────────────────────────────────
+  fetchData();
+  setInterval(tick, 1000);
+</script>
+</body>
+</html>
