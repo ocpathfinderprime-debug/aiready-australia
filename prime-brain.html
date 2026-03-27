@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Pathfinder Prime — Intelligence Architecture</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet"/>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:#080814;overflow:hidden;font-family:'Inter',sans-serif;color:#fff;}
+  canvas{display:block;}
+  #ui-title{position:absolute;top:24px;left:28px;pointer-events:none;}
+  #ui-title h1{font-size:13px;font-weight:600;letter-spacing:0.35em;text-transform:uppercase;color:#fff;text-shadow:0 0 20px rgba(255,255,255,0.8),0 0 40px rgba(255,255,255,0.4);}
+  #ui-title p{font-size:10px;font-weight:300;letter-spacing:0.2em;color:rgba(255,255,255,0.45);margin-top:4px;}
+  #ui-hint{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);font-size:10px;color:rgba(255,255,255,0.3);letter-spacing:0.15em;pointer-events:none;}
+  #info-panel{position:absolute;top:24px;right:24px;width:260px;background:rgba(8,8,20,0.92);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:18px;display:none;backdrop-filter:blur(12px);}
+  #info-panel h2{font-size:12px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:8px;}
+  #info-panel p{font-size:11px;color:rgba(255,255,255,0.6);line-height:1.6;}
+  #info-panel .status{display:inline-block;margin-top:10px;font-size:10px;padding:3px 8px;border-radius:20px;background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.5);}
+  #info-panel .close{position:absolute;top:12px;right:14px;cursor:pointer;color:rgba(255,255,255,0.3);font-size:14px;}
+  #info-panel .close:hover{color:#fff;}
+  #label{position:absolute;pointer-events:none;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.7);background:rgba(0,0,0,0.5);padding:3px 8px;border-radius:4px;display:none;}
+  #loading{position:absolute;inset:0;background:#080814;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:100;transition:opacity 0.8s;}
+  #loading.hidden{opacity:0;pointer-events:none;}
+  .spinner{width:48px;height:48px;border:2px solid rgba(255,215,0,0.15);border-top-color:#FFD700;border-radius:50%;animation:spin 1s linear infinite;margin-bottom:20px;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+  #loading p{font-size:11px;letter-spacing:0.25em;color:rgba(255,255,255,0.4);}
+</style>
+</head>
+<body>
+<div id="loading"><div class="spinner"></div><p>INITIALISING PRIME INTELLIGENCE...</p></div>
+<div id="ui-title"><h1>Pathfinder Prime</h1><p>Intelligence Architecture v1.0</p></div>
+<div id="ui-hint">Drag to rotate &nbsp;·&nbsp; Scroll to zoom &nbsp;·&nbsp; Click nodes to inspect</div>
+<div id="info-panel"><span class="close" id="close-panel">✕</span><h2 id="panel-name"></h2><p id="panel-desc"></p><span class="status" id="panel-status"></span></div>
+<div id="label"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script>
+const NODE_DATA = {
+  'Signal':      {desc:'Intelligence & reconnaissance. Scans markets, monitors competitors, detects opportunities.', status:'Active', color:0x00C8FF},
+  'Strategy':    {desc:'Venture analysis & business design. Turns signals into structured plans.', status:'Active', color:0x7B2FBE},
+  'Build':       {desc:'Engineering & R&D. Builds products, tools, automations, and infrastructure.', status:'Active', color:0xF59E0B},
+  'Ops':         {desc:'Execution & coordination. Keeps all missions running on time.', status:'Active', color:0x10B981},
+  'Finance':     {desc:'Capital strategy & scaling. Manages resources, models revenue, finds grants.', status:'Active', color:0xFFD700},
+  'Security':    {desc:'Protection & compliance. Guards Fleet integrity and data security.', status:'Active', color:0xEF4444},
+  'Archive':     {desc:'Memory & knowledge. Preserves decisions, distils learnings, manages continuity.', status:'Active', color:0x3B82F6},
+  'Marketing':   {desc:'Sales & growth. Drives revenue across all ventures and brand presence.', status:'Active', color:0xEC4899},
+  'Prime':       {desc:'Supreme Coordinating Intelligence. The Bridge. The mission is everything.', status:'Online', color:0xFFFFFF},
+  'Dome Lyfe':   {desc:'Premium modular dome homes. Hemp-lime + geodesic construction. Bunbury WA.', status:'Intel Gathering', color:0x10B981},
+  'QPC':         {desc:'Polyurea coating services. Industrial, commercial, automotive, marine. Picton East WA.', status:'Active', color:0xF59E0B},
+  'QTS':         {desc:'Spray foam insulation. Residential, commercial, industrial. WA.', status:'Active', color:0x00C8FF},
+  'AIReady AU':  {desc:'AI readiness audits for Australian businesses. Live and taking payments.', status:'🟢 Live', color:0x7B2FBE},
+};
+
+// Scene
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(60, window.innerWidth/window.innerHeight, 0.1, 1000);
+camera.position.set(0, 8, 30);
+const renderer = new THREE.WebGLRenderer({antialias:true, alpha:true});
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+document.body.appendChild(renderer.domElement);
+
+const controls = new THREE.OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+controls.dampingFactor = 0.05;
+controls.minDistance = 8;
+controls.maxDistance = 60;
+
+// Stars
+const starGeo = new THREE.BufferGeometry();
+const starVerts = [];
+for(let i=0;i<2000;i++){
+  starVerts.push((Math.random()-0.5)*400,(Math.random()-0.5)*400,(Math.random()-0.5)*400);
+}
+starGeo.setAttribute('position', new THREE.Float32BufferAttribute(starVerts,3));
+scene.add(new THREE.Points(starGeo, new THREE.PointsMaterial({color:0xffffff,size:0.15,transparent:true,opacity:0.6})));
+
+// Metatron's Cube core
+function makeMetatron() {
+  const group = new THREE.Group();
+  const mat = new THREE.LineBasicMaterial({color:0xFFD700, transparent:true, opacity:0.7});
+  const centers = [{x:0,y:0}];
+  for(let i=0;i<6;i++){
+    const a=i*Math.PI/3;
+    centers.push({x:Math.cos(a)*2, y:Math.sin(a)*2});
+  }
+  for(let i=0;i<6;i++){
+    const a=i*Math.PI/3;
+    centers.push({x:Math.cos(a)*4, y:Math.sin(a)*4});
+  }
+  // Draw circles
+  centers.forEach(c=>{
+    const pts=[];
+    for(let j=0;j<=64;j++){const a=j/64*Math.PI*2; pts.push(new THREE.Vector3(c.x+Math.cos(a)*2,c.y+Math.sin(a)*2,0));}
+    group.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), mat));
+  });
+  // Connect all center pairs
+  for(let i=0;i<centers.length;i++){
+    for(let j=i+1;j<centers.length;j++){
+      const pts=[new THREE.Vector3(centers[i].x,centers[i].y,0),new THREE.Vector3(centers[j].x,centers[j].y,0)];
+      const lm=new THREE.LineBasicMaterial({color:0xFFD700,transparent:true,opacity:0.15});
+      group.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts),lm));
+    }
+  }
+  return group;
+}
+const metatron = makeMetatron();
+scene.add(metatron);
+
+// Flower of Life (background, faint)
+function makeFlower(){
+  const g=new THREE.Group();
+  const mat=new THREE.LineBasicMaterial({color:0xffffff,transparent:true,opacity:0.04});
+  const ctrs=[{x:0,y:0}];
+  for(let i=0;i<6;i++){const a=i*Math.PI/3; ctrs.push({x:Math.cos(a)*3,y:Math.sin(a)*3});}
+  for(let i=0;i<6;i++){const a=i*Math.PI/3+Math.PI/6; ctrs.push({x:Math.cos(a)*6,y:Math.sin(a)*6});}
+  for(let i=0;i<6;i++){const a=i*Math.PI/3; ctrs.push({x:Math.cos(a)*6,y:Math.sin(a)*6});}
+  ctrs.forEach(c=>{
+    const pts=[];
+    for(let j=0;j<=64;j++){const a=j/64*Math.PI*2; pts.push(new THREE.Vector3(c.x+Math.cos(a)*3,c.y+Math.sin(a)*3,-2));}
+    g.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts),mat));
+  });
+  return g;
+}
+const flower = makeFlower();
+scene.add(flower);
+
+// Orbit nodes
+const clickableNodes = [];
+function makeNode(name, color, radius, pos, orbitRadius, orbitSpeed, orbitOffset, ring){
+  const geo = new THREE.SphereGeometry(radius,32,32);
+  const mat = new THREE.MeshStandardMaterial({color, emissive:color, emissiveIntensity:0.4, roughness:0.3, metalness:0.5});
+  const mesh = new THREE.Mesh(geo, mat);
+  mesh.position.copy(pos);
+  mesh.userData = {name, orbitRadius, orbitSpeed, orbitOffset, ring, baseEmissive:0.4};
+  scene.add(mesh);
+  // Line to center
+  const lpts=[new THREE.Vector3(0,0,0), pos.clone()];
+  const line = new THREE.Line(new THREE.BufferGeometry().setFromPoints(lpts), new THREE.LineBasicMaterial({color, transparent:true, opacity:0.2}));
+  scene.add(line);
+  mesh.userData.line = line;
+  clickableNodes.push(mesh);
+  return mesh;
+}
+
+// Ring 1 — Fleet (orbit r=8)
+const fleetNames = ['Signal','Strategy','Build','Ops','Finance','Security','Archive','Marketing'];
+const ring1Nodes = fleetNames.map((name,i)=>{
+  const a = (i/fleetNames.length)*Math.PI*2;
+  const pos = new THREE.Vector3(Math.cos(a)*8, 0, Math.sin(a)*8);
+  return makeNode(name, NODE_DATA[name].color, 0.4, pos, 8, 0.003, a, 1);
+});
+// Prime at center-top
+const primeNode = makeNode('Prime', 0xFFFFFF, 0.7, new THREE.Vector3(0,2,0), 0, 0, 0, 0);
+
+// Ring 2 — Missions (orbit r=14)
+const missionNames = ['Dome Lyfe','QPC','QTS','AIReady AU'];
+const ring2Nodes = missionNames.map((name,i)=>{
+  const a = (i/missionNames.length)*Math.PI*2;
+  const pos = new THREE.Vector3(Math.cos(a)*14, 0, Math.sin(a)*14);
+  return makeNode(name, NODE_DATA[name].color, 0.5, pos, 14, 0.0015, a, 2);
+});
+
+// Ring 3 — Opportunities (static faint points)
+for(let i=0;i<12;i++){
+  const a=(i/12)*Math.PI*2 + 0.3;
+  const h=(Math.random()-0.5)*4;
+  const r=19+Math.random()*3;
+  const geo=new THREE.SphereGeometry(0.15,8,8);
+  const mat=new THREE.MeshBasicMaterial({color:0x8888cc,transparent:true,opacity:0.35});
+  const m=new THREE.Mesh(geo,mat);
+  m.position.set(Math.cos(a)*r,h,Math.sin(a)*r);
+  scene.add(m);
+}
+
+// Ambient + point light
+scene.add(new THREE.AmbientLight(0x111133, 2));
+const pLight = new THREE.PointLight(0xFFD700, 1.5, 30);
+scene.add(pLight);
+const pLight2 = new THREE.PointLight(0x4444ff, 1, 40);
+pLight2.position.set(0,10,0);
+scene.add(pLight2);
+
+// Raycaster
+const raycaster = new THREE.Raycaster();
+const mouse = new THREE.Vector2();
+const panel = document.getElementById('info-panel');
+const labelEl = document.getElementById('label');
+
+window.addEventListener('click', e=>{
+  mouse.x=(e.clientX/window.innerWidth)*2-1;
+  mouse.y=-(e.clientY/window.innerHeight)*2+1;
+  raycaster.setFromCamera(mouse, camera);
+  const hits = raycaster.intersectObjects(clickableNodes);
+  if(hits.length>0){
+    const n = hits[0].object;
+    const name = n.userData.name;
+    const data = NODE_DATA[name];
+    document.getElementById('panel-name').textContent = name;
+    document.getElementById('panel-desc').textContent = data.desc;
+    document.getElementById('panel-status').textContent = data.status;
+    panel.style.display='block';
+    panel.style.borderColor = '#'+data.color.toString(16).padStart(6,'0')+'44';
+  }
+});
+
+window.addEventListener('mousemove', e=>{
+  mouse.x=(e.clientX/window.innerWidth)*2-1;
+  mouse.y=-(e.clientY/window.innerHeight)*2+1;
+  raycaster.setFromCamera(mouse, camera);
+  const hits = raycaster.intersectObjects(clickableNodes);
+  clickableNodes.forEach(n=>{ n.material.emissiveIntensity = n.userData.baseEmissive; });
+  if(hits.length>0){
+    const n=hits[0].object;
+    n.material.emissiveIntensity=1.2;
+    // Label
+    const vec=n.position.clone().project(camera);
+    labelEl.style.left=(( vec.x+1)/2*window.innerWidth+12)+'px';
+    labelEl.style.top=((-(vec.y-1)/2*window.innerHeight))+'px';
+    labelEl.textContent=n.userData.name;
+    labelEl.style.display='block';
+  } else {
+    labelEl.style.display='none';
+  }
+});
+
+document.getElementById('close-panel').addEventListener('click',()=>{ panel.style.display='none'; });
+
+window.addEventListener('resize',()=>{
+  camera.aspect=window.innerWidth/window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth,window.innerHeight);
+});
+
+// Hide loading
+setTimeout(()=>{ document.getElementById('loading').classList.add('hidden'); }, 1200);
+
+// Animate
+let t=0;
+function animate(){
+  requestAnimationFrame(animate);
+  t+=0.01;
+  // Metatron pulse
+  const s=0.95+0.05*Math.sin(t*0.8);
+  metatron.scale.set(s,s,s);
+  metatron.rotation.z += 0.002;
+  // Flower slow rotate
+  flower.rotation.z += 0.0005;
+  // Ring 1 orbit
+  ring1Nodes.forEach(n=>{
+    n.userData.orbitOffset += n.userData.orbitSpeed;
+    const a=n.userData.orbitOffset;
+    n.position.set(Math.cos(a)*8, Math.sin(t*0.3+a*0.1)*0.5, Math.sin(a)*8);
+    // Update line
+    const pos = n.position.toArray();
+    const arr = new Float32Array([0,0,0,...pos]);
+    n.userData.line.geometry.setAttribute('position', new THREE.BufferAttribute(arr,3));
+    n.userData.line.geometry.attributes.position.needsUpdate=true;
+  });
+  // Ring 2 orbit
+  ring2Nodes.forEach(n=>{
+    n.userData.orbitOffset += n.userData.orbitSpeed;
+    const a=n.userData.orbitOffset;
+    n.position.set(Math.cos(a)*14, Math.sin(t*0.2+a*0.05)*0.8, Math.sin(a)*14);
+    const pos=n.position.toArray();
+    const arr=new Float32Array([0,0,0,...pos]);
+    n.userData.line.geometry.setAttribute('position',new THREE.BufferAttribute(arr,3));
+    n.userData.line.geometry.attributes.position.needsUpdate=true;
+  });
+  // Prime pulse
+  const ps=1+0.08*Math.sin(t*1.2);
+  primeNode.scale.set(ps,ps,ps);
+  controls.update();
+  renderer.render(scene,camera);
+}
+animate();
+</script>
+</body>
+</html>
