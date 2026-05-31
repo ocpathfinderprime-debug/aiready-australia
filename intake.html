@@ -12,6 +12,10 @@
   <link rel="canonical" href="https://aireadyaudit.com.au/intake.html" />
   <link rel="stylesheet" href="style.css" />
 
+  <!-- Analytics -->
+  <script defer data-domain="aireadyaudit.com.au" src="https://plausible.io/js/script.js"></script>
+  <script data-goatcounter="https://aireadyaudit.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
   <style>
     /* ===== INTAKE-SPECIFIC STYLES ===== */
 
@@ -517,7 +521,78 @@
 
     <!-- ===== FORM ===== -->
     <div class="intake-form-wrap" id="formWrap">
-      <form id="intakeForm" novalidate>
+      <form id="intakeForm" name="aiready-intake" netlify netlify-honeypot="bot-field" novalidate>
+        <input type="hidden" name="form-name" value="aiready-intake" />
+        <p class="hidden" style="display:none;"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+        <!-- ======================================================
+             SECTION 0: BOOKING DETAILS (new — required for audit)
+        ====================================================== -->
+        <div class="form-section" data-section="0">
+          <div class="form-section-header">
+            <div class="section-letter" style="background:rgba(99,102,241,0.2);color:#a5b4fc;">★</div>
+            <div class="section-title-block">
+              <h2>Your Booking Details</h2>
+              <p>Quick details about your purchase — we use these to match your intake to your order.</p>
+            </div>
+          </div>
+
+          <div class="form-question">
+            <label class="question-label" for="contact_name">Full Name<span class="req">*</span></label>
+            <input class="form-input" type="text" id="contact_name" name="contact_name" placeholder="e.g. Jane Smith" required />
+          </div>
+
+          <div class="form-question">
+            <label class="question-label" for="business_name">Business Name<span class="req">*</span></label>
+            <input class="form-input" type="text" id="business_name" name="business_name" placeholder="e.g. Apex Plumbing Pty Ltd" required />
+          </div>
+
+          <div class="form-question">
+            <label class="question-label" for="business_website">Business Website URL</label>
+            <input class="form-input" type="url" id="business_website" name="business_website" placeholder="e.g. https://apexplumbing.com.au" />
+          </div>
+
+          <div class="form-question">
+            <label class="question-label" for="industry">Industry<span class="req">*</span></label>
+            <select class="form-select" id="industry" name="industry" required>
+              <option value="" disabled selected>Select your industry…</option>
+              <option value="Trade Services">Trade Services</option>
+              <option value="Professional Services">Professional Services</option>
+              <option value="Retail">Retail</option>
+              <option value="Hospitality">Hospitality</option>
+              <option value="Construction">Construction</option>
+              <option value="Healthcare">Healthcare</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-question">
+            <label class="question-label" for="tier_purchased">Which tier did you purchase?<span class="req">*</span></label>
+            <select class="form-select" id="tier_purchased" name="tier_purchased" required>
+              <option value="" disabled selected>Select your tier…</option>
+              <option value="Starter $497">Starter — $497</option>
+              <option value="Business $997">Business — $997</option>
+              <option value="Enterprise $1,997">Enterprise — $1,997</option>
+            </select>
+          </div>
+
+          <div class="form-question">
+            <label class="question-label" for="stripe_reference">Stripe Payment Reference<span class="req">*</span></label>
+            <p class="question-hint">Find this in your Stripe receipt email — starts with "pi_" or "ch_". Helps us confirm your order instantly.</p>
+            <input class="form-input" type="text" id="stripe_reference" name="stripe_reference" placeholder="e.g. pi_3ABC123..." required />
+          </div>
+
+          <div class="form-question">
+            <label class="question-label">Which AI tools do you currently use?</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="checkbox" name="ai_tools" value="None" /><span>None — we're starting from scratch</span></label>
+              <label class="radio-option"><input type="checkbox" name="ai_tools" value="ChatGPT" /><span>ChatGPT</span></label>
+              <label class="radio-option"><input type="checkbox" name="ai_tools" value="Google AI" /><span>Google AI (Gemini / Bard)</span></label>
+              <label class="radio-option"><input type="checkbox" name="ai_tools" value="Microsoft Copilot" /><span>Microsoft Copilot</span></label>
+              <label class="radio-option"><input type="checkbox" name="ai_tools" value="Other" /><span>Other</span></label>
+            </div>
+          </div>
+        </div>
 
         <!-- ======================================================
              SECTION A: BUSINESS BASICS
@@ -978,9 +1053,8 @@
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
       </div>
       <h2>You're all set — thank you!</h2>
-      <p>Your intake questionnaire has been sent to our team. We've got everything we need to get started on your audit.</p>
-      <p><strong>What happens next:</strong> You'll receive a confirmation email from hello@aireadyaudit.com.au within one business day. Your report will be delivered within the timeframe for your tier (Starter: 5 days, Business: 7 days, Enterprise: 5 days priority).</p>
-      <p>If you haven't heard from us within 24 hours, or if you have anything to add, just email us directly at <a href="mailto:hello@aireadyaudit.com.au" style="color:#6366f1;">hello@aireadyaudit.com.au</a>.</p>
+      <p>We've received your intake form. Expect your audit within 5–7 business days. We'll be in touch at <a href="mailto:hello@aireadyaudit.com.au" style="color:#6366f1;">hello@aireadyaudit.com.au</a> to confirm details.</p>
+      <p><strong>What happens next:</strong> Your report will be delivered within the timeframe for your tier (Starter: 5 days, Business: 7 days, Enterprise: 5 days priority). If you have anything to add, email us at <a href="mailto:hello@aireadyaudit.com.au" style="color:#6366f1;">hello@aireadyaudit.com.au</a> any time.</p>
       <a href="index.html" class="thankyou-back">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
         Back to AIReady Australia
@@ -1002,11 +1076,13 @@
         <ul role="list">
           <li><a href="index.html#pricing">Pricing</a></li>
           <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="legal.html">Privacy, Terms &amp; Refunds</a></li>
           <li><a href="mailto:hello@aireadyaudit.com.au">Contact</a></li>
         </ul>
       </nav>
       <div class="footer-legal">
         <p>&copy; 2026 AIReady Australia. All rights reserved.</p>
+        <p>ABN: 23 169 803 436</p>
       </div>
     </div>
   </footer>
