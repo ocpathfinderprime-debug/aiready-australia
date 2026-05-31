@@ -1,0 +1,10 @@
+[build]
+  publish = "."
+
+[[forms]]
+  name = "aiready-intake"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
