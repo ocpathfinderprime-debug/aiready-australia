@@ -320,8 +320,14 @@ p:last-child { margin-bottom: 0; }
     transform: translateX(100%);
     transition: transform var(--transition-slow);
     border-top: 1px solid var(--border);
+    visibility: hidden;
+    pointer-events: none;
   }
-  .nav-links.is-open { transform: translateX(0); }
+  .nav-links.is-open {
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+  }
   .nav-link {
     font-size: 1rem;
     padding: 14px 16px;
