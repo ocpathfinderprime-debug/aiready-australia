@@ -567,6 +567,71 @@ p:last-child { margin-bottom: 0; }
 }
 
 /* ============================================================
+   SERVICES
+   ============================================================ */
+
+.services-section {
+  background: var(--navy-mid);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.service-card {
+  background: var(--navy-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  min-height: 230px;
+  transition: border-color var(--transition), transform var(--transition);
+}
+
+.service-card:hover {
+  border-color: var(--border-blue);
+  transform: translateY(-3px);
+}
+
+.service-kicker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 28px;
+  margin-bottom: 18px;
+  border: 1px solid var(--border-blue);
+  border-radius: var(--radius-sm);
+  color: var(--blue);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.service-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 12px;
+}
+
+.service-card p {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+@media (max-width: 920px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .service-card { min-height: 0; }
+}
+
+/* ============================================================
    HOW IT WORKS
    ============================================================ */
 
@@ -861,6 +926,62 @@ p:last-child { margin-bottom: 0; }
 
 @media (max-width: 640px) {
   .pricing-guarantee { flex-direction: column; text-align: center; }
+}
+
+/* ============================================================
+   AUTHORITY
+   ============================================================ */
+
+.authority-section {
+  background: var(--navy);
+  border-bottom: 1px solid var(--border);
+}
+
+.authority-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 56px;
+  align-items: start;
+}
+
+.authority-body > p {
+  color: var(--text-secondary);
+  font-size: 1.02rem;
+  line-height: 1.75;
+  margin-bottom: 28px;
+}
+
+.authority-panels {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.authority-panel {
+  background: var(--navy-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--blue);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 20px 22px;
+}
+
+.authority-panel h3 {
+  font-size: 0.98rem;
+  margin-bottom: 8px;
+}
+
+.authority-panel p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  margin-bottom: 0;
+}
+
+@media (max-width: 840px) {
+  .authority-inner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
 }
 
 /* ============================================================

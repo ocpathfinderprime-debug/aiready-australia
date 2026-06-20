@@ -1,0 +1,22 @@
+# AIReady Australia
+
+AIReady Australia provides fixed-scope AI readiness, tools, automation, governance and AI website visibility audits for Australian businesses.
+
+## Core Services
+
+- AI Readiness Audit: readiness scoring, workflow review, risk flags and a 90-day implementation roadmap.
+- AI Tools Audit: practical tool recommendations based on current workflows, budget and business context.
+- AI Automation Audit: ranked automation opportunities with effort, impact and ROI estimates.
+- AI Website Visibility Audit: checks whether the site can be understood, trusted and recommended by modern search and AI answer tools.
+- AI Governance Review: privacy, data, staff usage and policy gap assessment.
+- Implementation Sprint: priority action sequencing after the audit.
+
+## Key Pages
+
+- Homepage: https://aireadyaudit.com.au/
+- Intake form: https://aireadyaudit.com.au/intake.html
+- Privacy, terms and refunds: https://aireadyaudit.com.au/legal.html
+
+## Contact
+
+Email: hello@aireadyaudit.com.au
