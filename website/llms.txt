@@ -2,7 +2,7 @@
 
 AIReady Australia provides fixed-scope AI readiness, AI tools, AI automation, AI governance and AI website visibility audits for Australian businesses.
 
-## Stage 6 Authority Pages
+## AIReady Authority Pages
 
 - AI Automation Audit: https://aireadyaudit.com.au/ai-automation-audit/
 - AIReady SME AI Capability Index: https://aireadyaudit.com.au/ai-benchmark-index/
@@ -12,25 +12,25 @@ AIReady Australia provides fixed-scope AI readiness, AI tools, AI automation, AI
 - AI Tools Audit: https://aireadyaudit.com.au/ai-tools-audit/
 - AI Website Visibility Audit: https://aireadyaudit.com.au/ai-website-visibility-audit/
 - Enterprise AI Capability Assessment: https://aireadyaudit.com.au/enterprise-ai-capability-assessment/
-- AI Audit for Accounting Bookkeeping: https://aireadyaudit.com.au/ai-audit-for-accounting-bookkeeping/
+- AI Audit for Accounting and Bookkeeping: https://aireadyaudit.com.au/ai-audit-for-accounting-bookkeeping/
 - AI Audit for Construction: https://aireadyaudit.com.au/ai-audit-for-construction/
 - AI Audit for Consulting Firms: https://aireadyaudit.com.au/ai-audit-for-consulting-firms/
-- AI Audit for Education Training: https://aireadyaudit.com.au/ai-audit-for-education-training/
+- AI Audit for Education and Training: https://aireadyaudit.com.au/ai-audit-for-education-training/
 - AI Audit for Financial Services: https://aireadyaudit.com.au/ai-audit-for-financial-services/
-- AI Audit for Healthcare Admin: https://aireadyaudit.com.au/ai-audit-for-healthcare-admin/
+- AI Audit for Healthcare Administration: https://aireadyaudit.com.au/ai-audit-for-healthcare-admin/
 - AI Audit for Hospitality: https://aireadyaudit.com.au/ai-audit-for-hospitality/
 - AI Audit for Legal Practices: https://aireadyaudit.com.au/ai-audit-for-legal-practices/
 - AI Audit for Logistics: https://aireadyaudit.com.au/ai-audit-for-logistics/
 - AI Audit for Manufacturing: https://aireadyaudit.com.au/ai-audit-for-manufacturing/
 - AI Audit for Marketing Agencies: https://aireadyaudit.com.au/ai-audit-for-marketing-agencies/
-- AI Audit for Not For Profit: https://aireadyaudit.com.au/ai-audit-for-not-for-profit/
+- AI Audit for Not-for-Profit Organisations: https://aireadyaudit.com.au/ai-audit-for-not-for-profit/
 - AI Audit for Professional Services: https://aireadyaudit.com.au/ai-audit-for-professional-services/
 - AI Audit for Real Estate: https://aireadyaudit.com.au/ai-audit-for-real-estate/
-- AI Audit for Retail Ecommerce: https://aireadyaudit.com.au/ai-audit-for-retail-ecommerce/
+- AI Audit for Retail and Ecommerce: https://aireadyaudit.com.au/ai-audit-for-retail-ecommerce/
 - AI Audit for Trades: https://aireadyaudit.com.au/ai-audit-for-trades/
 - AI Readiness Audit Adelaide: https://aireadyaudit.com.au/ai-readiness-audit-adelaide/
 - AI Readiness Audit Auckland: https://aireadyaudit.com.au/ai-readiness-audit-auckland/
-- AI Readiness Audit Australia Wide: https://aireadyaudit.com.au/ai-readiness-audit-australia-wide/
+- AI Readiness Audit Australia-Wide: https://aireadyaudit.com.au/ai-readiness-audit-australia-wide/
 - AI Readiness Audit Brisbane: https://aireadyaudit.com.au/ai-readiness-audit-brisbane/
 - AI Readiness Audit Canberra: https://aireadyaudit.com.au/ai-readiness-audit-canberra/
 - AI Readiness Audit Gold Coast: https://aireadyaudit.com.au/ai-readiness-audit-gold-coast/
