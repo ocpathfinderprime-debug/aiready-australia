@@ -10,7 +10,7 @@ export function getConfig(env = process.env) {
       .split(',')
       .map((origin) => origin.trim())
       .filter(Boolean),
-    stripeWebhookSecret: env.STRIPE_WEBHOOK_SECRET || env.STRIPE_WEBHOOK || '',
+    stripeWebhookSecret: env.STRIPE_WEBHOOK || env.STRIPE_WEBHOOK_SECRET || '',
     adminApiToken: env.ADMIN_API_TOKEN || '',
   };
 }
