@@ -22,6 +22,8 @@ Copy `backend/.env.example` into your deployment environment and set:
 
 - `PORT`: backend port.
 - `AIREADY_DATA_DIR`: local JSONL storage path for development.
+- `AIREADY_STORAGE_DRIVER`: `jsonl` for local file storage or `netlify-blobs` for Netlify production storage.
+- `AIREADY_BLOBS_STORE`: Netlify Blobs store name. Defaults to `aiready-records`.
 - `AIREADY_SERVE_STATIC`: set `true` to serve the public website from the backend.
 - `AIREADY_STATIC_DIR`: static website directory. Defaults to `./website`.
 - `AIREADY_ALLOWED_ORIGINS`: comma-separated browser origins allowed to call the API.
@@ -49,7 +51,7 @@ Public routes are mapped in the root `netlify.toml`:
 - `/api/*`
 - `/mcp/*`
 
-Set production environment variables in Netlify before enabling live intake and webhook workflows. If no `AIREADY_DATA_DIR` is set, the function uses `/tmp/aiready-data`, which is suitable for smoke testing only. Production lead and purchase records should move to a durable database, CRM, or queue before paid traffic is scaled.
+Set production environment variables in Netlify before enabling live intake and webhook workflows. Netlify Functions default to `AIREADY_STORAGE_DRIVER=netlify-blobs`, which persists lead and purchase records in the site-wide `AIREADY_BLOBS_STORE`.
 
 ## MCP Tools
 
@@ -63,4 +65,4 @@ The MCP endpoint is designed as the backend contract for Prime/OpenClaw integrat
 
 ## Production Notes
 
-The current storage adapter writes JSONL records for a simple first deployment. Before higher-volume operation, replace `backend/src/store.js` with a database adapter for Supabase, Neon Postgres, Airtable, or another approved system.
+The JSONL adapter is retained for local development and portable smoke tests. Netlify Blobs is suitable for a first production launch with moderate write volume. Before higher-volume operation or complex reporting, add a database or CRM adapter for Supabase, Neon Postgres, Airtable, HubSpot, or another approved system.

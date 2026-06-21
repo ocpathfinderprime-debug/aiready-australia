@@ -1,7 +1,8 @@
 import { Readable } from 'node:stream';
+import { getStore } from '@netlify/blobs';
 import { getConfig } from './config.js';
 import { handleRequest, jsonResponse } from './handlers.js';
-import { JsonlStore } from './store.js';
+import { JsonlStore, NetlifyBlobStore } from './store.js';
 
 function normaliseHeaders(headers = {}) {
   return Object.fromEntries(
@@ -65,16 +66,25 @@ function createResponseCollector() {
 function getNetlifyConfig() {
   return getConfig({
     ...process.env,
+    AIREADY_STORAGE_DRIVER: process.env.AIREADY_STORAGE_DRIVER || 'netlify-blobs',
     AIREADY_DATA_DIR: process.env.AIREADY_DATA_DIR || '/tmp/aiready-data',
     AIREADY_SERVE_STATIC: process.env.AIREADY_SERVE_STATIC || 'false',
   });
+}
+
+function createStore(config) {
+  if (config.storageDriver === 'netlify-blobs') {
+    return new NetlifyBlobStore({ getStore, storeName: config.blobsStore });
+  }
+
+  return new JsonlStore({ dataDir: config.dataDir });
 }
 
 export async function handleNetlifyEvent(event) {
   const config = getNetlifyConfig();
   const request = createEventRequest(event);
   const response = createResponseCollector();
-  const store = new JsonlStore({ dataDir: config.dataDir });
+  const store = createStore(config);
 
   try {
     await handleRequest({ request, response, store, config });

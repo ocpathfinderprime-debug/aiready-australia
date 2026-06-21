@@ -5,7 +5,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { createHmac } from 'node:crypto';
 import { createServer } from '../src/server.js';
-import { JsonlStore } from '../src/store.js';
+import { JsonlStore, NetlifyBlobStore } from '../src/store.js';
 import { verifyStripeSignature } from '../src/stripe.js';
 import { handleNetlifyEvent } from '../src/netlify.js';
 
@@ -133,6 +133,8 @@ test('netlify function adapter serves backend routes', async () => {
   const previousDataDir = process.env.AIREADY_DATA_DIR;
   const previousServeStatic = process.env.AIREADY_SERVE_STATIC;
   process.env.AIREADY_DATA_DIR = dataDir;
+  const previousStorageDriver = process.env.AIREADY_STORAGE_DRIVER;
+  process.env.AIREADY_STORAGE_DRIVER = 'jsonl';
   process.env.AIREADY_SERVE_STATIC = 'false';
 
   try {
@@ -170,8 +172,40 @@ test('netlify function adapter serves backend routes', async () => {
   } finally {
     if (previousDataDir === undefined) delete process.env.AIREADY_DATA_DIR;
     else process.env.AIREADY_DATA_DIR = previousDataDir;
+    if (previousStorageDriver === undefined) delete process.env.AIREADY_STORAGE_DRIVER;
+    else process.env.AIREADY_STORAGE_DRIVER = previousStorageDriver;
     if (previousServeStatic === undefined) delete process.env.AIREADY_SERVE_STATIC;
     else process.env.AIREADY_SERVE_STATIC = previousServeStatic;
     await rm(dataDir, { recursive: true, force: true });
   }
+});
+
+test('netlify blob store persists and reads records through injected store API', async () => {
+  const blobs = new Map();
+  const fakeStore = {
+    async setJSON(key, value) {
+      blobs.set(key, value);
+      return { modified: true, etag: `"${key}"` };
+    },
+    async get(key) {
+      return blobs.get(key) || null;
+    },
+    async list({ prefix }) {
+      return {
+        blobs: [...blobs.keys()]
+          .filter((key) => key.startsWith(prefix))
+          .map((key) => ({ key, etag: `"${key}"` })),
+        directories: [],
+      };
+    },
+  };
+
+  const store = new NetlifyBlobStore({ getStore: () => fakeStore, storeName: 'test-records' });
+  const lead = await store.create('leads', { status: 'new', contact: { email: 'buyer@example.com' } });
+  const found = await store.findById('leads', lead.id);
+  const records = await store.list('leads');
+
+  assert.equal(found.id, lead.id);
+  assert.equal(records.length, 1);
+  assert.equal(records[0].contact.email, 'buyer@example.com');
 });

@@ -52,3 +52,54 @@ export class JsonlStore {
     return records.find((record) => record.id === id) || null;
   }
 }
+
+export class NetlifyBlobStore {
+  constructor({ getStore, storeName = 'aiready-records' }) {
+    this.getStore = getStore;
+    this.storeName = storeName;
+  }
+
+  store() {
+    return this.getStore(this.storeName);
+  }
+
+  keyFor(bucket, id) {
+    return `${safeBucket(bucket)}/${id}.json`;
+  }
+
+  async create(bucket, payload) {
+    const now = new Date().toISOString();
+    const record = {
+      id: randomUUID(),
+      status: payload.status || 'new',
+      createdAt: now,
+      updatedAt: now,
+      ...payload,
+    };
+
+    await this.store().setJSON(this.keyFor(bucket, record.id), record, {
+      metadata: {
+        bucket: safeBucket(bucket),
+        status: record.status,
+        createdAt: now,
+      },
+      onlyIfNew: true,
+    });
+
+    return record;
+  }
+
+  async list(bucket) {
+    const safe = safeBucket(bucket);
+    const store = this.store();
+    const result = await store.list({ prefix: `${safe}/` });
+    const records = await Promise.all(
+      result.blobs.map((blob) => store.get(blob.key, { type: 'json', consistency: 'strong' })),
+    );
+    return records.filter(Boolean);
+  }
+
+  async findById(bucket, id) {
+    return this.store().get(this.keyFor(bucket, id), { type: 'json', consistency: 'strong' });
+  }
+}
