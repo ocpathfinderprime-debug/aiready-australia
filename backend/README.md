@@ -22,6 +22,8 @@ Copy `backend/.env.example` into your deployment environment and set:
 
 - `PORT`: backend port.
 - `AIREADY_DATA_DIR`: local JSONL storage path for development.
+- `AIREADY_SERVE_STATIC`: set `true` to serve the public website from the backend.
+- `AIREADY_STATIC_DIR`: static website directory. Defaults to `./website`.
 - `AIREADY_ALLOWED_ORIGINS`: comma-separated browser origins allowed to call the API.
 - `STRIPE_WEBHOOK_SECRET`: Stripe webhook signing secret. Required before production webhook activation.
 - `ADMIN_API_TOKEN`: optional bearer token for admin-only reads.
@@ -34,6 +36,8 @@ Copy `backend/.env.example` into your deployment environment and set:
 - `POST /api/stripe/webhook`: verifies Stripe webhook signatures when `STRIPE_WEBHOOK_SECRET` is configured and records checkout events.
 - `GET /mcp/manifest`: private MCP-style tool and resource manifest.
 - `POST /mcp/tools/call`: calls supported backend tools.
+
+When `AIREADY_SERVE_STATIC=true`, the same server also serves the static website files from `AIREADY_STATIC_DIR`, including `/`, `/intake.html`, `/llms.txt`, `/mcp-manifest.json`, and `/.well-known/mcp-manifest.json`.
 
 ## MCP Tools
 

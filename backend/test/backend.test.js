@@ -13,6 +13,8 @@ async function withServer(fn) {
   const config = {
     port: 0,
     dataDir,
+    serveStatic: true,
+    staticDir: './website',
     allowedOrigins: ['http://127.0.0.1:8802'],
     stripeWebhookSecret: 'whsec_test',
     adminApiToken: '',
@@ -85,6 +87,16 @@ test('mcp tool call can calculate readiness score', async () => {
     assert.equal(response.status, 200);
     assert.equal(typeof body.score, 'number');
     assert.ok(['foundation', 'emerging', 'ready', 'advanced'].includes(body.band));
+  });
+});
+
+test('backend can serve static website manifests', async () => {
+  await withServer(async (baseUrl) => {
+    const response = await fetch(`${baseUrl}/mcp-manifest.json`);
+    const body = await response.json();
+    assert.equal(response.status, 200);
+    assert.equal(body.name, 'AIReady Australia');
+    assert.ok(body.tools.includes('get_service_catalog'));
   });
 });
 

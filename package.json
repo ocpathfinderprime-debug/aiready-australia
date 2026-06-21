@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "start": "node backend/src/server.js",
     "backend:dev": "node backend/src/server.js",
     "backend:test": "node --test backend/test/*.test.js",
     "test": "node --test backend/test/*.test.js"

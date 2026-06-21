@@ -2,6 +2,8 @@ export function getConfig(env = process.env) {
   return {
     port: Number(env.PORT || 3001),
     dataDir: env.AIREADY_DATA_DIR || './data',
+    serveStatic: env.AIREADY_SERVE_STATIC !== 'false',
+    staticDir: env.AIREADY_STATIC_DIR || './website',
     allowedOrigins: String(env.AIREADY_ALLOWED_ORIGINS || 'https://aireadyaudit.com.au,http://localhost:8802,http://127.0.0.1:8802')
       .split(',')
       .map((origin) => origin.trim())

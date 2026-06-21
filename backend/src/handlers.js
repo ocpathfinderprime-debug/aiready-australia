@@ -1,6 +1,7 @@
 import { getCatalog, mcpTools, publicResources, purchaseLinks } from './catalog.js';
 import { calculateReadinessScore } from './scoring.js';
 import { inferPackageFromStripeEvent, verifyStripeSignature } from './stripe.js';
+import { serveStaticFile } from './static.js';
 
 export async function readRawBody(request) {
   const chunks = [];
@@ -198,6 +199,11 @@ export async function handleRequest({ request, response, store, config }) {
     const result = await handleToolCall(payload, store);
     jsonResponse(response, result.ok === false ? 400 : 200, result, corsHeaders);
     return;
+  }
+
+  if (request.method === 'GET' && config.serveStatic) {
+    const served = await serveStaticFile({ requestUrl: request.url, response, staticDir: config.staticDir });
+    if (served) return;
   }
 
   jsonResponse(response, 404, { ok: false, error: 'Not found' }, corsHeaders);
