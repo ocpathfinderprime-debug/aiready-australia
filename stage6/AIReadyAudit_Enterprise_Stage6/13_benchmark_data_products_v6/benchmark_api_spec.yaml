@@ -1,0 +1,11 @@
+openapi: 3.1.0
+info:
+  title: AIReady Benchmark API
+  version: 1.0.0
+paths:
+  /benchmarks/v1/industry:
+    get:
+      summary: Return aggregated industry benchmark data
+      responses:
+        '200':
+          description: OK

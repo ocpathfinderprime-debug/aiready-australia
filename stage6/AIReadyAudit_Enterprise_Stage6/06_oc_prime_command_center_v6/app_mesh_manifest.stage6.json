@@ -1,0 +1,32 @@
+{
+  "app": "aiready_audit",
+  "version": "6.0.0",
+  "status": "stage6_market_scale",
+  "events_out": [
+    "aiready.lead.created",
+    "aiready.readiness_score.completed",
+    "aiready.audit_workspace.created",
+    "aiready.report.qa_required",
+    "aiready.citation.observed",
+    "aiready.partner.lead_submitted"
+  ],
+  "commands_in": [
+    "lead.assign",
+    "audit.approve_report",
+    "mcp.approve_write_tool",
+    "partner.approve_workspace",
+    "citation.request_scan"
+  ],
+  "data_boundaries": {
+    "default": "tenant_isolated",
+    "cross_app_memory": "summaries_only",
+    "pii": "approval_required"
+  },
+  "dashboards": [
+    "AIReady Growth",
+    "AIReady Delivery",
+    "AI Citation Lab",
+    "Partner Pipeline",
+    "MCP Tool Risk"
+  ]
+}

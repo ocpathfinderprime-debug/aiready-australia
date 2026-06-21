@@ -1,0 +1,10 @@
+{
+  "widgets": [
+    "queries_by_page",
+    "clicks_by_service_intent",
+    "bing_ai_citations",
+    "grounding_queries",
+    "page_index_status",
+    "ai_crawler_hits"
+  ]
+}

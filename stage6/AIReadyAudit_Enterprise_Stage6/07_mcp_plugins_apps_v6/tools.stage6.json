@@ -1,0 +1,244 @@
+{
+  "tools": [
+    {
+      "name": "get_package_entitlements",
+      "title": "Get Package Entitlements",
+      "risk": "read",
+      "description": "Return package inclusions and eligibility rules.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "tenantId": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "tenantId"
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false
+      }
+    },
+    {
+      "name": "calculate_readiness_score",
+      "title": "Calculate Readiness Score",
+      "risk": "draft",
+      "description": "Calculate a preliminary AI readiness score.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "tenantId": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "tenantId"
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": false
+      }
+    },
+    {
+      "name": "generate_audit_outline",
+      "title": "Generate Audit Outline",
+      "risk": "draft",
+      "description": "Generate a report outline for a selected package.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "tenantId": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "tenantId"
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": false
+      }
+    },
+    {
+      "name": "score_ai_citation_presence",
+      "title": "Score AI Citation Presence",
+      "risk": "draft",
+      "description": "Score AI search citation observations.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "tenantId": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "tenantId"
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": false
+      }
+    },
+    {
+      "name": "create_lead",
+      "title": "Create Lead",
+      "risk": "write",
+      "description": "Create a lead record after user confirmation.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "tenantId": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "tenantId"
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": false
+      }
+    },
+    {
+      "name": "create_audit_workspace",
+      "title": "Create Audit Workspace",
+      "risk": "write",
+      "description": "Create an audit workspace from a qualified lead.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "tenantId": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "tenantId"
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": false
+      }
+    },
+    {
+      "name": "request_report_publish_approval",
+      "title": "Request Report Publish Approval",
+      "risk": "high_risk_write",
+      "description": "Request human approval to publish a report to a customer.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "tenantId": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "tenantId"
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": true
+      }
+    },
+    {
+      "name": "emit_oc_prime_event",
+      "title": "Emit OC Prime Event",
+      "risk": "write",
+      "description": "Emit a structured event into OC Prime.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "tenantId": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "tenantId"
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": false
+      }
+    },
+    {
+      "name": "request_partner_workspace_activation",
+      "title": "Request Partner Workspace Activation",
+      "risk": "high_risk_write",
+      "description": "Request approval to activate a partner workspace.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "tenantId": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "tenantId"
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": true
+      }
+    },
+    {
+      "name": "submit_indexnow_url",
+      "title": "Submit IndexNow URL",
+      "risk": "write",
+      "description": "Submit an updated URL to IndexNow after content change.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "tenantId": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "tenantId"
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "AIReady Audit",
+  "description": "Assess AI readiness, map AI opportunities and review website visibility for AI search.",
+  "version": "6.0.0",
+  "mcp_server": "https://api.aireadyaudit.com.au/mcp",
+  "auth": {
+    "type": "oauth2",
+    "scopes": [
+      "aiready.read",
+      "aiready.draft"
+    ]
+  },
+  "widgets": [
+    {
+      "name": "Readiness Score",
+      "resource": "ui://widgets/readiness-score.html"
+    },
+    {
+      "name": "Citation Lab",
+      "resource": "ui://widgets/citation-lab.html"
+    }
+  ]
+}

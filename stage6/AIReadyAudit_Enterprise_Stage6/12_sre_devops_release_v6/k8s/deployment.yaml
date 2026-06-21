@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aiready-api
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: aiready-api
+  template:
+    metadata:
+      labels:
+        app: aiready-api
+    spec:
+      containers:
+        - name: api
+          image: aiready/api:stage6
+          ports:
+            - containerPort: 3001

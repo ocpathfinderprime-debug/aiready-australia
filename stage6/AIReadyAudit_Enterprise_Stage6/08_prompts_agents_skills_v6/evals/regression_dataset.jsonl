@@ -1,0 +1,2 @@
+{"input": "Assess readiness for a 15-person accounting firm", "expected_fields": ["score", "opportunities", "risks", "roadmap"]}
+{"input": "Review AI visibility for a local trades website", "expected_fields": ["crawlability", "schema", "entity_clarity", "content_gaps"]}

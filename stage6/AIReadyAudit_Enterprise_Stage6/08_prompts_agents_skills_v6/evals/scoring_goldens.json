@@ -1,0 +1,16 @@
+{
+  "goldens": [
+    {
+      "case": "balanced readiness",
+      "input": {
+        "workflowMaturity": 50,
+        "dataReadiness": 50,
+        "toolStackClarity": 50,
+        "governanceReadiness": 50,
+        "automationOpportunity": 50,
+        "implementationCapacity": 50
+      },
+      "expected_band": "emerging"
+    }
+  ]
+}

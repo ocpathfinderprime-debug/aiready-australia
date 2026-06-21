@@ -1,0 +1,53 @@
+{
+  "events": [
+    {
+      "type": "aiready.lead.created",
+      "owner": "growth",
+      "pii": true,
+      "routes": [
+        "oc_prime.lead_queue"
+      ]
+    },
+    {
+      "type": "aiready.readiness_score.completed",
+      "owner": "product",
+      "pii": true,
+      "routes": [
+        "oc_prime.sales_queue",
+        "analytics"
+      ]
+    },
+    {
+      "type": "aiready.audit_workspace.created",
+      "owner": "delivery",
+      "pii": true,
+      "routes": [
+        "oc_prime.delivery_queue"
+      ]
+    },
+    {
+      "type": "aiready.report.qa_required",
+      "owner": "delivery",
+      "pii": true,
+      "routes": [
+        "oc_prime.qa_queue"
+      ]
+    },
+    {
+      "type": "aiready.citation.observed",
+      "owner": "search",
+      "pii": false,
+      "routes": [
+        "oc_prime.search_dashboard"
+      ]
+    },
+    {
+      "type": "aiready.partner.lead_submitted",
+      "owner": "partner",
+      "pii": true,
+      "routes": [
+        "oc_prime.partner_queue"
+      ]
+    }
+  ]
+}

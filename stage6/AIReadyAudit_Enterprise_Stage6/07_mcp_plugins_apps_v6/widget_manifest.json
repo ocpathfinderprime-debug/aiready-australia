@@ -1,0 +1,12 @@
+{
+  "widgets": [
+    {
+      "id": "readiness-score",
+      "path": "widgets/readinessScoreWidget.html"
+    },
+    {
+      "id": "citation-lab",
+      "path": "widgets/citationLabWidget.html"
+    }
+  ]
+}

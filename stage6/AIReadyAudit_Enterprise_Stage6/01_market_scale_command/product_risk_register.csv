@@ -1,0 +1,6 @@
+risk,impact,likelihood,control,owner
+Overstated AI-search ranking claims,high,medium,claim register and legal/commercial review,search
+Report recommendations too generic,high,medium,evidence-linked QA and sample scenarios,delivery
+Partner delivery quality variance,high,medium,certification and QA sampling,partner
+MCP tool misuse,high,medium,read/draft/write/high-risk tool separation,security
+Cross-tenant data exposure,critical,low,"RLS tests, audit logs and tenant isolation reviews",engineering

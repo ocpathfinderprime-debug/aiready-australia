@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: aiready-api
+spec:
+  rules:
+    - host: api.aireadyaudit.com.au
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: aiready-api
+                port:
+                  number: 80

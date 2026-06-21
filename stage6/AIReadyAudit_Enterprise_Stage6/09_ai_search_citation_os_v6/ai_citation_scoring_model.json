@@ -1,0 +1,17 @@
+{
+  "score_name": "AIReady Citation Presence Score",
+  "components": {
+    "cited_in_answer": 40,
+    "correct_service_mapping": 20,
+    "target_page_cited": 15,
+    "competitor_displacement": 10,
+    "answer_sentiment": 10,
+    "freshness": 5
+  },
+  "bands": {
+    "0-39": "weak",
+    "40-59": "emerging",
+    "60-79": "competitive",
+    "80-100": "category_leader"
+  }
+}

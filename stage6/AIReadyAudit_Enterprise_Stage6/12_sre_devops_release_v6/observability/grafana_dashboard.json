@@ -1,0 +1,17 @@
+{
+  "title": "AIReady Stage 6 SRE",
+  "panels": [
+    {
+      "title": "API Error Rate"
+    },
+    {
+      "title": "MCP Tool Calls"
+    },
+    {
+      "title": "OC Prime Events"
+    },
+    {
+      "title": "Citation Jobs"
+    }
+  ]
+}

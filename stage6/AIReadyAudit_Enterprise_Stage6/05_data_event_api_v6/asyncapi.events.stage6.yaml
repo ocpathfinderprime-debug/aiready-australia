@@ -1,0 +1,23 @@
+asyncapi: 3.0.0
+info:
+  title: AIReady Stage 6 Event Contract
+  version: 6.0.0
+channels:
+  aiready.lead.created:
+    address: aiready.lead.created
+    messages:
+      leadCreated:
+        payload:
+          type: object
+  aiready.readiness_score.completed:
+    address: aiready.readiness_score.completed
+    messages:
+      scoreCompleted:
+        payload:
+          type: object
+  aiready.citation.observed:
+    address: aiready.citation.observed
+    messages:
+      citationObserved:
+        payload:
+          type: object

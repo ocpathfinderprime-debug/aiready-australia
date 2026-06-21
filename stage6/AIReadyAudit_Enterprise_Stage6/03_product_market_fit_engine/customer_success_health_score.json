@@ -1,0 +1,22 @@
+{
+  "score_name": "AIReady Customer Health Score",
+  "weights": {
+    "report_viewed": 15,
+    "roadmap_accepted": 20,
+    "implementation_started": 25,
+    "stakeholder_engagement": 15,
+    "support_risk": -15,
+    "renewal_interest": 20,
+    "case_study_candidate": 10
+  },
+  "thresholds": {
+    "green": 75,
+    "amber": 50,
+    "red": 0
+  },
+  "actions": {
+    "green": "ask for testimonial or implementation sprint",
+    "amber": "schedule roadmap review",
+    "red": "escalate to delivery lead"
+  }
+}

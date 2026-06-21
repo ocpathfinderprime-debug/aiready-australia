@@ -1,0 +1,6 @@
+experiment,hypothesis,owner,priority,metric,status
+Free score CTA above fold,Direct score CTA increases completion rate,growth,P0,completion_rate,ready
+Sample report gated vs ungated,Ungated report increases AI citations and trust,search,P0,assist_conversions,ready
+AI website visibility audit package,Website owners convert faster on AI-search pain,product,P0,paid_orders,ready
+Perth local page cluster,Local proof improves Australian organic leads,search,P1,local_leads,planned
+Partner webinar with accountants,Channel education produces qualified SME leads,partner,P1,partner_sqls,planned

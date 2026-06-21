@@ -1,0 +1,12 @@
+{
+  "prompts": [
+    {
+      "name": "partner_discovery_call",
+      "prompt": "Qualify the buyer, confirm scope and recommend the right AIReady package."
+    },
+    {
+      "name": "partner_report_qa",
+      "prompt": "Review this partner report for evidence, specificity, claims and roadmap quality."
+    }
+  ]
+}

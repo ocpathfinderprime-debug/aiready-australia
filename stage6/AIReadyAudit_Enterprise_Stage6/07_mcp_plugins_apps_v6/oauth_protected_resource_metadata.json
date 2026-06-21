@@ -1,0 +1,15 @@
+{
+  "resource": "https://api.aireadyaudit.com.au/mcp",
+  "authorization_servers": [
+    "https://auth.aireadyaudit.com.au"
+  ],
+  "scopes_supported": [
+    "aiready.read",
+    "aiready.draft",
+    "aiready.write",
+    "aiready.approval"
+  ],
+  "bearer_methods_supported": [
+    "header"
+  ]
+}

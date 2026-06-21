@@ -1,0 +1,24 @@
+{
+  "resources": [
+    {
+      "uri": "aiready://packages",
+      "name": "Package entitlements",
+      "description": "Current audit packages and inclusions"
+    },
+    {
+      "uri": "aiready://methodology",
+      "name": "Audit methodology",
+      "description": "Scoring and delivery methodology"
+    },
+    {
+      "uri": "aiready://citation-prompts",
+      "name": "AI search prompt panel",
+      "description": "Prompts used for citation tracking"
+    },
+    {
+      "uri": "aiready://governance-controls",
+      "name": "Governance controls",
+      "description": "AI governance review controls"
+    }
+  ]
+}

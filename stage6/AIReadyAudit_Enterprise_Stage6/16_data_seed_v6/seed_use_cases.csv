@@ -1,0 +1,4 @@
+use_case,value,complexity,governance
+email drafting,time saving,low,acceptable use policy
+invoice coding,admin reduction,medium,human review
+customer chatbot,support scale,medium-high,escalation and monitoring

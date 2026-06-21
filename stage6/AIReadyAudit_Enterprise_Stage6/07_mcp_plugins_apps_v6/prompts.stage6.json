@@ -1,0 +1,20 @@
+{
+  "prompts": [
+    {
+      "name": "audit_intake_summary",
+      "description": "Summarise intake evidence into an audit-ready brief."
+    },
+    {
+      "name": "opportunity_register_builder",
+      "description": "Create ranked AI opportunity register."
+    },
+    {
+      "name": "ai_visibility_gap_analysis",
+      "description": "Assess why a site is not being cited by AI answer engines."
+    },
+    {
+      "name": "partner_delivery_qa",
+      "description": "Review partner-delivered reports against AIReady standards."
+    }
+  ]
+}

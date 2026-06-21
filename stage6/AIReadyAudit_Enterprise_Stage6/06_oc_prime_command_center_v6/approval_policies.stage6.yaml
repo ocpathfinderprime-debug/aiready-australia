@@ -1,0 +1,11 @@
+policies:
+  - action: report.publish_to_customer
+    requires: [delivery_qa_pass, claim_register_pass]
+  - action: mcp.write_tool.execute
+    requires: [scoped_token, human_approval, audit_log]
+  - action: partner.workspace.activate
+    requires: [partner_contract_review, delivery_certification]
+  - action: public_claim.publish
+    requires: [source_check, owner_approval]
+  - action: cross_app_memory.share
+    requires: [pii_redaction, receiving_app_approval]

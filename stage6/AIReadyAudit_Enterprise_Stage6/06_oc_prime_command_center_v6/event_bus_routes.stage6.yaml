@@ -1,0 +1,19 @@
+routes:
+  aiready.lead.created:
+    target: oc_prime.sales_queue
+    priority: high
+  aiready.readiness_score.completed:
+    target: oc_prime.qualification_dashboard
+    priority: high
+  aiready.audit_workspace.created:
+    target: oc_prime.delivery_queue
+    priority: medium
+  aiready.report.qa_required:
+    target: oc_prime.approvals
+    priority: high
+  aiready.citation.observed:
+    target: oc_prime.ai_search_dashboard
+    priority: medium
+  aiready.partner.lead_submitted:
+    target: oc_prime.partner_dashboard
+    priority: medium

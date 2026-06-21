@@ -1,0 +1,1574 @@
+{
+  "project": "AIReady Audit Enterprise Stage 6",
+  "version": "6.0.0",
+  "created": "2026-06-06",
+  "file_count": 313,
+  "description": "Stage 6 market-scale enterprise production, AI-search citation leadership, OC Prime orchestration, MCP/app marketplace readiness and global commercialisation.",
+  "files": [
+    {
+      "path": "00_STAGE6_PRIORITY_PLAN.md",
+      "bytes": 2068,
+      "sha256_16": "2b919e5595d4ca0d"
+    },
+    {
+      "path": "01_market_scale_command/120_day_market_scale_plan.md",
+      "bytes": 929,
+      "sha256_16": "636fa8de39d7586d"
+    },
+    {
+      "path": "01_market_scale_command/decision_log_template.md",
+      "bytes": 386,
+      "sha256_16": "ba3218f233f6937a"
+    },
+    {
+      "path": "01_market_scale_command/growth_experiment_backlog.csv",
+      "bytes": 598,
+      "sha256_16": "003bde5f1b589de4"
+    },
+    {
+      "path": "01_market_scale_command/launch_command_os.md",
+      "bytes": 1301,
+      "sha256_16": "c9e251aff7a3c134"
+    },
+    {
+      "path": "01_market_scale_command/north_star_metrics.md",
+      "bytes": 729,
+      "sha256_16": "721d18b31035d994"
+    },
+    {
+      "path": "01_market_scale_command/operating_cadence.md",
+      "bytes": 810,
+      "sha256_16": "f5314e61fa915453"
+    },
+    {
+      "path": "01_market_scale_command/product_risk_register.csv",
+      "bytes": 506,
+      "sha256_16": "9ccbdd6f47a89474"
+    },
+    {
+      "path": "01_market_scale_command/stage6_go_no_go_gate.md",
+      "bytes": 1107,
+      "sha256_16": "e024e24fc21bb6b4"
+    },
+    {
+      "path": "01_market_scale_command/war_room_dashboard_spec.json",
+      "bytes": 1559,
+      "sha256_16": "31666b9d31ecabd6"
+    },
+    {
+      "path": "02_website_v6_ai_authority/ai_answer_entity_profile.md",
+      "bytes": 998,
+      "sha256_16": "f76f35ac6df0f45e"
+    },
+    {
+      "path": "02_website_v6_ai_authority/ai_answer_page_template.md",
+      "bytes": 515,
+      "sha256_16": "c9cbf2d4d188cd4f"
+    },
+    {
+      "path": "02_website_v6_ai_authority/buyer_questions/ai-governance-checklist-for-small-business.md",
+      "bytes": 561,
+      "sha256_16": "fe557ca0d5b3ba4b"
+    },
+    {
+      "path": "02_website_v6_ai_authority/buyer_questions/best-ai-automation-opportunities-for-smes.md",
+      "bytes": 559,
+      "sha256_16": "2479f38042a46d97"
+    },
+    {
+      "path": "02_website_v6_ai_authority/buyer_questions/best-ai-tools-for-small-business-australia.md",
+      "bytes": 561,
+      "sha256_16": "1f32e2abb09ef1ec"
+    },
+    {
+      "path": "02_website_v6_ai_authority/buyer_questions/how-much-does-an-ai-audit-cost-in-australia.md",
+      "bytes": 563,
+      "sha256_16": "ab67e17fd03b6d36"
+    },
+    {
+      "path": "02_website_v6_ai_authority/buyer_questions/how-to-audit-a-website-for-ai-search-visibility.md",
+      "bytes": 571,
+      "sha256_16": "68bd3e2ff2ae4418"
+    },
+    {
+      "path": "02_website_v6_ai_authority/buyer_questions/how-to-choose-ai-tools-for-business.md",
+      "bytes": 547,
+      "sha256_16": "827429e8ea522821"
+    },
+    {
+      "path": "02_website_v6_ai_authority/buyer_questions/how-to-create-ai-implementation-roadmap.md",
+      "bytes": 555,
+      "sha256_16": "8fd4fd1afb5b6fe4"
+    },
+    {
+      "path": "02_website_v6_ai_authority/buyer_questions/how-to-measure-ai-roi-in-small-business.md",
+      "bytes": 555,
+      "sha256_16": "6c23e4c17cc1384c"
+    },
+    {
+      "path": "02_website_v6_ai_authority/buyer_questions/what-data-should-not-go-into-chatgpt.md",
+      "bytes": 549,
+      "sha256_16": "176ad4e92daf773c"
+    },
+    {
+      "path": "02_website_v6_ai_authority/buyer_questions/what-is-an-ai-readiness-audit.md",
+      "bytes": 535,
+      "sha256_16": "7b22da0f796c5786"
+    },
+    {
+      "path": "02_website_v6_ai_authority/comparison_pages/ai-automation-audit-vs-process-mapping.md",
+      "bytes": 822,
+      "sha256_16": "1531e208480feaca"
+    },
+    {
+      "path": "02_website_v6_ai_authority/comparison_pages/ai-governance-review-vs-ai-policy-template.md",
+      "bytes": 830,
+      "sha256_16": "ea94d336dc71a090"
+    },
+    {
+      "path": "02_website_v6_ai_authority/comparison_pages/ai-readiness-audit-vs-ai-consultant.md",
+      "bytes": 816,
+      "sha256_16": "91d4e6a9bf957810"
+    },
+    {
+      "path": "02_website_v6_ai_authority/comparison_pages/ai-tools-audit-vs-software-demo.md",
+      "bytes": 808,
+      "sha256_16": "f66e39e398e34063"
+    },
+    {
+      "path": "02_website_v6_ai_authority/comparison_pages/ai-website-visibility-audit-vs-seo-audit.md",
+      "bytes": 826,
+      "sha256_16": "79200c5705aa4a8e"
+    },
+    {
+      "path": "02_website_v6_ai_authority/comparison_pages/chatgpt-vs-copilot-for-business.md",
+      "bytes": 808,
+      "sha256_16": "a83758722ec54621"
+    },
+    {
+      "path": "02_website_v6_ai_authority/content_quality_bar_v6.md",
+      "bytes": 582,
+      "sha256_16": "eac9608a8786ad52"
+    },
+    {
+      "path": "02_website_v6_ai_authority/homepage_v6_final.md",
+      "bytes": 1333,
+      "sha256_16": "b5b561fe6d0d4720"
+    },
+    {
+      "path": "02_website_v6_ai_authority/industry_pages/ai-audit-for-accounting-bookkeeping.md",
+      "bytes": 767,
+      "sha256_16": "e3dfefdb09bff256"
+    },
+    {
+      "path": "02_website_v6_ai_authority/industry_pages/ai-audit-for-construction.md",
+      "bytes": 747,
+      "sha256_16": "c712bed9f3bdf69f"
+    },
+    {
+      "path": "02_website_v6_ai_authority/industry_pages/ai-audit-for-consulting-firms.md",
+      "bytes": 755,
+      "sha256_16": "d8abc32b3c626895"
+    },
+    {
+      "path": "02_website_v6_ai_authority/industry_pages/ai-audit-for-education-training.md",
+      "bytes": 759,
+      "sha256_16": "c28d5a73a30b329d"
+    },
+    {
+      "path": "02_website_v6_ai_authority/industry_pages/ai-audit-for-financial-services.md",
+      "bytes": 759,
+      "sha256_16": "817c8f14b159cab8"
+    },
+    {
+      "path": "02_website_v6_ai_authority/industry_pages/ai-audit-for-healthcare-admin.md",
+      "bytes": 755,
+      "sha256_16": "e192139b3ef16b15"
+    },
+    {
+      "path": "02_website_v6_ai_authority/industry_pages/ai-audit-for-hospitality.md",
+      "bytes": 745,
+      "sha256_16": "2422a76a60644075"
+    },
+    {
+      "path": "02_website_v6_ai_authority/industry_pages/ai-audit-for-legal-practices.md",
+      "bytes": 753,
+      "sha256_16": "fdd27bc8479a2c9a"
+    },
+    {
+      "path": "02_website_v6_ai_authority/industry_pages/ai-audit-for-logistics.md",
+      "bytes": 741,
+      "sha256_16": "4ebfdad3487799d7"
+    },
+    {
+      "path": "02_website_v6_ai_authority/industry_pages/ai-audit-for-manufacturing.md",
+      "bytes": 749,
+      "sha256_16": "1cc1cb7202c38f70"
+    },
+    {
+      "path": "02_website_v6_ai_authority/industry_pages/ai-audit-for-marketing-agencies.md",
+      "bytes": 759,
+      "sha256_16": "b584f514b1f26970"
+    },
+    {
+      "path": "02_website_v6_ai_authority/industry_pages/ai-audit-for-not-for-profit.md",
+      "bytes": 751,
+      "sha256_16": "9384dfeea33741bd"
+    },
+    {
+      "path": "02_website_v6_ai_authority/industry_pages/ai-audit-for-professional-services.md",
+      "bytes": 765,
+      "sha256_16": "f3bfff86c2914b61"
+    },
+    {
+      "path": "02_website_v6_ai_authority/industry_pages/ai-audit-for-real-estate.md",
+      "bytes": 745,
+      "sha256_16": "acbed24b96628565"
+    },
+    {
+      "path": "02_website_v6_ai_authority/industry_pages/ai-audit-for-retail-ecommerce.md",
+      "bytes": 755,
+      "sha256_16": "bc68785ab35843c5"
+    },
+    {
+      "path": "02_website_v6_ai_authority/industry_pages/ai-audit-for-trades.md",
+      "bytes": 735,
+      "sha256_16": "28b32cc71785b15e"
+    },
+    {
+      "path": "02_website_v6_ai_authority/llms.txt",
+      "bytes": 519,
+      "sha256_16": "dfd393b3e1fd1bb8"
+    },
+    {
+      "path": "02_website_v6_ai_authority/location_pages/ai-readiness-audit-adelaide.md",
+      "bytes": 464,
+      "sha256_16": "7656c2261514ace8"
+    },
+    {
+      "path": "02_website_v6_ai_authority/location_pages/ai-readiness-audit-auckland.md",
+      "bytes": 464,
+      "sha256_16": "2d50692a6b24d74e"
+    },
+    {
+      "path": "02_website_v6_ai_authority/location_pages/ai-readiness-audit-australia-wide.md",
+      "bytes": 476,
+      "sha256_16": "1284b016817933d8"
+    },
+    {
+      "path": "02_website_v6_ai_authority/location_pages/ai-readiness-audit-brisbane.md",
+      "bytes": 464,
+      "sha256_16": "ac99a61ce2324c57"
+    },
+    {
+      "path": "02_website_v6_ai_authority/location_pages/ai-readiness-audit-canberra.md",
+      "bytes": 464,
+      "sha256_16": "faeeb3734fb8a612"
+    },
+    {
+      "path": "02_website_v6_ai_authority/location_pages/ai-readiness-audit-gold-coast.md",
+      "bytes": 468,
+      "sha256_16": "e56a4ce997050a92"
+    },
+    {
+      "path": "02_website_v6_ai_authority/location_pages/ai-readiness-audit-london.md",
+      "bytes": 460,
+      "sha256_16": "5c8eac5b6eabc0ef"
+    },
+    {
+      "path": "02_website_v6_ai_authority/location_pages/ai-readiness-audit-melbourne.md",
+      "bytes": 466,
+      "sha256_16": "c583a23f5861e131"
+    },
+    {
+      "path": "02_website_v6_ai_authority/location_pages/ai-readiness-audit-new-york.md",
+      "bytes": 464,
+      "sha256_16": "7c39c4afeceb35df"
+    },
+    {
+      "path": "02_website_v6_ai_authority/location_pages/ai-readiness-audit-newcastle.md",
+      "bytes": 466,
+      "sha256_16": "b88c2b98e4f73c79"
+    },
+    {
+      "path": "02_website_v6_ai_authority/location_pages/ai-readiness-audit-perth.md",
+      "bytes": 458,
+      "sha256_16": "c68e8eef0c5cc683"
+    },
+    {
+      "path": "02_website_v6_ai_authority/location_pages/ai-readiness-audit-singapore.md",
+      "bytes": 466,
+      "sha256_16": "be6a3a1644e4b448"
+    },
+    {
+      "path": "02_website_v6_ai_authority/location_pages/ai-readiness-audit-sydney.md",
+      "bytes": 460,
+      "sha256_16": "d1733e7132f391a8"
+    },
+    {
+      "path": "02_website_v6_ai_authority/location_pages/ai-readiness-audit-toronto.md",
+      "bytes": 462,
+      "sha256_16": "7e146a3798f90ce8"
+    },
+    {
+      "path": "02_website_v6_ai_authority/resource_pages/ai-readiness-resource-01.md",
+      "bytes": 414,
+      "sha256_16": "450df99af5352efe"
+    },
+    {
+      "path": "02_website_v6_ai_authority/resource_pages/ai-readiness-resource-02.md",
+      "bytes": 414,
+      "sha256_16": "e7d573ad63508a6c"
+    },
+    {
+      "path": "02_website_v6_ai_authority/resource_pages/ai-readiness-resource-03.md",
+      "bytes": 414,
+      "sha256_16": "2c586632c0dc5046"
+    },
+    {
+      "path": "02_website_v6_ai_authority/resource_pages/ai-readiness-resource-04.md",
+      "bytes": 414,
+      "sha256_16": "9dbd7fc02ae34f07"
+    },
+    {
+      "path": "02_website_v6_ai_authority/resource_pages/ai-readiness-resource-05.md",
+      "bytes": 414,
+      "sha256_16": "1ee8006840ad7700"
+    },
+    {
+      "path": "02_website_v6_ai_authority/resource_pages/ai-readiness-resource-06.md",
+      "bytes": 414,
+      "sha256_16": "e97da9d46990252d"
+    },
+    {
+      "path": "02_website_v6_ai_authority/resource_pages/ai-readiness-resource-07.md",
+      "bytes": 414,
+      "sha256_16": "f54749ffe7f79bcc"
+    },
+    {
+      "path": "02_website_v6_ai_authority/resource_pages/ai-readiness-resource-08.md",
+      "bytes": 414,
+      "sha256_16": "e6c527b76562ba16"
+    },
+    {
+      "path": "02_website_v6_ai_authority/resource_pages/ai-readiness-resource-09.md",
+      "bytes": 414,
+      "sha256_16": "57d9c9fc73802162"
+    },
+    {
+      "path": "02_website_v6_ai_authority/resource_pages/ai-readiness-resource-10.md",
+      "bytes": 414,
+      "sha256_16": "c4efb000b92cb76e"
+    },
+    {
+      "path": "02_website_v6_ai_authority/resource_pages/ai-readiness-resource-11.md",
+      "bytes": 414,
+      "sha256_16": "f75521631652165a"
+    },
+    {
+      "path": "02_website_v6_ai_authority/resource_pages/ai-readiness-resource-12.md",
+      "bytes": 414,
+      "sha256_16": "da186966aa007bc9"
+    },
+    {
+      "path": "02_website_v6_ai_authority/resource_pages/ai-readiness-resource-13.md",
+      "bytes": 414,
+      "sha256_16": "473e7cfdb0952423"
+    },
+    {
+      "path": "02_website_v6_ai_authority/resource_pages/ai-readiness-resource-14.md",
+      "bytes": 414,
+      "sha256_16": "2602ffb8ecb0b0e1"
+    },
+    {
+      "path": "02_website_v6_ai_authority/resource_pages/ai-readiness-resource-15.md",
+      "bytes": 414,
+      "sha256_16": "d79ec9af6d6c155a"
+    },
+    {
+      "path": "02_website_v6_ai_authority/resource_pages/ai-readiness-resource-16.md",
+      "bytes": 414,
+      "sha256_16": "a718569d1446d622"
+    },
+    {
+      "path": "02_website_v6_ai_authority/resource_pages/ai-readiness-resource-17.md",
+      "bytes": 414,
+      "sha256_16": "85b9a39383c3acb3"
+    },
+    {
+      "path": "02_website_v6_ai_authority/resource_pages/ai-readiness-resource-18.md",
+      "bytes": 414,
+      "sha256_16": "e7cac4a7b3f29bf1"
+    },
+    {
+      "path": "02_website_v6_ai_authority/resource_pages/ai-readiness-resource-19.md",
+      "bytes": 414,
+      "sha256_16": "16e604ddaf35f652"
+    },
+    {
+      "path": "02_website_v6_ai_authority/resource_pages/ai-readiness-resource-20.md",
+      "bytes": 414,
+      "sha256_16": "1d5f2482a1c5c953"
+    },
+    {
+      "path": "02_website_v6_ai_authority/robots.production.v6.txt",
+      "bytes": 180,
+      "sha256_16": "a7fced6007077c55"
+    },
+    {
+      "path": "02_website_v6_ai_authority/schema_graph_v6.jsonld",
+      "bytes": 1542,
+      "sha256_16": "5df84d677fcb7669"
+    },
+    {
+      "path": "02_website_v6_ai_authority/service_pages/ai-automation-audit.md",
+      "bytes": 910,
+      "sha256_16": "59fa9f66ef6969a5"
+    },
+    {
+      "path": "02_website_v6_ai_authority/service_pages/ai-benchmark-index.md",
+      "bytes": 934,
+      "sha256_16": "37c1080cfff79d13"
+    },
+    {
+      "path": "02_website_v6_ai_authority/service_pages/ai-governance-review.md",
+      "bytes": 912,
+      "sha256_16": "6390536c08dbc102"
+    },
+    {
+      "path": "02_website_v6_ai_authority/service_pages/ai-implementation-sprint.md",
+      "bytes": 920,
+      "sha256_16": "1f10199ba2448e7e"
+    },
+    {
+      "path": "02_website_v6_ai_authority/service_pages/ai-readiness-audit-australia.md",
+      "bytes": 928,
+      "sha256_16": "24a69dceec743bb2"
+    },
+    {
+      "path": "02_website_v6_ai_authority/service_pages/ai-tools-audit.md",
+      "bytes": 900,
+      "sha256_16": "1152841bd2698f1f"
+    },
+    {
+      "path": "02_website_v6_ai_authority/service_pages/ai-website-visibility-audit.md",
+      "bytes": 926,
+      "sha256_16": "a5b1655746f68c4b"
+    },
+    {
+      "path": "02_website_v6_ai_authority/service_pages/enterprise-ai-capability-assessment.md",
+      "bytes": 942,
+      "sha256_16": "fbb3a3fafe620b9c"
+    },
+    {
+      "path": "02_website_v6_ai_authority/sitemap_index_v6.xml",
+      "bytes": 470,
+      "sha256_16": "e61a52c2bb5e05dd"
+    },
+    {
+      "path": "02_website_v6_ai_authority/website_v6_ai_authority_architecture.md",
+      "bytes": 1165,
+      "sha256_16": "c7f47f309d3a3f4c"
+    },
+    {
+      "path": "03_product_market_fit_engine/audit_delivery_sla.md",
+      "bytes": 558,
+      "sha256_16": "3d4ee6673f6a8fd6"
+    },
+    {
+      "path": "03_product_market_fit_engine/conversion_analytics_spec.md",
+      "bytes": 510,
+      "sha256_16": "6e9b6e49508d8114"
+    },
+    {
+      "path": "03_product_market_fit_engine/customer_success_health_score.json",
+      "bytes": 507,
+      "sha256_16": "c56215e11bd1d003"
+    },
+    {
+      "path": "03_product_market_fit_engine/data_product_sme_ai_capability_index.md",
+      "bytes": 555,
+      "sha256_16": "5f71d88fd6e2977d"
+    },
+    {
+      "path": "03_product_market_fit_engine/evidence_room_spec.md",
+      "bytes": 485,
+      "sha256_16": "1f79b5c668af27b8"
+    },
+    {
+      "path": "03_product_market_fit_engine/free_score_funnel_v6.md",
+      "bytes": 783,
+      "sha256_16": "0a9aabf194f3d347"
+    },
+    {
+      "path": "03_product_market_fit_engine/implementation_sprint_playbook_v6.md",
+      "bytes": 505,
+      "sha256_16": "013fb512acb8ada8"
+    },
+    {
+      "path": "03_product_market_fit_engine/onboarding_flow_v6.md",
+      "bytes": 627,
+      "sha256_16": "a002db9e7db7d14b"
+    },
+    {
+      "path": "03_product_market_fit_engine/package_entitlements_v6.json",
+      "bytes": 1382,
+      "sha256_16": "a3a0121b04f42e2c"
+    },
+    {
+      "path": "03_product_market_fit_engine/pricing_experiment_matrix.md",
+      "bytes": 652,
+      "sha256_16": "35fc7217c5850c43"
+    },
+    {
+      "path": "03_product_market_fit_engine/product_line_v6.md",
+      "bytes": 620,
+      "sha256_16": "b2c7c20f367a21d7"
+    },
+    {
+      "path": "03_product_market_fit_engine/renewal_and_expansion_playbook.md",
+      "bytes": 503,
+      "sha256_16": "5060e27c281885bf"
+    },
+    {
+      "path": "04_runtime_code_v6/.env.example",
+      "bytes": 227,
+      "sha256_16": "0cd9d8eedb8dc5b5"
+    },
+    {
+      "path": "04_runtime_code_v6/apps/api/src/index.ts",
+      "bytes": 942,
+      "sha256_16": "8e7aa057ed5057c6"
+    },
+    {
+      "path": "04_runtime_code_v6/apps/api/src/routes/citations.ts",
+      "bytes": 200,
+      "sha256_16": "d6cfeea14cda414b"
+    },
+    {
+      "path": "04_runtime_code_v6/apps/api/src/routes/ocprime.ts",
+      "bytes": 136,
+      "sha256_16": "ef4051573a6b9fde"
+    },
+    {
+      "path": "04_runtime_code_v6/apps/api/src/routes/readiness.ts",
+      "bytes": 196,
+      "sha256_16": "9da797f86e645506"
+    },
+    {
+      "path": "04_runtime_code_v6/apps/mcp/src/server.ts",
+      "bytes": 910,
+      "sha256_16": "6ae95154f3ce9bb3"
+    },
+    {
+      "path": "04_runtime_code_v6/apps/oc-prime-bridge/src/index.ts",
+      "bytes": 299,
+      "sha256_16": "dd4f0a66be2c6003"
+    },
+    {
+      "path": "04_runtime_code_v6/apps/web/app/page.tsx",
+      "bytes": 311,
+      "sha256_16": "47b27771fef6d323"
+    },
+    {
+      "path": "04_runtime_code_v6/apps/web/app/readiness-score/page.tsx",
+      "bytes": 201,
+      "sha256_16": "f2d312966e857332"
+    },
+    {
+      "path": "04_runtime_code_v6/apps/web/components/CitationScorecard.tsx",
+      "bytes": 275,
+      "sha256_16": "894f0dd456ead912"
+    },
+    {
+      "path": "04_runtime_code_v6/apps/web/components/ReadinessScoreForm.tsx",
+      "bytes": 670,
+      "sha256_16": "0371c3c12de03395"
+    },
+    {
+      "path": "04_runtime_code_v6/apps/worker/src/index.ts",
+      "bytes": 228,
+      "sha256_16": "3340501c1a596cb6"
+    },
+    {
+      "path": "04_runtime_code_v6/apps/worker/src/jobs/aiCitationScan.ts",
+      "bytes": 159,
+      "sha256_16": "888a5ec7b19e4979"
+    },
+    {
+      "path": "04_runtime_code_v6/package.json",
+      "bytes": 549,
+      "sha256_16": "e691027b919f5bac"
+    },
+    {
+      "path": "04_runtime_code_v6/packages/core/src/citation.ts",
+      "bytes": 649,
+      "sha256_16": "493f61b04d7a1a07"
+    },
+    {
+      "path": "04_runtime_code_v6/packages/core/src/governance.ts",
+      "bytes": 415,
+      "sha256_16": "809fb3f23b78e891"
+    },
+    {
+      "path": "04_runtime_code_v6/packages/core/src/index.ts",
+      "bytes": 159,
+      "sha256_16": "d846caa554fdec88"
+    },
+    {
+      "path": "04_runtime_code_v6/packages/core/src/report.ts",
+      "bytes": 364,
+      "sha256_16": "947b37c3d0dfb4af"
+    },
+    {
+      "path": "04_runtime_code_v6/packages/core/src/roi.ts",
+      "bytes": 433,
+      "sha256_16": "77c540de56a80254"
+    },
+    {
+      "path": "04_runtime_code_v6/packages/core/src/scoring.ts",
+      "bytes": 1115,
+      "sha256_16": "1358ef254138f542"
+    },
+    {
+      "path": "04_runtime_code_v6/packages/core/src/types.ts",
+      "bytes": 549,
+      "sha256_16": "dbc934125e142f89"
+    },
+    {
+      "path": "04_runtime_code_v6/packages/integrations/src/bingWebmaster.ts",
+      "bytes": 262,
+      "sha256_16": "32cb1873da1e9e4a"
+    },
+    {
+      "path": "04_runtime_code_v6/packages/integrations/src/hubspot.ts",
+      "bytes": 244,
+      "sha256_16": "2fb049f4bb5c7854"
+    },
+    {
+      "path": "04_runtime_code_v6/packages/integrations/src/mailer.ts",
+      "bytes": 241,
+      "sha256_16": "0218e948bfedbfa1"
+    },
+    {
+      "path": "04_runtime_code_v6/packages/integrations/src/searchConsole.ts",
+      "bytes": 262,
+      "sha256_16": "085bee454b322a73"
+    },
+    {
+      "path": "04_runtime_code_v6/packages/integrations/src/stripe.ts",
+      "bytes": 241,
+      "sha256_16": "18aa6410b734bc26"
+    },
+    {
+      "path": "04_runtime_code_v6/packages/oc-prime/src/events.ts",
+      "bytes": 275,
+      "sha256_16": "b12b2a0a6fe6fe9b"
+    },
+    {
+      "path": "04_runtime_code_v6/pnpm-workspace.yaml",
+      "bytes": 36,
+      "sha256_16": "253208fa7c1b6437"
+    },
+    {
+      "path": "04_runtime_code_v6/tests/citation.test.ts",
+      "bytes": 447,
+      "sha256_16": "759fe8b56f65b942"
+    },
+    {
+      "path": "04_runtime_code_v6/tests/mcp-tools.test.ts",
+      "bytes": 127,
+      "sha256_16": "eed38fd464a09059"
+    },
+    {
+      "path": "04_runtime_code_v6/tests/scoring.test.ts",
+      "bytes": 546,
+      "sha256_16": "5c89be8a2b929d30"
+    },
+    {
+      "path": "04_runtime_code_v6/tsconfig.base.json",
+      "bytes": 213,
+      "sha256_16": "5f98cc5e454ca1e3"
+    },
+    {
+      "path": "04_runtime_code_v6/turbo.json",
+      "bytes": 241,
+      "sha256_16": "e72ec5533132bf75"
+    },
+    {
+      "path": "05_data_event_api_v6/asyncapi.events.stage6.yaml",
+      "bytes": 526,
+      "sha256_16": "ecbf23635a17512c"
+    },
+    {
+      "path": "05_data_event_api_v6/data_dictionary_stage6.md",
+      "bytes": 598,
+      "sha256_16": "baf75c8ac9fe039b"
+    },
+    {
+      "path": "05_data_event_api_v6/dbt_models/README.md",
+      "bytes": 273,
+      "sha256_16": "2712d1582ace55e0"
+    },
+    {
+      "path": "05_data_event_api_v6/event_catalog.stage6.json",
+      "bytes": 1012,
+      "sha256_16": "a34cccfcc582e8e3"
+    },
+    {
+      "path": "05_data_event_api_v6/migrations/001_stage6_core.sql",
+      "bytes": 1171,
+      "sha256_16": "36c773ce9ced975b"
+    },
+    {
+      "path": "05_data_event_api_v6/migrations/002_growth_citations.sql",
+      "bytes": 798,
+      "sha256_16": "5df7200ce154617f"
+    },
+    {
+      "path": "05_data_event_api_v6/migrations/003_marketplace_partner.sql",
+      "bytes": 802,
+      "sha256_16": "b407fb836ef22f01"
+    },
+    {
+      "path": "05_data_event_api_v6/migrations/004_audit_quality.sql",
+      "bytes": 636,
+      "sha256_16": "b9d7d07fd1877c3d"
+    },
+    {
+      "path": "05_data_event_api_v6/openapi.stage6.yaml",
+      "bytes": 694,
+      "sha256_16": "4cafe201e7e375f4"
+    },
+    {
+      "path": "05_data_event_api_v6/rls_policies_stage6.sql",
+      "bytes": 906,
+      "sha256_16": "2d6f37a1a5e18e1e"
+    },
+    {
+      "path": "05_data_event_api_v6/stored_procedures_stage6.sql",
+      "bytes": 466,
+      "sha256_16": "8eb04b1ad134a3da"
+    },
+    {
+      "path": "05_data_event_api_v6/warehouse_star_schema.sql",
+      "bytes": 507,
+      "sha256_16": "dba59bb7052e11e8"
+    },
+    {
+      "path": "06_oc_prime_command_center_v6/README.md",
+      "bytes": 587,
+      "sha256_16": "9fea87351fef0fdd"
+    },
+    {
+      "path": "06_oc_prime_command_center_v6/app_mesh_manifest.stage6.json",
+      "bytes": 754,
+      "sha256_16": "850201e946be0478"
+    },
+    {
+      "path": "06_oc_prime_command_center_v6/app_registry_template.json",
+      "bytes": 156,
+      "sha256_16": "b0ac589697374d9e"
+    },
+    {
+      "path": "06_oc_prime_command_center_v6/approval_policies.stage6.yaml",
+      "bytes": 464,
+      "sha256_16": "e83dacf1847d5b02"
+    },
+    {
+      "path": "06_oc_prime_command_center_v6/command_center_dashboard.stage6.json",
+      "bytes": 894,
+      "sha256_16": "9dfc20d9836466bb"
+    },
+    {
+      "path": "06_oc_prime_command_center_v6/cross_app_integration_recipes.md",
+      "bytes": 744,
+      "sha256_16": "ba9641cf1b71a7a2"
+    },
+    {
+      "path": "06_oc_prime_command_center_v6/event_bus_routes.stage6.yaml",
+      "bytes": 542,
+      "sha256_16": "e212481f8532ddbd"
+    },
+    {
+      "path": "06_oc_prime_command_center_v6/human_approval_matrix.md",
+      "bytes": 396,
+      "sha256_16": "0e1b235a9f359086"
+    },
+    {
+      "path": "06_oc_prime_command_center_v6/memory_boundary_policy.md",
+      "bytes": 543,
+      "sha256_16": "00608044e9741c2f"
+    },
+    {
+      "path": "06_oc_prime_command_center_v6/oc_prime_adapter_contract.stage6.ts",
+      "bytes": 509,
+      "sha256_16": "88ced6f6303f41de"
+    },
+    {
+      "path": "06_oc_prime_command_center_v6/shared_ontology_stage6.json",
+      "bytes": 561,
+      "sha256_16": "d61e0256f16d2fd3"
+    },
+    {
+      "path": "06_oc_prime_command_center_v6/workflows.stage6.yaml",
+      "bytes": 715,
+      "sha256_16": "de0786829442e487"
+    },
+    {
+      "path": "07_mcp_plugins_apps_v6/README.md",
+      "bytes": 594,
+      "sha256_16": "3464fbe6597fe939"
+    },
+    {
+      "path": "07_mcp_plugins_apps_v6/app_store_submission_pack_stage6.md",
+      "bytes": 758,
+      "sha256_16": "287a216db7dc8a48"
+    },
+    {
+      "path": "07_mcp_plugins_apps_v6/chatgpt_app_manifest.stage6.json",
+      "bytes": 532,
+      "sha256_16": "332c98e6fa8ac95c"
+    },
+    {
+      "path": "07_mcp_plugins_apps_v6/mcp_server/package.json",
+      "bytes": 243,
+      "sha256_16": "b0fc3a0cf7ad08ee"
+    },
+    {
+      "path": "07_mcp_plugins_apps_v6/mcp_server/src/server.ts",
+      "bytes": 871,
+      "sha256_16": "46fa82746b7e4c49"
+    },
+    {
+      "path": "07_mcp_plugins_apps_v6/oauth_protected_resource_metadata.json",
+      "bytes": 293,
+      "sha256_16": "e3cf9d6ea5928a13"
+    },
+    {
+      "path": "07_mcp_plugins_apps_v6/openapi_actions.stage6.yaml",
+      "bytes": 453,
+      "sha256_16": "378c9a08c6174185"
+    },
+    {
+      "path": "07_mcp_plugins_apps_v6/prompts.stage6.json",
+      "bytes": 542,
+      "sha256_16": "899e4db59602f073"
+    },
+    {
+      "path": "07_mcp_plugins_apps_v6/resources.stage6.json",
+      "bytes": 616,
+      "sha256_16": "4101e0280981fe9f"
+    },
+    {
+      "path": "07_mcp_plugins_apps_v6/security_review_checklist.md",
+      "bytes": 434,
+      "sha256_16": "53e5bdcc9067ff2f"
+    },
+    {
+      "path": "07_mcp_plugins_apps_v6/tool_risk_register.csv",
+      "bytes": 611,
+      "sha256_16": "f13f061d6c721e27"
+    },
+    {
+      "path": "07_mcp_plugins_apps_v6/tools.stage6.json",
+      "bytes": 5666,
+      "sha256_16": "7ed7feed4afc1b2d"
+    },
+    {
+      "path": "07_mcp_plugins_apps_v6/widget_manifest.json",
+      "bytes": 204,
+      "sha256_16": "e14170cf15bb1f44"
+    },
+    {
+      "path": "07_mcp_plugins_apps_v6/widgets/citationLabWidget.html",
+      "bytes": 117,
+      "sha256_16": "68ce887cb03365f8"
+    },
+    {
+      "path": "07_mcp_plugins_apps_v6/widgets/readinessScoreWidget.html",
+      "bytes": 117,
+      "sha256_16": "a5e29a671a543dcc"
+    },
+    {
+      "path": "08_prompts_agents_skills_v6/agent_contracts/ai_governance_reviewer.md",
+      "bytes": 603,
+      "sha256_16": "c97865eb49e2b6e7"
+    },
+    {
+      "path": "08_prompts_agents_skills_v6/agent_contracts/ai_visibility_analyst.md",
+      "bytes": 601,
+      "sha256_16": "31d001d08f282cbe"
+    },
+    {
+      "path": "08_prompts_agents_skills_v6/agent_contracts/benchmark_index_analyst.md",
+      "bytes": 605,
+      "sha256_16": "a6ef7fcbb76894d0"
+    },
+    {
+      "path": "08_prompts_agents_skills_v6/agent_contracts/citation_lab_operator.md",
+      "bytes": 601,
+      "sha256_16": "0704e4fd0944d845"
+    },
+    {
+      "path": "08_prompts_agents_skills_v6/agent_contracts/intake_evidence_analyst.md",
+      "bytes": 605,
+      "sha256_16": "6dbf8b7ceb7fdc44"
+    },
+    {
+      "path": "08_prompts_agents_skills_v6/agent_contracts/master_audit_orchestrator.md",
+      "bytes": 609,
+      "sha256_16": "9d9ea5060eb84b4e"
+    },
+    {
+      "path": "08_prompts_agents_skills_v6/agent_contracts/mcp_security_reviewer.md",
+      "bytes": 601,
+      "sha256_16": "0ca97378689b0d73"
+    },
+    {
+      "path": "08_prompts_agents_skills_v6/agent_contracts/oc_prime_routing_agent.md",
+      "bytes": 603,
+      "sha256_16": "9a6343993307bf55"
+    },
+    {
+      "path": "08_prompts_agents_skills_v6/agent_contracts/opportunity_ranker.md",
+      "bytes": 595,
+      "sha256_16": "9d46410ada104153"
+    },
+    {
+      "path": "08_prompts_agents_skills_v6/agent_contracts/partner_enablement_agent.md",
+      "bytes": 607,
+      "sha256_16": "481a3aa502476a4d"
+    },
+    {
+      "path": "08_prompts_agents_skills_v6/agent_contracts/qa_reviewer.md",
+      "bytes": 581,
+      "sha256_16": "0f81f106e77c8ed7"
+    },
+    {
+      "path": "08_prompts_agents_skills_v6/agent_contracts/report_writer.md",
+      "bytes": 585,
+      "sha256_16": "aa322464d5c67884"
+    },
+    {
+      "path": "08_prompts_agents_skills_v6/agent_contracts/roi_estimator.md",
+      "bytes": 585,
+      "sha256_16": "c9286ac3c263e668"
+    },
+    {
+      "path": "08_prompts_agents_skills_v6/agent_contracts/sales_followup_agent.md",
+      "bytes": 599,
+      "sha256_16": "a7bebaeb6f3fe8a2"
+    },
+    {
+      "path": "08_prompts_agents_skills_v6/agent_contracts/tool_recommendation_specialist.md",
+      "bytes": 619,
+      "sha256_16": "6c93a332b7915ee6"
+    },
+    {
+      "path": "08_prompts_agents_skills_v6/agent_contracts/workflow_mapper.md",
+      "bytes": 589,
+      "sha256_16": "e5d64c8eb0d5d41d"
+    },
+    {
+      "path": "08_prompts_agents_skills_v6/agent_roster_stage6.json",
+      "bytes": 2324,
+      "sha256_16": "d0975474dc312a06"
+    },
+    {
+      "path": "08_prompts_agents_skills_v6/evals/prompt_eval_suite_stage6.yaml",
+      "bytes": 480,
+      "sha256_16": "656fb9e8dae26ddd"
+    },
+    {
+      "path": "08_prompts_agents_skills_v6/evals/red_team_cases_stage6.json",
+      "bytes": 526,
+      "sha256_16": "3bbfefc66d1683be"
+    },
+    {
+      "path": "08_prompts_agents_skills_v6/evals/regression_dataset.jsonl",
+      "bytes": 271,
+      "sha256_16": "fbc8a6905a266967"
+    },
+    {
+      "path": "08_prompts_agents_skills_v6/evals/scoring_goldens.json",
+      "bytes": 333,
+      "sha256_16": "403696b2ae2d23a9"
+    },
+    {
+      "path": "08_prompts_agents_skills_v6/guardrails/claim_policy.md",
+      "bytes": 208,
+      "sha256_16": "3ff67f7bf7429a8f"
+    },
+    {
+      "path": "08_prompts_agents_skills_v6/guardrails/data_boundary_policy.md",
+      "bytes": 187,
+      "sha256_16": "d965b203ac6a6982"
+    },
+    {
+      "path": "08_prompts_agents_skills_v6/guardrails/unsafe_advice_policy.md",
+      "bytes": 210,
+      "sha256_16": "5aa24250951fd89e"
+    },
+    {
+      "path": "08_prompts_agents_skills_v6/prompt_governance_stage6.md",
+      "bytes": 557,
+      "sha256_16": "fa8888cdd84e2c1e"
+    },
+    {
+      "path": "08_prompts_agents_skills_v6/prompt_pack_stage6.json",
+      "bytes": 8592,
+      "sha256_16": "742d7d93b727eb11"
+    },
+    {
+      "path": "08_prompts_agents_skills_v6/skills/ai_readiness_audit/SKILL.md",
+      "bytes": 507,
+      "sha256_16": "474583b56a36468b"
+    },
+    {
+      "path": "08_prompts_agents_skills_v6/skills/ai_visibility_audit/SKILL.md",
+      "bytes": 509,
+      "sha256_16": "ac435509a9e343e2"
+    },
+    {
+      "path": "08_prompts_agents_skills_v6/skills/benchmark_index/SKILL.md",
+      "bytes": 478,
+      "sha256_16": "d7a1434cbe9d6d17"
+    },
+    {
+      "path": "08_prompts_agents_skills_v6/skills/enterprise_sales/SKILL.md",
+      "bytes": 485,
+      "sha256_16": "1b8df2a36789ad1f"
+    },
+    {
+      "path": "08_prompts_agents_skills_v6/skills/evidence_review/SKILL.md",
+      "bytes": 488,
+      "sha256_16": "3b9ab3b4e27db304"
+    },
+    {
+      "path": "08_prompts_agents_skills_v6/skills/mcp_security/SKILL.md",
+      "bytes": 483,
+      "sha256_16": "d2ad89b3fd371ba7"
+    },
+    {
+      "path": "08_prompts_agents_skills_v6/skills/oc_prime_routing/SKILL.md",
+      "bytes": 483,
+      "sha256_16": "73746a9cf13df331"
+    },
+    {
+      "path": "08_prompts_agents_skills_v6/skills/partner_onboarding/SKILL.md",
+      "bytes": 479,
+      "sha256_16": "0ee4252420b6157c"
+    },
+    {
+      "path": "09_ai_search_citation_os_v6/ai_citation_operating_system.md",
+      "bytes": 775,
+      "sha256_16": "63e48d3309813a75"
+    },
+    {
+      "path": "09_ai_search_citation_os_v6/ai_citation_scoring_model.json",
+      "bytes": 373,
+      "sha256_16": "d6b0225ac5939ab4"
+    },
+    {
+      "path": "09_ai_search_citation_os_v6/ai_search_prompt_panel_stage6.csv",
+      "bytes": 7344,
+      "sha256_16": "2e76806ce1daab39"
+    },
+    {
+      "path": "09_ai_search_citation_os_v6/answer_entity_profile.json",
+      "bytes": 534,
+      "sha256_16": "a26412a86e7f2045"
+    },
+    {
+      "path": "09_ai_search_citation_os_v6/citation_data_schema.json",
+      "bytes": 510,
+      "sha256_16": "af2f05ada8e11e54"
+    },
+    {
+      "path": "09_ai_search_citation_os_v6/competitor_tracking_matrix.csv",
+      "bytes": 239,
+      "sha256_16": "7334a20d0d58cc4e"
+    },
+    {
+      "path": "09_ai_search_citation_os_v6/content_factory_stage6.md",
+      "bytes": 527,
+      "sha256_16": "73e4e2b134aa233e"
+    },
+    {
+      "path": "09_ai_search_citation_os_v6/directory_and_citation_targets_v6.csv",
+      "bytes": 338,
+      "sha256_16": "3600b745d87ccbdb"
+    },
+    {
+      "path": "09_ai_search_citation_os_v6/gsc_bing_kpi_dashboard_spec.json",
+      "bytes": 175,
+      "sha256_16": "8ec973663b4df5c1"
+    },
+    {
+      "path": "09_ai_search_citation_os_v6/indexnow_submission_worker.ts",
+      "bytes": 238,
+      "sha256_16": "f5cb1be538eb6a2c"
+    },
+    {
+      "path": "09_ai_search_citation_os_v6/knowledge_graph_targets.md",
+      "bytes": 340,
+      "sha256_16": "9ccf2d0d4d33a5d7"
+    },
+    {
+      "path": "09_ai_search_citation_os_v6/weekly_ai_search_review_template.md",
+      "bytes": 297,
+      "sha256_16": "c3ff30e85dacbd30"
+    },
+    {
+      "path": "10_security_privacy_governance_v6/ai_system_impact_assessment_template_v6.md",
+      "bytes": 413,
+      "sha256_16": "708030e2cc1adda0"
+    },
+    {
+      "path": "10_security_privacy_governance_v6/au_responsible_ai_practices_matrix_v6.md",
+      "bytes": 529,
+      "sha256_16": "a53c0bb0b01d0063"
+    },
+    {
+      "path": "10_security_privacy_governance_v6/claim_register_stage6.csv",
+      "bytes": 472,
+      "sha256_16": "21f13ba17019a8ff"
+    },
+    {
+      "path": "10_security_privacy_governance_v6/data_retention_policy.md",
+      "bytes": 484,
+      "sha256_16": "74eea1a4cecfac86"
+    },
+    {
+      "path": "10_security_privacy_governance_v6/dpia_template_global.md",
+      "bytes": 397,
+      "sha256_16": "a04e4132eaf40bca"
+    },
+    {
+      "path": "10_security_privacy_governance_v6/enterprise_security_questionnaire_v6.md",
+      "bytes": 410,
+      "sha256_16": "6522c3ea61f201a9"
+    },
+    {
+      "path": "10_security_privacy_governance_v6/eu_ai_act_readiness_map.md",
+      "bytes": 704,
+      "sha256_16": "f6049d1fc6bab109"
+    },
+    {
+      "path": "10_security_privacy_governance_v6/incident_response_runbook_stage6.md",
+      "bytes": 523,
+      "sha256_16": "f57f2df344e8d624"
+    },
+    {
+      "path": "10_security_privacy_governance_v6/mcp_security_control_map_stage6.md",
+      "bytes": 710,
+      "sha256_16": "c037d574429f8d49"
+    },
+    {
+      "path": "10_security_privacy_governance_v6/pentest_scope.md",
+      "bytes": 335,
+      "sha256_16": "54450eb5fe83237d"
+    },
+    {
+      "path": "10_security_privacy_governance_v6/privacy_impact_assessment_template_v6.md",
+      "bytes": 411,
+      "sha256_16": "be01afa3c12a0204"
+    },
+    {
+      "path": "10_security_privacy_governance_v6/soc2_iso_control_mapping.md",
+      "bytes": 430,
+      "sha256_16": "459fe49273b41d75"
+    },
+    {
+      "path": "10_security_privacy_governance_v6/threat_model_stage6.md",
+      "bytes": 701,
+      "sha256_16": "580d94e4ff76d9ad"
+    },
+    {
+      "path": "10_security_privacy_governance_v6/vendor_risk_assessment_template.md",
+      "bytes": 408,
+      "sha256_16": "d5ea1646020a10a0"
+    },
+    {
+      "path": "11_commercialisation_global_v6/au_category_dominance_plan_v6.md",
+      "bytes": 907,
+      "sha256_16": "e2f41f5f69b066f2"
+    },
+    {
+      "path": "11_commercialisation_global_v6/board_metrics_template.md",
+      "bytes": 877,
+      "sha256_16": "ff74ccbf2920f008"
+    },
+    {
+      "path": "11_commercialisation_global_v6/channel_enablement_kit.md",
+      "bytes": 877,
+      "sha256_16": "c66e11042722d331"
+    },
+    {
+      "path": "11_commercialisation_global_v6/customer_case_study_template.md",
+      "bytes": 889,
+      "sha256_16": "2592e2c71af88609"
+    },
+    {
+      "path": "11_commercialisation_global_v6/enterprise_abm_playbook.md",
+      "bytes": 879,
+      "sha256_16": "d70bc7cf29615190"
+    },
+    {
+      "path": "11_commercialisation_global_v6/global_expansion_strategy_v6.md",
+      "bytes": 889,
+      "sha256_16": "f7a1cae2ec36d6d5"
+    },
+    {
+      "path": "11_commercialisation_global_v6/investor_update_pack.md",
+      "bytes": 873,
+      "sha256_16": "ce48236d62cbc1b9"
+    },
+    {
+      "path": "11_commercialisation_global_v6/local_market_pages_plan.csv",
+      "bytes": 421,
+      "sha256_16": "2d44c17e91458675"
+    },
+    {
+      "path": "11_commercialisation_global_v6/marketplace_strategy_v6.md",
+      "bytes": 879,
+      "sha256_16": "340c652c7d3d6c9f"
+    },
+    {
+      "path": "11_commercialisation_global_v6/partner_program_v6.md",
+      "bytes": 869,
+      "sha256_16": "acc76e1387356065"
+    },
+    {
+      "path": "11_commercialisation_global_v6/pricing_packaging_v6.md",
+      "bytes": 881,
+      "sha256_16": "0615ffbaa980fad9"
+    },
+    {
+      "path": "11_commercialisation_global_v6/reseller_contract_brief.md",
+      "bytes": 879,
+      "sha256_16": "25ca9afcd87374f6"
+    },
+    {
+      "path": "11_commercialisation_global_v6/sales_playbook_stage6.md",
+      "bytes": 877,
+      "sha256_16": "4bad13c2ad444c88"
+    },
+    {
+      "path": "11_commercialisation_global_v6/white_label_platform_v6.md",
+      "bytes": 879,
+      "sha256_16": "123fdbe541711c25"
+    },
+    {
+      "path": "12_sre_devops_release_v6/chaos_test_plan.md",
+      "bytes": 354,
+      "sha256_16": "c804200387e5c985"
+    },
+    {
+      "path": "12_sre_devops_release_v6/docker-compose.stage6.yml",
+      "bytes": 380,
+      "sha256_16": "ddb1ae0d930cc93e"
+    },
+    {
+      "path": "12_sre_devops_release_v6/github_actions_ci.yml",
+      "bytes": 298,
+      "sha256_16": "0079e6b59bc7a9af"
+    },
+    {
+      "path": "12_sre_devops_release_v6/k8s/deployment.yaml",
+      "bytes": 339,
+      "sha256_16": "c9f51f8c3dbc84f4"
+    },
+    {
+      "path": "12_sre_devops_release_v6/k8s/hpa.yaml",
+      "bytes": 356,
+      "sha256_16": "73ce34a1e4ad3e18"
+    },
+    {
+      "path": "12_sre_devops_release_v6/k8s/ingress.yaml",
+      "bytes": 333,
+      "sha256_16": "d5e19d071f14afc6"
+    },
+    {
+      "path": "12_sre_devops_release_v6/k8s/secrets.example.yaml",
+      "bytes": 132,
+      "sha256_16": "a24067835efa8a4a"
+    },
+    {
+      "path": "12_sre_devops_release_v6/k8s/service.yaml",
+      "bytes": 145,
+      "sha256_16": "5ba3ea82a6c28614"
+    },
+    {
+      "path": "12_sre_devops_release_v6/load_tests/k6_readiness_score.js",
+      "bytes": 492,
+      "sha256_16": "c541e9056bc02323"
+    },
+    {
+      "path": "12_sre_devops_release_v6/observability/grafana_dashboard.json",
+      "bytes": 235,
+      "sha256_16": "97f3958cee26e941"
+    },
+    {
+      "path": "12_sre_devops_release_v6/observability/otel-collector-config.yaml",
+      "bytes": 168,
+      "sha256_16": "97aa733e9bda404d"
+    },
+    {
+      "path": "12_sre_devops_release_v6/observability/prometheus_rules.yaml",
+      "bytes": 241,
+      "sha256_16": "55b91dffd4783316"
+    },
+    {
+      "path": "12_sre_devops_release_v6/runbooks/backup_restore.md",
+      "bytes": 277,
+      "sha256_16": "afcb6a6a7086e615"
+    },
+    {
+      "path": "12_sre_devops_release_v6/runbooks/incident_response.md",
+      "bytes": 276,
+      "sha256_16": "9dcc10b0c1365c4f"
+    },
+    {
+      "path": "12_sre_devops_release_v6/runbooks/load_test.md",
+      "bytes": 268,
+      "sha256_16": "272f363d3a5c1732"
+    },
+    {
+      "path": "12_sre_devops_release_v6/runbooks/release_train_stage6.md",
+      "bytes": 272,
+      "sha256_16": "a9291b901d558f10"
+    },
+    {
+      "path": "12_sre_devops_release_v6/runbooks/rollback.md",
+      "bytes": 267,
+      "sha256_16": "b8083289d0e625f4"
+    },
+    {
+      "path": "12_sre_devops_release_v6/slos_slas.md",
+      "bytes": 409,
+      "sha256_16": "b20cb2c12e57839e"
+    },
+    {
+      "path": "12_sre_devops_release_v6/terraform/README.md",
+      "bytes": 220,
+      "sha256_16": "92ba9bc172fc16ed"
+    },
+    {
+      "path": "12_sre_devops_release_v6/terraform/main.tf",
+      "bytes": 122,
+      "sha256_16": "5ea595fcea0607e1"
+    },
+    {
+      "path": "12_sre_devops_release_v6/terraform/variables.tf",
+      "bytes": 77,
+      "sha256_16": "e6400f1ea7879218"
+    },
+    {
+      "path": "13_benchmark_data_products_v6/anonymization_policy.md",
+      "bytes": 257,
+      "sha256_16": "f2d1939f1a47c5b4"
+    },
+    {
+      "path": "13_benchmark_data_products_v6/benchmark_api_spec.yaml",
+      "bytes": 227,
+      "sha256_16": "eb6422201279ccbb"
+    },
+    {
+      "path": "13_benchmark_data_products_v6/benchmark_index_strategy_v6.md",
+      "bytes": 474,
+      "sha256_16": "476073b1c140585b"
+    },
+    {
+      "path": "13_benchmark_data_products_v6/data_contribution_agreement_brief.md",
+      "bytes": 186,
+      "sha256_16": "21c84a993e4a5e62"
+    },
+    {
+      "path": "13_benchmark_data_products_v6/industry_benchmark_schema.json",
+      "bytes": 571,
+      "sha256_16": "70925c151d15d04f"
+    },
+    {
+      "path": "13_benchmark_data_products_v6/methodology_public_page.md",
+      "bytes": 242,
+      "sha256_16": "782f4fe66f4addb6"
+    },
+    {
+      "path": "13_benchmark_data_products_v6/quarterly_report_outline.md",
+      "bytes": 248,
+      "sha256_16": "aad1c93602541f16"
+    },
+    {
+      "path": "13_benchmark_data_products_v6/sample_benchmark_dataset.csv",
+      "bytes": 198,
+      "sha256_16": "8608f8444f6a5f21"
+    },
+    {
+      "path": "14_partner_white_label_v6/certification_program.md",
+      "bytes": 339,
+      "sha256_16": "637c8e5b6390a91f"
+    },
+    {
+      "path": "14_partner_white_label_v6/co_branded_report_template.md",
+      "bytes": 344,
+      "sha256_16": "2373f6196dfb9945"
+    },
+    {
+      "path": "14_partner_white_label_v6/partner_api_spec.yaml",
+      "bytes": 344,
+      "sha256_16": "4a2a9609df057537"
+    },
+    {
+      "path": "14_partner_white_label_v6/partner_enablement_prompts.json",
+      "bytes": 315,
+      "sha256_16": "4304e771fda5e7a1"
+    },
+    {
+      "path": "14_partner_white_label_v6/partner_portal_spec.md",
+      "bytes": 346,
+      "sha256_16": "0ae6d3f967e5cf24"
+    },
+    {
+      "path": "14_partner_white_label_v6/partner_scorecard.json",
+      "bytes": 182,
+      "sha256_16": "658691716d508b80"
+    },
+    {
+      "path": "14_partner_white_label_v6/reseller_onboarding_playbook.md",
+      "bytes": 346,
+      "sha256_16": "ae66101a6056777e"
+    },
+    {
+      "path": "14_partner_white_label_v6/service_delivery_quality_gate.md",
+      "bytes": 347,
+      "sha256_16": "5ba3a0c428bf6b18"
+    },
+    {
+      "path": "14_partner_white_label_v6/white_label_tenant_model.md",
+      "bytes": 342,
+      "sha256_16": "efc4f54d5ec292c5"
+    },
+    {
+      "path": "15_training_enablement_v6/customer_onboarding_email_sequences.md",
+      "bytes": 474,
+      "sha256_16": "7eb22f691b801003"
+    },
+    {
+      "path": "15_training_enablement_v6/delivery_certification_checklist.md",
+      "bytes": 471,
+      "sha256_16": "513cce31f799d2b2"
+    },
+    {
+      "path": "15_training_enablement_v6/demo_script_stage6.md",
+      "bytes": 458,
+      "sha256_16": "0cb9d52c60a89885"
+    },
+    {
+      "path": "15_training_enablement_v6/faq_knowledgebase.md",
+      "bytes": 456,
+      "sha256_16": "5ff8541f27c79b73"
+    },
+    {
+      "path": "15_training_enablement_v6/internal_training_plan.md",
+      "bytes": 461,
+      "sha256_16": "03d6ab7e62c08b7c"
+    },
+    {
+      "path": "15_training_enablement_v6/objection_handling_library.md",
+      "bytes": 465,
+      "sha256_16": "5104d9693d4c385b"
+    },
+    {
+      "path": "15_training_enablement_v6/sales_training_deck_outline.md",
+      "bytes": 466,
+      "sha256_16": "977bba1aca9ac00e"
+    },
+    {
+      "path": "15_training_enablement_v6/support_knowledge_base.md",
+      "bytes": 461,
+      "sha256_16": "63c81f70c01ad9c0"
+    },
+    {
+      "path": "16_data_seed_v6/seed_ai_search_prompts.csv",
+      "bytes": 2985,
+      "sha256_16": "1c79427ace2098f4"
+    },
+    {
+      "path": "16_data_seed_v6/seed_benchmark_industries.csv",
+      "bytes": 452,
+      "sha256_16": "69ea61cf166f2b99"
+    },
+    {
+      "path": "16_data_seed_v6/seed_directory_targets.csv",
+      "bytes": 143,
+      "sha256_16": "a45c209e663aa2e8"
+    },
+    {
+      "path": "16_data_seed_v6/seed_governance_controls.csv",
+      "bytes": 156,
+      "sha256_16": "6d1c39b9743bcd53"
+    },
+    {
+      "path": "16_data_seed_v6/seed_partner_tiers.csv",
+      "bytes": 142,
+      "sha256_16": "dfa74d3e001e1135"
+    },
+    {
+      "path": "16_data_seed_v6/seed_tools_catalog.csv",
+      "bytes": 381,
+      "sha256_16": "0480c46c430a6093"
+    },
+    {
+      "path": "16_data_seed_v6/seed_use_cases.csv",
+      "bytes": 214,
+      "sha256_16": "6b91b36dce0888b3"
+    },
+    {
+      "path": "16_data_seed_v6/seed_workflow_templates.csv",
+      "bytes": 239,
+      "sha256_16": "29556e6253dc98cd"
+    },
+    {
+      "path": "DELTA_FROM_STAGE5.md",
+      "bytes": 1291,
+      "sha256_16": "a46c40d93bf33bec"
+    },
+    {
+      "path": "FILE_MANIFEST.json",
+      "bytes": 45845,
+      "sha256_16": "4fe403fc6dea1041"
+    },
+    {
+      "path": "IMPLEMENTATION_INDEX.md",
+      "bytes": 1262,
+      "sha256_16": "e2d1ffa21341a0a2"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3023,
+      "sha256_16": "588b49c8d49a1eb9"
+    },
+    {
+      "path": "SOURCE_ALIGNMENT_REGISTER.md",
+      "bytes": 2688,
+      "sha256_16": "5cd4076e09f5c7a4"
+    },
+    {
+      "path": "STAGE6_EXECUTIVE_BRIEF.md",
+      "bytes": 1889,
+      "sha256_16": "5a8620ff077d3ed3"
+    },
+    {
+      "path": "STAGE6_IMPLEMENTATION_DECISIONS.md",
+      "bytes": 1244,
+      "sha256_16": "a7d9b3db3b6684e0"
+    },
+    {
+      "path": "VALIDATION_RESULTS.json",
+      "bytes": 81,
+      "sha256_16": "8090c4281119cbd0"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "dashboards": [
+    {
+      "name": "AIReady Growth",
+      "widgets": [
+        "leads_by_source",
+        "free_score_completion",
+        "paid_conversion",
+        "revenue"
+      ]
+    },
+    {
+      "name": "AIReady Delivery",
+      "widgets": [
+        "open_audits",
+        "sla_risk",
+        "qa_queue",
+        "report_delivery"
+      ]
+    },
+    {
+      "name": "AI Citation Lab",
+      "widgets": [
+        "citation_rate",
+        "cited_pages",
+        "competitor_mentions",
+        "content_tasks"
+      ]
+    },
+    {
+      "name": "MCP Tool Risk",
+      "widgets": [
+        "tool_calls",
+        "approval_requests",
+        "denied_calls",
+        "auth_errors"
+      ]
+    },
+    {
+      "name": "Partner Pipeline",
+      "widgets": [
+        "partner_leads",
+        "workspace_status",
+        "partner_quality_score",
+        "commission_due"
+      ]
+    }
+  ]
+}

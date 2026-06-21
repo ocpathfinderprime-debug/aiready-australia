@@ -1,0 +1,17 @@
+industry,market,status
+accounting-bookkeeping,AU,active
+construction,AU,active
+education-training,AU,active
+healthcare-admin,AU,active
+hospitality,AU,active
+legal-practices,AU,active
+logistics,AU,active
+not-for-profit,AU,active
+professional-services,AU,active
+real-estate,AU,active
+retail-ecommerce,AU,active
+trades,AU,active
+manufacturing,AU,active
+financial-services,AU,active
+marketing-agencies,AU,active
+consulting-firms,AU,active

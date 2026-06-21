@@ -1,0 +1,7 @@
+target,type,priority,status
+National AI Centre AI Directory,AI directory,P0,apply
+Google Business Profile,local entity,P0,setup
+Bing Places,local entity,P0,setup
+Perth business directory,local citation,P1,identify
+Australian small business association,industry citation,P1,identify
+Partner marketplaces,channel listing,P1,identify

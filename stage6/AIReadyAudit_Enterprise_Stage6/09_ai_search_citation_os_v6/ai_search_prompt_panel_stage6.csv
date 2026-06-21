@@ -1,0 +1,51 @@
+prompt_id,engine,market,intent,prompt,expected_target_url
+google_ai_au_ai_readiness,google_ai,AU/global,au_ai_readiness,Best AI readiness audit for Australian small businesses,https://www.aireadyaudit.com.au/
+google_ai_au_ai_tools,google_ai,AU/global,au_ai_tools,Who can audit my business and recommend AI tools in Australia?,https://www.aireadyaudit.com.au/
+google_ai_au_ai_automation,google_ai,AU/global,au_ai_automation,AI automation audit for small business Australia,https://www.aireadyaudit.com.au/
+google_ai_ai_website_visibility,google_ai,AU/global,ai_website_visibility,Who can audit my website for AI search visibility?,https://www.aireadyaudit.com.au/
+google_ai_perth_ai_consultant,google_ai,AU/global,perth_ai_consultant,AI readiness audit Perth,https://www.aireadyaudit.com.au/
+google_ai_industry_accounting,google_ai,AU/global,industry_accounting,AI tools audit for accounting firm Australia,https://www.aireadyaudit.com.au/
+google_ai_industry_trades,google_ai,AU/global,industry_trades,AI automation audit for trades business Australia,https://www.aireadyaudit.com.au/
+google_ai_governance_review,google_ai,AU/global,governance_review,AI governance review for Australian SME,https://www.aireadyaudit.com.au/
+google_ai_sample_report,google_ai,AU/global,sample_report,Example AI readiness audit report,https://www.aireadyaudit.com.au/
+google_ai_global_partner,google_ai,AU/global,global_partner,White label AI readiness audit platform,https://www.aireadyaudit.com.au/
+bing_copilot_au_ai_readiness,bing_copilot,AU/global,au_ai_readiness,Best AI readiness audit for Australian small businesses,https://www.aireadyaudit.com.au/
+bing_copilot_au_ai_tools,bing_copilot,AU/global,au_ai_tools,Who can audit my business and recommend AI tools in Australia?,https://www.aireadyaudit.com.au/
+bing_copilot_au_ai_automation,bing_copilot,AU/global,au_ai_automation,AI automation audit for small business Australia,https://www.aireadyaudit.com.au/
+bing_copilot_ai_website_visibility,bing_copilot,AU/global,ai_website_visibility,Who can audit my website for AI search visibility?,https://www.aireadyaudit.com.au/
+bing_copilot_perth_ai_consultant,bing_copilot,AU/global,perth_ai_consultant,AI readiness audit Perth,https://www.aireadyaudit.com.au/
+bing_copilot_industry_accounting,bing_copilot,AU/global,industry_accounting,AI tools audit for accounting firm Australia,https://www.aireadyaudit.com.au/
+bing_copilot_industry_trades,bing_copilot,AU/global,industry_trades,AI automation audit for trades business Australia,https://www.aireadyaudit.com.au/
+bing_copilot_governance_review,bing_copilot,AU/global,governance_review,AI governance review for Australian SME,https://www.aireadyaudit.com.au/
+bing_copilot_sample_report,bing_copilot,AU/global,sample_report,Example AI readiness audit report,https://www.aireadyaudit.com.au/
+bing_copilot_global_partner,bing_copilot,AU/global,global_partner,White label AI readiness audit platform,https://www.aireadyaudit.com.au/
+chatgpt_search_au_ai_readiness,chatgpt_search,AU/global,au_ai_readiness,Best AI readiness audit for Australian small businesses,https://www.aireadyaudit.com.au/
+chatgpt_search_au_ai_tools,chatgpt_search,AU/global,au_ai_tools,Who can audit my business and recommend AI tools in Australia?,https://www.aireadyaudit.com.au/
+chatgpt_search_au_ai_automation,chatgpt_search,AU/global,au_ai_automation,AI automation audit for small business Australia,https://www.aireadyaudit.com.au/
+chatgpt_search_ai_website_visibility,chatgpt_search,AU/global,ai_website_visibility,Who can audit my website for AI search visibility?,https://www.aireadyaudit.com.au/
+chatgpt_search_perth_ai_consultant,chatgpt_search,AU/global,perth_ai_consultant,AI readiness audit Perth,https://www.aireadyaudit.com.au/
+chatgpt_search_industry_accounting,chatgpt_search,AU/global,industry_accounting,AI tools audit for accounting firm Australia,https://www.aireadyaudit.com.au/
+chatgpt_search_industry_trades,chatgpt_search,AU/global,industry_trades,AI automation audit for trades business Australia,https://www.aireadyaudit.com.au/
+chatgpt_search_governance_review,chatgpt_search,AU/global,governance_review,AI governance review for Australian SME,https://www.aireadyaudit.com.au/
+chatgpt_search_sample_report,chatgpt_search,AU/global,sample_report,Example AI readiness audit report,https://www.aireadyaudit.com.au/
+chatgpt_search_global_partner,chatgpt_search,AU/global,global_partner,White label AI readiness audit platform,https://www.aireadyaudit.com.au/
+perplexity_au_ai_readiness,perplexity,AU/global,au_ai_readiness,Best AI readiness audit for Australian small businesses,https://www.aireadyaudit.com.au/
+perplexity_au_ai_tools,perplexity,AU/global,au_ai_tools,Who can audit my business and recommend AI tools in Australia?,https://www.aireadyaudit.com.au/
+perplexity_au_ai_automation,perplexity,AU/global,au_ai_automation,AI automation audit for small business Australia,https://www.aireadyaudit.com.au/
+perplexity_ai_website_visibility,perplexity,AU/global,ai_website_visibility,Who can audit my website for AI search visibility?,https://www.aireadyaudit.com.au/
+perplexity_perth_ai_consultant,perplexity,AU/global,perth_ai_consultant,AI readiness audit Perth,https://www.aireadyaudit.com.au/
+perplexity_industry_accounting,perplexity,AU/global,industry_accounting,AI tools audit for accounting firm Australia,https://www.aireadyaudit.com.au/
+perplexity_industry_trades,perplexity,AU/global,industry_trades,AI automation audit for trades business Australia,https://www.aireadyaudit.com.au/
+perplexity_governance_review,perplexity,AU/global,governance_review,AI governance review for Australian SME,https://www.aireadyaudit.com.au/
+perplexity_sample_report,perplexity,AU/global,sample_report,Example AI readiness audit report,https://www.aireadyaudit.com.au/
+perplexity_global_partner,perplexity,AU/global,global_partner,White label AI readiness audit platform,https://www.aireadyaudit.com.au/
+gemini_au_ai_readiness,gemini,AU/global,au_ai_readiness,Best AI readiness audit for Australian small businesses,https://www.aireadyaudit.com.au/
+gemini_au_ai_tools,gemini,AU/global,au_ai_tools,Who can audit my business and recommend AI tools in Australia?,https://www.aireadyaudit.com.au/
+gemini_au_ai_automation,gemini,AU/global,au_ai_automation,AI automation audit for small business Australia,https://www.aireadyaudit.com.au/
+gemini_ai_website_visibility,gemini,AU/global,ai_website_visibility,Who can audit my website for AI search visibility?,https://www.aireadyaudit.com.au/
+gemini_perth_ai_consultant,gemini,AU/global,perth_ai_consultant,AI readiness audit Perth,https://www.aireadyaudit.com.au/
+gemini_industry_accounting,gemini,AU/global,industry_accounting,AI tools audit for accounting firm Australia,https://www.aireadyaudit.com.au/
+gemini_industry_trades,gemini,AU/global,industry_trades,AI automation audit for trades business Australia,https://www.aireadyaudit.com.au/
+gemini_governance_review,gemini,AU/global,governance_review,AI governance review for Australian SME,https://www.aireadyaudit.com.au/
+gemini_sample_report,gemini,AU/global,sample_report,Example AI readiness audit report,https://www.aireadyaudit.com.au/
+gemini_global_partner,gemini,AU/global,global_partner,White label AI readiness audit platform,https://www.aireadyaudit.com.au/

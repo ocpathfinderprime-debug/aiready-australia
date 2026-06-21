@@ -1,0 +1,19 @@
+openapi: 3.1.0
+info:
+  title: AIReady Audit Actions Stage 6
+  version: 6.0.0
+paths:
+  /v6/readiness-score:
+    post:
+      operationId: calculateReadinessScore
+      summary: Calculate AI readiness score
+      responses:
+        '200':
+          description: OK
+  /v6/ai-visibility/plan:
+    post:
+      operationId: createAiVisibilityPlan
+      summary: Create AI website visibility audit plan
+      responses:
+        '200':
+          description: OK

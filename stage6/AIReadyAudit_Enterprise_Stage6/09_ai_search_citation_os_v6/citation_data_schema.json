@@ -1,0 +1,35 @@
+{
+  "type": "object",
+  "properties": {
+    "promptId": {
+      "type": "string"
+    },
+    "engine": {
+      "type": "string"
+    },
+    "observedAt": {
+      "type": "string"
+    },
+    "cited": {
+      "type": "boolean"
+    },
+    "citedUrl": {
+      "type": "string"
+    },
+    "competitors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "promptId",
+    "engine",
+    "observedAt",
+    "cited"
+  ]
+}

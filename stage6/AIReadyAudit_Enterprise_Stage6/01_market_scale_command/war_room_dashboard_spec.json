@@ -1,0 +1,71 @@
+{
+  "dashboard": "AIReady Stage 6 War Room",
+  "refresh_minutes": 15,
+  "tiles": [
+    {
+      "id": "lead_velocity",
+      "title": "Lead Velocity",
+      "source": "api.leads",
+      "metric": "new_leads_7d"
+    },
+    {
+      "id": "free_scores",
+      "title": "Free Score Completions",
+      "source": "api.readiness_scores",
+      "metric": "completed_7d"
+    },
+    {
+      "id": "paid_audits",
+      "title": "Paid Audits",
+      "source": "api.orders",
+      "metric": "paid_audits_30d"
+    },
+    {
+      "id": "delivery_sla",
+      "title": "Delivery SLA",
+      "source": "api.audit_workspaces",
+      "metric": "on_time_rate"
+    },
+    {
+      "id": "ai_citations",
+      "title": "AI Citations",
+      "source": "citation_lab",
+      "metric": "citation_presence_rate"
+    },
+    {
+      "id": "oc_events",
+      "title": "OC Prime Events",
+      "source": "oc_prime_event_bus",
+      "metric": "events_24h"
+    },
+    {
+      "id": "mcp_health",
+      "title": "MCP Health",
+      "source": "mcp_server",
+      "metric": "tool_error_rate"
+    },
+    {
+      "id": "support_risk",
+      "title": "Support Risk",
+      "source": "support",
+      "metric": "open_escalations"
+    }
+  ],
+  "alerts": [
+    {
+      "metric": "api_error_rate",
+      "threshold": "> 2% for 15m",
+      "severity": "high"
+    },
+    {
+      "metric": "delivery_sla_breach",
+      "threshold": "> 1 active breach",
+      "severity": "medium"
+    },
+    {
+      "metric": "cross_tenant_access_denied",
+      "threshold": "> 0",
+      "severity": "critical"
+    }
+  ]
+}

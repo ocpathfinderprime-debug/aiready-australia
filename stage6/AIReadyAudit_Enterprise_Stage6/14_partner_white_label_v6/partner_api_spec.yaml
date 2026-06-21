@@ -1,0 +1,17 @@
+openapi: 3.1.0
+info:
+  title: AIReady Partner API
+  version: 6.0.0
+paths:
+  /partner/v6/leads:
+    post:
+      summary: Submit a partner lead
+      responses:
+        '202':
+          description: Accepted
+  /partner/v6/workspaces:
+    get:
+      summary: List partner audit workspaces
+      responses:
+        '200':
+          description: OK

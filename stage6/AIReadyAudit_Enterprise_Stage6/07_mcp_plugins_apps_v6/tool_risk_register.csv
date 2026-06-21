@@ -1,0 +1,11 @@
+tool,risk_class,primary_control
+get_package_entitlements,read,scoped auth and audit log
+calculate_readiness_score,draft,scoped auth and audit log
+generate_audit_outline,draft,scoped auth and audit log
+score_ai_citation_presence,draft,scoped auth and audit log
+create_lead,write,scoped auth and audit log
+create_audit_workspace,write,scoped auth and audit log
+request_report_publish_approval,high_risk_write,approval required
+emit_oc_prime_event,write,scoped auth and audit log
+request_partner_workspace_activation,high_risk_write,approval required
+submit_indexnow_url,write,scoped auth and audit log

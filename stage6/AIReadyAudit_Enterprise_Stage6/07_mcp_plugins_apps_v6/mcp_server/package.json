@@ -1,0 +1,13 @@
+{
+  "name": "aiready-stage6-mcp-server",
+  "version": "6.0.0",
+  "type": "module",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "latest",
+    "zod": "latest"
+  },
+  "scripts": {
+    "dev": "tsx src/server.ts",
+    "build": "tsc"
+  }
+}

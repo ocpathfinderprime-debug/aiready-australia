@@ -1,0 +1,10 @@
+groups:
+  - name: aiready-stage6
+    rules:
+      - alert: HighApiErrorRate
+        expr: api_error_rate > 0.02
+        for: 15m
+        labels:
+          severity: high
+        annotations:
+          summary: API error rate above threshold

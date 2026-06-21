@@ -1,0 +1,100 @@
+{
+  "agents": [
+    {
+      "id": "master_audit_orchestrator",
+      "owner": "AIReady",
+      "status": "stage6_ready",
+      "human_review_required": false
+    },
+    {
+      "id": "intake_evidence_analyst",
+      "owner": "AIReady",
+      "status": "stage6_ready",
+      "human_review_required": false
+    },
+    {
+      "id": "workflow_mapper",
+      "owner": "AIReady",
+      "status": "stage6_ready",
+      "human_review_required": false
+    },
+    {
+      "id": "opportunity_ranker",
+      "owner": "AIReady",
+      "status": "stage6_ready",
+      "human_review_required": false
+    },
+    {
+      "id": "tool_recommendation_specialist",
+      "owner": "AIReady",
+      "status": "stage6_ready",
+      "human_review_required": false
+    },
+    {
+      "id": "roi_estimator",
+      "owner": "AIReady",
+      "status": "stage6_ready",
+      "human_review_required": false
+    },
+    {
+      "id": "ai_governance_reviewer",
+      "owner": "AIReady",
+      "status": "stage6_ready",
+      "human_review_required": false
+    },
+    {
+      "id": "report_writer",
+      "owner": "AIReady",
+      "status": "stage6_ready",
+      "human_review_required": true
+    },
+    {
+      "id": "qa_reviewer",
+      "owner": "AIReady",
+      "status": "stage6_ready",
+      "human_review_required": true
+    },
+    {
+      "id": "ai_visibility_analyst",
+      "owner": "AIReady",
+      "status": "stage6_ready",
+      "human_review_required": false
+    },
+    {
+      "id": "citation_lab_operator",
+      "owner": "AIReady",
+      "status": "stage6_ready",
+      "human_review_required": false
+    },
+    {
+      "id": "sales_followup_agent",
+      "owner": "AIReady",
+      "status": "stage6_ready",
+      "human_review_required": false
+    },
+    {
+      "id": "partner_enablement_agent",
+      "owner": "AIReady",
+      "status": "stage6_ready",
+      "human_review_required": false
+    },
+    {
+      "id": "benchmark_index_analyst",
+      "owner": "AIReady",
+      "status": "stage6_ready",
+      "human_review_required": false
+    },
+    {
+      "id": "oc_prime_routing_agent",
+      "owner": "AIReady",
+      "status": "stage6_ready",
+      "human_review_required": false
+    },
+    {
+      "id": "mcp_security_reviewer",
+      "owner": "AIReady",
+      "status": "stage6_ready",
+      "human_review_required": true
+    }
+  ]
+}

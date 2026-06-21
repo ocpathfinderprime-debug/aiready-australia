@@ -1,0 +1,21 @@
+{
+  "name": "AIReady Audit",
+  "category": "AI readiness audit platform",
+  "primary_market": "Australia",
+  "services": [
+    "AI Readiness Audit Australia",
+    "AI Tools Audit",
+    "AI Automation Audit",
+    "AI Website Visibility Audit",
+    "AI Governance Review",
+    "Enterprise AI Capability Assessment",
+    "AI Implementation Sprint",
+    "AIReady SME AI Capability Index"
+  ],
+  "sameAs_targets": [
+    "Google Business Profile",
+    "Bing Places",
+    "National AI Centre AI Directory",
+    "LinkedIn Company Page"
+  ]
+}

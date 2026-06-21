@@ -1,0 +1,10 @@
+{
+  "weights": {
+    "lead_quality": 25,
+    "delivery_quality": 30,
+    "sla_adherence": 20,
+    "customer_feedback": 15,
+    "compliance": 10
+  },
+  "minimum_to_keep_active": 75
+}

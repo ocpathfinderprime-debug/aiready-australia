@@ -1,0 +1,54 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.aireadyaudit.com.au/#organization",
+      "name": "AIReady Audit",
+      "alternateName": [
+        "AIReady Australia",
+        "AIReady Audit Australia"
+      ],
+      "url": "https://www.aireadyaudit.com.au/",
+      "areaServed": [
+        "Australia",
+        "New Zealand",
+        "Singapore",
+        "United Kingdom",
+        "Canada",
+        "United States"
+      ],
+      "knowsAbout": [
+        "AI readiness audit",
+        "AI tools audit",
+        "AI automation audit",
+        "AI website visibility audit",
+        "AI governance",
+        "AI implementation roadmap"
+      ],
+      "description": "Australian AI readiness, tools, automation and AI website visibility audit platform for small and medium businesses."
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.aireadyaudit.com.au/ai-readiness-audit-australia/#service",
+      "serviceType": "AI readiness audit",
+      "provider": {
+        "@id": "https://www.aireadyaudit.com.au/#organization"
+      },
+      "areaServed": "Australia",
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Small and medium businesses"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.aireadyaudit.com.au/#website",
+      "url": "https://www.aireadyaudit.com.au/",
+      "name": "AIReady Audit",
+      "publisher": {
+        "@id": "https://www.aireadyaudit.com.au/#organization"
+      }
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+control,category,priority
+AI acceptable use policy,governance,P0
+human review for customer-impacting AI,oversight,P0
+vendor data review,supply chain,P1

@@ -1,0 +1,37 @@
+{
+  "type": "object",
+  "properties": {
+    "industry": {
+      "type": "string"
+    },
+    "market": {
+      "type": "string"
+    },
+    "sizeBand": {
+      "type": "string"
+    },
+    "sampleSize": {
+      "type": "integer"
+    },
+    "averageReadinessScore": {
+      "type": "number"
+    },
+    "topOpportunities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "topRisks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "industry",
+    "market",
+    "sampleSize"
+  ]
+}

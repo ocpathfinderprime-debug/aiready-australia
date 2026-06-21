@@ -1,0 +1,7 @@
+market,priority,pages,launch_stage
+Australia,P0,"national, city, industry, comparison",now
+New Zealand,P1,"country, Auckland, SME industries",after AU proof
+Singapore,P1,"country, professional services, governance",after AU proof
+United Kingdom,P2,"country, AI governance, SMEs",partner led
+Canada,P2,"country, SMB audit, AI tools",partner led
+United States,P3,"AI website visibility, partner workspace",selective

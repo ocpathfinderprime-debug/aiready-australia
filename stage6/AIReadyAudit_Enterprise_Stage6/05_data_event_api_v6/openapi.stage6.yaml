@@ -1,0 +1,28 @@
+openapi: 3.1.0
+info:
+  title: AIReady Audit Stage 6 API
+  version: 6.0.0
+servers:
+  - url: https://api.aireadyaudit.com.au
+paths:
+  /v6/readiness-score:
+    post:
+      summary: Calculate a readiness score
+      operationId: calculateReadinessScore
+      responses:
+        '200':
+          description: Score calculated
+  /v6/citation-score:
+    post:
+      summary: Score AI citation presence
+      operationId: scoreCitationPresence
+      responses:
+        '200':
+          description: Citation score calculated
+  /v6/oc-prime/events:
+    post:
+      summary: Emit an OC Prime event
+      operationId: emitOcPrimeEvent
+      responses:
+        '202':
+          description: Event accepted

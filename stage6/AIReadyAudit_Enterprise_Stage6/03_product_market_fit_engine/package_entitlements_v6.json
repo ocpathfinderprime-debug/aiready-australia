@@ -1,0 +1,65 @@
+{
+  "free_score": {
+    "price_aud": "0",
+    "turnaround": "instant",
+    "includes": [
+      "readiness score",
+      "top opportunities",
+      "package recommendation"
+    ],
+    "human_review": false
+  },
+  "starter_audit": {
+    "price_aud": "497+",
+    "turnaround": "5 business days",
+    "includes": [
+      "readiness score",
+      "tool shortlist",
+      "90-day roadmap"
+    ],
+    "human_review": true
+  },
+  "business_audit": {
+    "price_aud": "1497+",
+    "turnaround": "7 business days",
+    "includes": [
+      "workflow map",
+      "opportunity register",
+      "ROI estimate",
+      "risk review"
+    ],
+    "human_review": true
+  },
+  "enterprise_assessment": {
+    "price_aud": "custom",
+    "turnaround": "scoped",
+    "includes": [
+      "multi-team assessment",
+      "governance review",
+      "implementation portfolio"
+    ],
+    "human_review": true
+  },
+  "website_visibility_audit": {
+    "price_aud": "997+",
+    "turnaround": "5 business days",
+    "includes": [
+      "AI answer tests",
+      "schema/crawl review",
+      "citation opportunities",
+      "content gap plan"
+    ],
+    "human_review": true
+  },
+  "partner_workspace": {
+    "price_aud": "monthly/custom",
+    "turnaround": "partner-led",
+    "includes": [
+      "tenant workspace",
+      "templates",
+      "QA sampling",
+      "report builder"
+    ],
+    "human_review": true
+  }
+}

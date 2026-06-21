@@ -1,0 +1,36 @@
+{
+  "entities": [
+    "tenant",
+    "lead",
+    "readiness_score",
+    "audit_workspace",
+    "report",
+    "citation_prompt",
+    "citation_observation",
+    "partner",
+    "approval",
+    "implementation_task"
+  ],
+  "intents": [
+    "assess_ai_readiness",
+    "choose_ai_tools",
+    "identify_automation",
+    "improve_ai_search_visibility",
+    "review_ai_governance",
+    "implement_roadmap"
+  ],
+  "risk_classes": [
+    "low",
+    "medium",
+    "high",
+    "restricted"
+  ],
+  "markets": [
+    "AU",
+    "NZ",
+    "SG",
+    "UK",
+    "CA",
+    "US"
+  ]
+}

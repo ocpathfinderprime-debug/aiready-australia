@@ -1,0 +1,26 @@
+workflows:
+  - id: lead_to_audit
+    trigger: aiready.readiness_score.completed
+    steps:
+      - qualify_lead
+      - assign_owner
+      - create_followup_task
+      - recommend_package
+  - id: report_quality_gate
+    trigger: aiready.report.qa_required
+    steps:
+      - assign_qa_reviewer
+      - check_claim_register
+      - approve_or_request_revision
+  - id: citation_response_loop
+    trigger: aiready.citation.observed
+    steps:
+      - update_dashboard
+      - compare_competitors
+      - create_content_task_if_gap_detected
+  - id: mcp_high_risk_tool_approval
+    trigger: mcp.write_tool.requested
+    steps:
+      - verify_scope
+      - request_human_approval
+      - issue_short_lived_approval_token
