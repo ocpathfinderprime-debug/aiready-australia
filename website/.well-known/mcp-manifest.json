@@ -1,0 +1,8 @@
+{
+  "name": "AIReady Australia",
+  "version": "1.0.0",
+  "description": "Public pointer to the AIReady Australia backend integration manifest.",
+  "manifest": "https://aireadyaudit.com.au/mcp-manifest.json",
+  "website": "https://aireadyaudit.com.au",
+  "contact": "hello@aireadyaudit.com.au"
+}

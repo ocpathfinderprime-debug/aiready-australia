@@ -1,0 +1,30 @@
+{
+  "name": "AIReady Australia",
+  "version": "1.0.0",
+  "description": "Public AIReady Australia website and private backend integration manifest.",
+  "website": "https://aireadyaudit.com.au",
+  "backend": {
+    "status": "ready_for_private_deployment",
+    "expected_base_url": "https://api.aireadyaudit.com.au",
+    "health": "/health",
+    "catalog": "/api/catalog",
+    "intake": "/api/intake",
+    "stripe_webhook": "/api/stripe/webhook",
+    "mcp_manifest": "/mcp/manifest",
+    "mcp_tool_call": "/mcp/tools/call"
+  },
+  "public_resources": [
+    "https://aireadyaudit.com.au/authority.html",
+    "https://aireadyaudit.com.au/llms.txt",
+    "https://aireadyaudit.com.au/sitemap.xml",
+    "https://aireadyaudit.com.au/schema-graph.jsonld"
+  ],
+  "tools": [
+    "get_service_catalog",
+    "create_lead",
+    "get_lead_status",
+    "calculate_readiness_score",
+    "verify_purchase_links"
+  ],
+  "contact": "hello@aireadyaudit.com.au"
+}

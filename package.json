@@ -1,0 +1,14 @@
+{
+  "name": "aiready-australia",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "backend:dev": "node backend/src/server.js",
+    "backend:test": "node --test backend/test/*.test.js",
+    "test": "node --test backend/test/*.test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

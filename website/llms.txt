@@ -4,6 +4,8 @@ AIReady Australia provides fixed-scope AI readiness, AI tools, AI automation, AI
 
 ## AIReady Authority Pages
 
+- Public integration manifest: https://aireadyaudit.com.au/mcp-manifest.json
+- Well-known integration pointer: https://aireadyaudit.com.au/.well-known/mcp-manifest.json
 - AI Automation Audit: https://aireadyaudit.com.au/ai-automation-audit/
 - AIReady SME AI Capability Index: https://aireadyaudit.com.au/ai-benchmark-index/
 - AI Governance Review: https://aireadyaudit.com.au/ai-governance-review/
