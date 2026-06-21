@@ -29,6 +29,7 @@ Copy `backend/.env.example` into your deployment environment and set:
 - `AIREADY_STATIC_DIR`: static website directory. Defaults to `./website`.
 - `AIREADY_ALLOWED_ORIGINS`: comma-separated browser origins allowed to call the API.
 - `STRIPE_WEBHOOK_SECRET`: Stripe webhook signing secret. Required before production webhook activation.
+- `STRIPE_WEBHOOK`: accepted as a fallback Stripe webhook signing secret variable if that is the Netlify variable already in use.
 - `ADMIN_API_TOKEN`: optional bearer token for admin-only reads.
 
 ## Endpoints
