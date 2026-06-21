@@ -100,12 +100,12 @@ export class NetlifyBlobStore {
     const store = this.store();
     const result = await store.list({ prefix: `${safe}/` });
     const records = await Promise.all(
-      result.blobs.map((blob) => store.get(blob.key, { type: 'json', consistency: 'strong' })),
+      result.blobs.map((blob) => store.get(blob.key, { type: 'json' })),
     );
     return records.filter(Boolean);
   }
 
   async findById(bucket, id) {
-    return this.store().get(this.keyFor(bucket, id), { type: 'json', consistency: 'strong' });
+    return this.store().get(this.keyFor(bucket, id), { type: 'json' });
   }
 }

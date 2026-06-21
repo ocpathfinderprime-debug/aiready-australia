@@ -127,7 +127,7 @@ export async function handleRequest({ request, response, store, config }) {
       ok: true,
       service: 'aiready-backend',
       version: '1.0.0',
-      storage: 'jsonl',
+      storage: config.storageDriver || 'jsonl',
       time: new Date().toISOString(),
     }, corsHeaders);
     return;
