@@ -24,6 +24,7 @@ Copy `backend/.env.example` into your deployment environment and set:
 - `AIREADY_DATA_DIR`: local JSONL storage path for development.
 - `AIREADY_STORAGE_DRIVER`: `jsonl` for local file storage or `netlify-blobs` for Netlify production storage.
 - `AIREADY_BLOBS_STORE`: Netlify Blobs store name. Defaults to `aiready-records`.
+- `NETLIFY_BLOBS_SITE_ID` and `NETLIFY_BLOBS_TOKEN`: optional explicit Blobs credentials if the function event does not include Netlify's Blobs context.
 - `AIREADY_SERVE_STATIC`: set `true` to serve the public website from the backend.
 - `AIREADY_STATIC_DIR`: static website directory. Defaults to `./website`.
 - `AIREADY_ALLOWED_ORIGINS`: comma-separated browser origins allowed to call the API.

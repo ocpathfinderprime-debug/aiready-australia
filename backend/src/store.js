@@ -54,12 +54,18 @@ export class JsonlStore {
 }
 
 export class NetlifyBlobStore {
-  constructor({ getStore, storeName = 'aiready-records' }) {
+  constructor({ getStore, storeName = 'aiready-records', siteID = '', token = '' }) {
     this.getStore = getStore;
     this.storeName = storeName;
+    this.siteID = siteID;
+    this.token = token;
   }
 
   store() {
+    if (this.siteID && this.token) {
+      return this.getStore({ name: this.storeName, siteID: this.siteID, token: this.token });
+    }
+
     return this.getStore(this.storeName);
   }
 

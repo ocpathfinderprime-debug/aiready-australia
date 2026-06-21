@@ -1,5 +1,5 @@
 import { Readable } from 'node:stream';
-import { getStore } from '@netlify/blobs';
+import { connectLambda, getStore } from '@netlify/blobs';
 import { getConfig } from './config.js';
 import { handleRequest, jsonResponse } from './handlers.js';
 import { JsonlStore, NetlifyBlobStore } from './store.js';
@@ -74,13 +74,22 @@ function getNetlifyConfig() {
 
 function createStore(config) {
   if (config.storageDriver === 'netlify-blobs') {
-    return new NetlifyBlobStore({ getStore, storeName: config.blobsStore });
+    return new NetlifyBlobStore({
+      getStore,
+      storeName: config.blobsStore,
+      siteID: process.env.NETLIFY_BLOBS_SITE_ID || process.env.SITE_ID || '',
+      token: process.env.NETLIFY_BLOBS_TOKEN || '',
+    });
   }
 
   return new JsonlStore({ dataDir: config.dataDir });
 }
 
 export async function handleNetlifyEvent(event) {
+  if (event.blobs) {
+    connectLambda(event);
+  }
+
   const config = getNetlifyConfig();
   const request = createEventRequest(event);
   const response = createResponseCollector();
