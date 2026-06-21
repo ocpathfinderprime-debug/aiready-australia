@@ -39,6 +39,18 @@ Copy `backend/.env.example` into your deployment environment and set:
 
 When `AIREADY_SERVE_STATIC=true`, the same server also serves the static website files from `AIREADY_STATIC_DIR`, including `/`, `/intake.html`, `/llms.txt`, `/mcp-manifest.json`, and `/.well-known/mcp-manifest.json`.
 
+## Netlify Functions
+
+The same backend can run on Netlify through `netlify/functions/backend.js`.
+
+Public routes are mapped in the root `netlify.toml`:
+
+- `/health`
+- `/api/*`
+- `/mcp/*`
+
+Set production environment variables in Netlify before enabling live intake and webhook workflows. If no `AIREADY_DATA_DIR` is set, the function uses `/tmp/aiready-data`, which is suitable for smoke testing only. Production lead and purchase records should move to a durable database, CRM, or queue before paid traffic is scaled.
+
 ## MCP Tools
 
 - `get_service_catalog`

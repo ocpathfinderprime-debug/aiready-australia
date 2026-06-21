@@ -7,6 +7,7 @@ import { createHmac } from 'node:crypto';
 import { createServer } from '../src/server.js';
 import { JsonlStore } from '../src/store.js';
 import { verifyStripeSignature } from '../src/stripe.js';
+import { handleNetlifyEvent } from '../src/netlify.js';
 
 async function withServer(fn) {
   const dataDir = await mkdtemp(join(tmpdir(), 'aiready-backend-'));
@@ -125,4 +126,52 @@ test('stripe webhook rejects invalid signatures', async () => {
     });
     assert.equal(response.status, 400);
   });
+});
+
+test('netlify function adapter serves backend routes', async () => {
+  const dataDir = await mkdtemp(join(tmpdir(), 'aiready-netlify-'));
+  const previousDataDir = process.env.AIREADY_DATA_DIR;
+  const previousServeStatic = process.env.AIREADY_SERVE_STATIC;
+  process.env.AIREADY_DATA_DIR = dataDir;
+  process.env.AIREADY_SERVE_STATIC = 'false';
+
+  try {
+    const health = await handleNetlifyEvent({
+      httpMethod: 'GET',
+      path: '/.netlify/functions/backend',
+      rawQuery: 'path=%2Fhealth',
+      headers: { host: 'aireadyaudit.com.au' },
+    });
+    assert.equal(health.statusCode, 200);
+    assert.equal(JSON.parse(health.body).ok, true);
+
+    const catalog = await handleNetlifyEvent({
+      httpMethod: 'GET',
+      path: '/.netlify/functions/backend',
+      rawQuery: 'path=%2Fapi%2Fcatalog',
+      headers: { host: 'aireadyaudit.com.au' },
+    });
+    assert.equal(catalog.statusCode, 200);
+    assert.equal(JSON.parse(catalog.body).catalog.purchaseLinks.starterAudit, 'https://buy.stripe.com/8x200idHAep9bvRejYebu03');
+
+    const intake = await handleNetlifyEvent({
+      httpMethod: 'POST',
+      path: '/.netlify/functions/backend',
+      rawQuery: 'path=%2Fapi%2Fintake',
+      headers: {
+        host: 'aireadyaudit.com.au',
+        origin: 'https://aireadyaudit.com.au',
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({ email: 'buyer@example.com', business: 'Example Co', consent: true }),
+    });
+    assert.equal(intake.statusCode, 202);
+    assert.equal(JSON.parse(intake.body).ok, true);
+  } finally {
+    if (previousDataDir === undefined) delete process.env.AIREADY_DATA_DIR;
+    else process.env.AIREADY_DATA_DIR = previousDataDir;
+    if (previousServeStatic === undefined) delete process.env.AIREADY_SERVE_STATIC;
+    else process.env.AIREADY_SERVE_STATIC = previousServeStatic;
+    await rm(dataDir, { recursive: true, force: true });
+  }
 });
