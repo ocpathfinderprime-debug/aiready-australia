@@ -1,0 +1,57 @@
+audit_engine:
+  name: "AIReady Australia Audit Research Engine"
+  intake_source: "Tally"
+  form_url: "https://tally.so/r/J9DJ57"
+  website_url: "https://aireadyaudit.com.au/#top"
+
+tiers:
+  starter:
+    price_aud: 497
+    opportunity_cap: 8
+    evidence_target: "10-15"
+    tool_scan_target: "6-10"
+    delivery_days: 5
+    walkthrough_call: false
+    followup_support: false
+    report_style: "simple, owner-friendly, quick-win focused"
+  business:
+    price_aud: 997
+    opportunity_cap: 15
+    evidence_target: "20-35"
+    tool_scan_target: "12-20"
+    delivery_days: 7
+    walkthrough_call: "1 hour"
+    followup_support: "30 days email Q&A"
+    report_style: "implementation-ready with integration notes"
+  enterprise:
+    price_aud: 1997
+    opportunity_cap: "none"
+    evidence_target: "40-75"
+    tool_scan_target: "20-35"
+    delivery_days: 5
+    scoping_call: "30 minutes before audit begins"
+    stakeholder_interviews: 3
+    walkthrough_call: "2 hours"
+    followup_support: "60 days email Q&A"
+    report_style: "executive, governance, integration, compliance, vendor strategy"
+
+quality_rules:
+  no_generic_advice: true
+  every_recommendation_requires_client_link: true
+  every_top_recommendation_requires_evidence: true
+  label_assumptions: true
+  no_sensitive_data_in_public_ai_tools: true
+  human_review_required_for_high_risk: true
+  final_report_requires_qa_gate: true
+
+risk_flags:
+  - sensitive_personal_information
+  - health_or_medical_data
+  - legal_or_financial_decisions
+  - employee_monitoring
+  - customer_surveillance
+  - children_or_vulnerable_persons
+  - regulated_industry
+  - offshore_vendor_data_transfer
+  - unclear_data_retention
+  - no_human_review_for_high_impact_process
