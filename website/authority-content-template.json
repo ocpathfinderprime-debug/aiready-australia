@@ -1,0 +1,306 @@
+{
+  "ai-audit-for-accounting-bookkeeping": {
+    "workflows": [
+      "BAS lodgement and ATO reporting",
+      "bank reconciliation and transaction coding",
+      "payroll processing and superannuation",
+      "client document collection and verification",
+      "financial statement preparation",
+      "tax planning scenario modelling"
+    ],
+    "opportunities": [
+      "automated transaction categorisation",
+      "AI-assisted tax position reviews",
+      "document extraction for expense coding",
+      "compliance deadline tracking and alerts",
+      "client query handling via knowledge retrieval",
+      "payroll anomaly detection"
+    ],
+    "blurb": "Accounting and bookkeeping firms handle high-volume document processing, strict compliance deadlines, and repetitive data entry. AI can reduce manual coding hours, flag anomalies before they become problems, and provide automated client-ready summaries."
+  },
+  "ai-audit-for-construction": {
+    "workflows": [
+      "project tender preparation and submission",
+      "subcontractor quote comparison and onboarding",
+      "progress claims and variation tracking",
+      "safety and SWMS documentation",
+      "site diary and daily reporting",
+      "material ordering and delivery scheduling"
+    ],
+    "opportunities": [
+      "automated take-off from plan documents",
+      "tender response drafting",
+      "safety compliance document checking",
+      "progress photo analysis and reporting",
+      "variation and claim tracking automation",
+      "subcontractor performance review synthesis"
+    ],
+    "blurb": "Construction businesses juggle tenders, variations, safety compliance, and subcontractor management — often from the ute rather than a desk. AI can speed up quoting, monitor document compliance, and turn site photos into structured progress reports."
+  },
+  "ai-audit-for-consulting-firms": {
+    "workflows": [
+      "proposal and engagement letter drafting",
+      "research synthesis and insights gathering",
+      "client workshop preparation and summarisation",
+      "deliverable drafting and quality review",
+      "timesheet and billing reconciliation",
+      "methodology and framework documentation"
+    ],
+    "opportunities": [
+      "proposal drafting from project briefs",
+      "research aggregation and synthesis",
+      "workshop transcription and summary generation",
+      "framework customisation from templates",
+      "client report first-draft generation",
+      "engagement risk flagging from project data"
+    ],
+    "blurb": "Consulting firms sell expertise and deliverables — but too much billable time goes into research, drafting, and admin. AI can accelerate proposals, synthesise research, and produce structured first drafts so consultants focus on high-value advisory work."
+  },
+  "ai-audit-for-education-training": {
+    "workflows": [
+      "learning material and curriculum development",
+      "student progress tracking and reporting",
+      "enrolment and administration processing",
+      "assessment creation and marking support",
+      "compliance and RTO evidence collection",
+      "stakeholder communication and newsletters"
+    ],
+    "opportunities": [
+      "curriculum content drafting and adaptation",
+      "automated assessment feedback generation",
+      "student query handling via knowledge base",
+      "RTO compliance evidence organisation",
+      "personalised learning pathway suggestions",
+      "admin form processing and triage"
+    ],
+    "blurb": "Education and training providers balance curriculum development, student support, compliance evidence, and administration — often with lean teams. AI can draft learning content, generate assessment feedback, and streamline the compliance paperwork that eats into teaching time."
+  },
+  "ai-audit-for-financial-services": {
+    "workflows": [
+      "client fact-find and needs analysis",
+      "statement of advice drafting",
+      "compliance and regulatory document checking",
+      "portfolio reporting and commentary",
+      "client review meeting preparation",
+      "product comparison and research"
+    ],
+    "opportunities": [
+      "SOA and ROA drafting acceleration",
+      "regulatory change monitoring and summaries",
+      "client portfolio commentary generation",
+      "document compliance pre-screening",
+      "product research aggregation",
+      "meeting note transcription and action extraction"
+    ],
+    "blurb": "Financial services firms operate in a heavily regulated environment where accuracy, compliance, and client trust are non-negotiable. AI can accelerate advice document drafting, pre-screen compliance, and synthesise product research — with human sign-off remaining the final gate."
+  },
+  "ai-audit-for-healthcare-admin": {
+    "workflows": [
+      "patient intake and referral processing",
+      "appointment scheduling and reminders",
+      "clinical note transcription and coding",
+      "Medicare and private billing reconciliation",
+      "inventory and consumables management",
+      "accreditation evidence collection"
+    ],
+    "opportunities": [
+      "referral triage and prioritisation",
+      "clinical note summarisation from dictation",
+      "billing code suggestion and claim checking",
+      "appointment no-show prediction and follow-up",
+      "accreditation document organisation",
+      "patient FAQ handling via knowledge retrieval"
+    ],
+    "blurb": "Healthcare administration teams manage patient flow, clinical documentation, billing, and accreditation — all with zero tolerance for error. AI can reduce the admin burden by summarising notes, pre-checking claims, and organising compliance evidence while keeping clinicians in control."
+  },
+  "ai-audit-for-hospitality": {
+    "workflows": [
+      "roster planning and shift management",
+      "supplier ordering and inventory tracking",
+      "event and function booking coordination",
+      "customer review monitoring and response",
+      "menu costing and recipe management",
+      "staff onboarding and training"
+    ],
+    "opportunities": [
+      "demand-based roster optimisation",
+      "supplier order suggestion from inventory levels",
+      "review response drafting and sentiment tracking",
+      "event booking automation and upselling",
+      "menu engineering analysis from sales data",
+      "staff training content generation"
+    ],
+    "blurb": "Hospitality businesses run on tight margins, variable demand, and high staff turnover. AI can optimise rosters against booking data, help manage supplier orders, monitor review sentiment, and reduce the admin hours that keep owners away from their guests."
+  },
+  "ai-audit-for-legal-practices": {
+    "workflows": [
+      "client intake and conflict checking",
+      "legal research and case law review",
+      "document drafting and precedent management",
+      "discovery and document review",
+      "matter management and deadline tracking",
+      "billing narrative and timesheet completion"
+    ],
+    "opportunities": [
+      "legal research summarisation with citations",
+      "first-draft document generation from precedents",
+      "discovery document review and relevance flagging",
+      "matter deadline and limitation period tracking",
+      "client communication drafting",
+      "billing narrative generation from time records"
+    ],
+    "blurb": "Legal practices deal with high-stakes document accuracy, rigorous research requirements, and billable-hour pressure. AI can accelerate research, generate first drafts from precedent libraries, and assist with discovery review — all with solicitor oversight remaining central."
+  },
+  "ai-audit-for-logistics": {
+    "workflows": [
+      "shipment tracking and exception management",
+      "carrier rate comparison and booking",
+      "inventory forecasting and replenishment",
+      "customer delivery updates and POD handling",
+      "customs documentation and clearance",
+      "fleet maintenance scheduling"
+    ],
+    "opportunities": [
+      "shipment exception prediction and alerting",
+      "carrier selection optimisation from rate cards",
+      "demand forecasting for inventory planning",
+      "automated customer delivery notifications",
+      "customs document pre-validation",
+      "fleet maintenance scheduling from usage data"
+    ],
+    "blurb": "Logistics operators manage complex chains of shipments, inventory, customs, and customer expectations — where every delay costs money. AI can predict exceptions before they happen, optimise carrier selection, and automate the status communications that currently tie up your team."
+  },
+  "ai-audit-for-manufacturing": {
+    "workflows": [
+      "production scheduling and line planning",
+      "quality inspection and non-conformance reporting",
+      "bill of materials and procurement management",
+      "equipment maintenance and downtime tracking",
+      "safety and WHS documentation",
+      "order fulfilment and dispatch coordination"
+    ],
+    "opportunities": [
+      "predictive maintenance from sensor data",
+      "quality defect detection and classification",
+      "demand-driven production scheduling",
+      "BOM cost optimisation analysis",
+      "safety compliance document automation",
+      "order status tracking and customer updates"
+    ],
+    "blurb": "Manufacturing businesses balance production throughput, quality control, maintenance, and supply chain coordination. AI can predict maintenance needs, detect quality issues earlier, optimise schedules against demand, and keep compliance documentation current without manual effort."
+  },
+  "ai-audit-for-marketing-agencies": {
+    "workflows": [
+      "client brief intake and scoping",
+      "content calendar planning and production",
+      "campaign performance reporting",
+      "creative concept development and iteration",
+      "competitor and market analysis",
+      "client approval and feedback management"
+    ],
+    "opportunities": [
+      "content first-draft generation across formats",
+      "campaign performance insight synthesis",
+      "brief-to-proposal acceleration",
+      "competitive analysis automation",
+      "A/B test result interpretation",
+      "client reporting automation"
+    ],
+    "blurb": "Marketing agencies produce high volumes of creative and analytical output under deadline pressure. AI can accelerate content drafting, synthesise campaign insights, automate competitive research, and turn raw data into client-ready reports — freeing creatives for the work that needs human judgment."
+  },
+  "ai-audit-for-not-for-profit": {
+    "workflows": [
+      "grant application and reporting",
+      "donor communication and CRM updates",
+      "volunteer coordination and scheduling",
+      "program impact measurement and reporting",
+      "board report and governance documentation",
+      "fundraising campaign execution"
+    ],
+    "opportunities": [
+      "grant application drafting and tailoring",
+      "donor communication personalisation",
+      "impact report generation from program data",
+      "volunteer matching and scheduling",
+      "board paper summarisation and drafting",
+      "fundraising content production"
+    ],
+    "blurb": "Not-for-profit organisations achieve more with less — but grant writing, impact reporting, donor management, and volunteer coordination consume scarce staff hours. AI can accelerate grant applications, draft impact reports, and personalise donor communications so your team focuses on mission delivery."
+  },
+  "ai-audit-for-professional-services": {
+    "workflows": [
+      "client engagement scoping and proposals",
+      "document review and quality assurance",
+      "knowledge management and precedent access",
+      "project status tracking and client updates",
+      "invoicing and work-in-progress management",
+      "professional development and CPD tracking"
+    ],
+    "opportunities": [
+      "proposal and scope-of-work drafting",
+      "document review and consistency checking",
+      "internal knowledge base query and retrieval",
+      "project status report generation",
+      "WIP and billing narrative automation",
+      "CPD content summarisation and tracking"
+    ],
+    "blurb": "Professional services firms — from architecture to engineering to business advisory — depend on expertise, precision, and client relationships. AI can accelerate document review, surface relevant precedents, generate project updates, and reduce the non-billable admin that erodes margin."
+  },
+  "ai-audit-for-real-estate": {
+    "workflows": [
+      "property listing creation and marketing",
+      "buyer and tenant enquiry handling",
+      "lease and contract document preparation",
+      "property inspection scheduling and reporting",
+      "rent roll and arrears management",
+      "vendor communication and campaign reporting"
+    ],
+    "opportunities": [
+      "listing description generation from property data",
+      "enquiry triage and automated qualification",
+      "lease and contract draft preparation",
+      "inspection report generation from notes and photos",
+      "rent arrears communication automation",
+      "campaign performance reporting"
+    ],
+    "blurb": "Real estate agencies manage high enquiry volumes, property marketing, contract documentation, and relationship management — often across hundreds of properties. AI can generate listing copy, triage buyer enquiries, produce inspection reports, and automate arrears communications so agents spend more time closing deals."
+  },
+  "ai-audit-for-retail-ecommerce": {
+    "workflows": [
+      "product description and catalogue management",
+      "inventory forecasting and purchase ordering",
+      "customer service and returns handling",
+      "order processing and fulfilment tracking",
+      "marketing campaign and promotion execution",
+      "sales reporting and trend analysis"
+    ],
+    "opportunities": [
+      "product description generation at scale",
+      "demand forecasting for inventory planning",
+      "customer service response automation",
+      "return reason analysis and trend detection",
+      "promotional campaign content production",
+      "sales insight generation and anomaly detection"
+    ],
+    "blurb": "Retail and ecommerce businesses manage large catalogues, customer service at scale, and inventory across channels. AI can generate product content, automate service responses, forecast demand, and surface sales trends — turning operational data into faster decisions."
+  },
+  "ai-audit-for-trades": {
+    "workflows": [
+      "job quoting and estimation",
+      "scheduling and job allocation",
+      "invoicing and progress payment claims",
+      "material take-off and supplier ordering",
+      "compliance and licence management",
+      "customer follow-up and review requests"
+    ],
+    "opportunities": [
+      "quote generation from job scope notes",
+      "intelligent scheduling with travel optimisation",
+      "invoice creation from completed job data",
+      "material list generation from plans and specs",
+      "licence and certification expiry tracking",
+      "automated review request and follow-up"
+    ],
+    "blurb": "Trades businesses win or lose on quoting speed, job scheduling, and cash flow. AI can turn rough job notes into professional quotes, optimise daily schedules around travel time, and automate the invoicing and follow-up that keeps the pipeline healthy."
+  }
+}

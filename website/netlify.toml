@@ -2,12 +2,51 @@
   command = "echo 'Static site - no build step'"
   publish = "website"
 
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=(), payment=()"
+    X-XSS-Protection = "1; mode=block"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
 [[redirects]]
   from = "/intake"
-  to = "/intake.html"
-  status = 200
+  to = "https://tally.so/r/J9DJ57"
+  status = 302
 
 [[redirects]]
   from = "/legal"
   to = "/legal.html"
   status = 200
+
+[[redirects]]
+  from = "/enterprise-inquiry"
+  to = "https://tally.so/r/J9DJ57"
+  status = 302
